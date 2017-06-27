@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+
+const exists = require('fs').existsSync;
+const join = require('path').join;
+const program = require('commander');
+const resolve = require('path').resolve;
+
+var files = [
+  'package.json',
+  'config.json',
+  'README.md'
+];
+
+/**
+ * Usage.
+ */
+
+program
+  .option('-p, --project <project>', 'the name (slug) of project')
+  .usage('<project> <month> <year>');
+
+/**
+ * Help.
+ */
+
+program.on('--help', function(){
+  console.log('  Examples:');
+  console.log();
+  console.log('    # create a new project from machinist template');
+  console.log('    $ machinist my-project-name 7 2017');
+  console.log();
+});
+
+/**
+ * Help.
+ */
+
+program.parse(process.argv);
+if (program.args.length < 1) {
+  return program.help();
+}
+
+/**
+ * Padding.
+ */
+
+console.log();
+process.on('exit', function(){
+  console.log('.........');
+});
+
+/**
+ * Settings.
+ */
+
+const projectName = program.args[0];
+const month = program.args[1] || new Date().getMonth() + 1;
+const year = program.args[2] || new Date().getYear() + 1900;
+const dir = program.project;
+console.log(projectName, month, year);
+
+/**
+ * Modify files
+ */
+
+ files.forEach(function (file) {
+   console.log('modified', file);
+ });
