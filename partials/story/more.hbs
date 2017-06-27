@@ -1,0 +1,12 @@
+<div class="gutter--horizontal">
+  <section class="more column--2x set--center">
+    <h2>More from NBC News Specials</h2>
+    <div class="flex-row flex-row--gutter">
+      {{#eachLimit globalData.storyCatalog 3}}
+        <div class="column--third gutter--horizontal-half">
+          {{> entry}}
+        </div>
+      {{/eachLimit}}
+    </div>
+  </section>
+</div>

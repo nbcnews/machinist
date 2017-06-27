@@ -1,0 +1,10 @@
+{{#ifOr value.caption value.source}}
+  <figcaption>
+    {{#if value.caption}}
+      {{value.caption}}
+    {{/if}}
+    {{#if value.source}}
+      {{{value.source}}}
+    {{/if}}
+  </figcaption>
+{{/ifOr}}

@@ -1,0 +1,480 @@
+::selection {
+  background-color: $highlight-color;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-serif;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  font-weight: 300;
+  margin: auto;
+  overflow-x: hidden;
+  padding: $site-header-height + $bar-height 0 0 0;
+}
+
+html.is-menu-open {
+  @media (max-width: $screen-xs-max) {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+}
+
+.is-menu-open {
+  @media (max-width: $screen-xs-max) {
+    body {
+      overflow: hidden;
+    }
+
+    main,
+    footer {
+      visibility: hidden;
+    }
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $font-headline;
+  font-weight: bold;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  text-rendering: optimizeLegibility;
+
+  a:link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+// [1] Applies a margin bottom that is a multiple of the vertical grid in EMs.
+// The first argument is the font size context and the second is multiple of the
+// vertical grid unit.
+// [2] Sets the type to one of the modular scale values and the second argument
+// sets a unitless line-height as a multiple of the vertical grid.
+// [3] A generic media query for tablet size ranges.
+// [4] Applies a margin bottom that is the same vertical grid value as the mobile
+// first rule.
+// [5] Sets the type to one of the modular scale values and the second argument
+// sets a unitless line-height as a multiple of the vertical grid.
+h1,
+.h1 {
+  @include setType(4, $ms-up3); // [2]
+  margin-bottom: emRhythm(1, $ms-up3, $silent: true); // [1]
+
+  @media (min-width: $screen-sm-min) {
+    @include setType(7, $ms-up5);
+
+    margin-bottom: emRhythm(1, $ms-up5, $silent: true);
+  }
+}
+
+h2,
+.h2 {
+  @include setType(3, $ms-up1);
+
+  margin-bottom: emRhythm(1, $ms-up1, $silent: true);
+}
+
+h3,
+.h3 {
+  @include setType(2.5, $base-em-font-size, $silent: true);
+
+  margin-bottom: emRhythm(1);
+}
+
+h4,
+.h4 {
+  @include setType(2.5, $base-em-font-size, $silent: true);
+
+  margin-bottom: emRhythm(1);
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  @include setType(2, $ms-down1);
+
+  margin-bottom: emRhythm(1, $ms-down1);
+}
+
+a,
+a:link {
+  background-image: linear-gradient($link-color, $link-color);
+  background-position: 0 95%;
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  color: $link-color;
+  text-decoration: none;
+  text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
+}
+
+a:visited {
+  color: $link-color;
+}
+
+a:hover {
+  background-size: 1px 2px;
+  color: $link-color;
+}
+
+a:active {
+  color: lighten($link-color, 15%);
+}
+
+p {
+  margin-bottom: emRhythm(2);
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @media (min-width: $screen-sm-min) {
+    @if $paragraph-justify {
+      text-align: justify;
+    }
+  }
+}
+
+small,
+.font-small {
+  font-size: $ms-down1;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+figure {
+  margin: 0;
+  position: relative;
+}
+
+figcaption {
+  @include setType(2, $ms-down1);
+
+  color: $secondary-text-color;
+  font-family: $font-sans;
+  font-weight: 400;
+  margin-top: $base-vertical-unit;
+}
+
+blockquote {
+  font-family: $font-display-serif;
+  margin: emRhythm($base-line-multi * 2) 0;
+  // margin-bottom: emRhythm($base-line-multi * 2);
+  // margin-left: 0;
+  // margin-right: 0;
+  // margin-top: emRhythm($base-line-multi * 2);
+  padding-bottom: 0;
+  text-align: center;
+
+  p {
+    @include setType(4, $ms-up2);
+
+    font-weight: 900;
+    margin-bottom: 0;
+  }
+
+  cite {
+    @include setType(2, $ms-down1);
+
+    color: $secondary-text-color;
+    display: block;
+    font-family: $font-sans;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: emRhythm(1, $ms-down1);
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+pre,
+code,
+kbd {
+  background-color: $lighter-grey;
+  font-family: $font-mono;
+  margin: 0;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+code,
+kbd {
+  font-size: $ms-down1;
+}
+
+ol,
+ul,
+dl {
+  margin-bottom: emRhythm(3);
+  margin-left: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: emRhythm(3);
+  padding-top: 0;
+}
+
+ul ul,
+ol ol,
+dl dl {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+dt {
+  font-weight: bold;
+}
+
+// [1] https://developer.mozilla.org/en-US/docs/CSS/font-variant
+abbr {
+  font-variant: small-caps; // [1]
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+// Cursor changed to a question mark when it has a title
+abbr[title]:hover {
+  cursor: help;
+}
+
+mark {
+  background: $highlight-color;
+}
+
+// Creates horizontal rules that obey the baseline.
+// [1] Zero outs the user agent border
+hr {
+  @include rhythmBorderTop(1px, 3);
+
+  border: 0;
+  border-top: 1px;
+  border-top-color: $light-grey;
+  border-top-style: solid; // [1]
+  margin-bottom: 0;
+  margin-top: emRhythm(4);
+}
+
+table {
+  font-family: $font-sans;
+  margin-bottom: emRhythm($base-line-multi * 2);
+  margin-top: emRhythm($base-line-multi * 2);
+  max-width: 100%;
+  overflow: scroll;
+  width: 100%;
+}
+
+table + figcaption {
+  margin-bottom: emRhythm(6, $ms-down1);
+  margin-top: emRhythm(-5, $ms-down1);
+}
+
+tr {
+  border-bottom: 1px solid $light-grey;
+  display: block;
+
+  @media (min-width: $screen-sm-min) {
+    display: table-row;
+  }
+}
+
+th {
+  display: none;
+
+  @media (min-width: $screen-sm-min) {
+    display: table-cell;
+  }
+}
+
+td {
+  display: block;
+
+  &::before {
+    content: attr(data-th) ":";
+    font-weight: bold;
+    padding-right: $base-vertical-unit;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    display: table-cell;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+th,
+td {
+  padding: $base-vertical-unit;
+  text-align: left;
+}
+
+form p {
+  margin-bottom: 0;
+}
+
+[type="email"],
+[type="number"],
+[type="search"],
+[type="text"],
+[type="tel"],
+[type="url"],
+[type="password"],
+[type="date"],
+[type="month"],
+[type="week"],
+[type="time"],
+[type="datetime"],
+[type="datetime-local"],
+textarea,
+select {
+  background-color: #fff;
+  border: 1px solid $grey; /* The 6px vertically centers text on FF, ignored by Webkit */
+  box-shadow: none;
+  box-sizing: border-box;
+  font-family: $font-sans;
+  font-weight: 400;
+  height: $base-vertical-unit * 4;
+  padding: 6px $base-vertical-unit;
+  vertical-align: middle;
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+[type="email"],
+[type="number"],
+[type="search"],
+[type="text"],
+[type="tel"],
+[type="url"],
+[type="password"],
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  min-height: $base-vertical-unit * 9;
+  padding-bottom: $base-vertical-unit;
+  padding-top: $base-vertical-unit;
+}
+
+[type="email"]:focus,
+[type="number"]:focus,
+[type="search"]:focus,
+[type="text"]:focus,
+[type="tel"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="date"]:focus,
+[type="month"]:focus,
+[type="week"]:focus,
+[type="time"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid $link-color;
+  outline: 0;
+}
+
+.button,
+button,
+[type="submit"],
+[type="reset"],
+[type="button"] {
+  background-color: transparent;
+  border: 1px solid $light-grey;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-sans;
+  font-size: $base-font-size;
+  font-weight: normal;
+  height: $base-vertical-unit * 4;
+  line-height: $base-vertical-unit * 4;
+  padding: 0 ($base-vertical-unit * 2);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button:hover,
+button:hover,
+[type="submit"]:hover,
+[type="reset"]:hover,
+[type="button"]:hover,
+.button:focus,
+button:focus,
+[type="submit"]:focus,
+[type="reset"]:focus,
+[type="button"]:focus {
+  border-color: $link-color;
+  outline: 0;
+}
+
+label,
+legend {
+  @include setType($base-line-multi, $ms-down1);
+
+  color: $secondary-text-color;
+  display: block;
+  font-family: $font-sans;
+  font-weight: 400;
+}
+
+legend {
+  margin-bottom: emRhythm(1, $ms-down1);
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+}
+
+[type="file"] {
+  padding-left: 0;
+  padding-right: 0;
+}

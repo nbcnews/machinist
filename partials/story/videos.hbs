@@ -1,0 +1,47 @@
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+<figure class="media" {{#if value.id}}id="{{value.id}}"{{/if}}>
+  <div class="gutter--vertical">
+    {{#if value.title}}
+      {{> story/mediaTitle}}
+    {{/if}}
+  </div>
+  <div class="media__gallery">
+    {{#each value.videos}}
+      <figure class="media__gallery__item media__gallery__item--video{{#ifEqual ../value.grid '3'}} media__gallery__item--3{{else}} media__gallery__item--2{{/ifEqual}}">
+        {{#if value.title}}
+          {{> story/mediaTitle}}
+        {{/if}}
+        {{#if value.ratio}}<div class="intrinsic ratio--{{value.ratio}}">{{/if}}
+          <video id="{{#if value.id}}{{value.id}}{{else}}video-{{@index}}{{/if}}"
+              class="{{#ifEqual value.type 'element'}}{{#if value.ratio}} intrinsic__element{{/if}}{{else}}video-js vjs-default-skin vjs-16-9{{/ifEqual}}"
+              preload="none" poster="{{value.thumbnail}}"
+              playsinline
+              {{#if value.autoplay}} autoplay{{/if}}
+              {{#if value.loop}} loop{{/if}}
+              {{#if value.muted}} muted{{/if}}{{#unless value.noControls}} controls{{/unless}}
+              data-meta='{"title":"{{title}}","guid":"{{guid}}", "duration":"{{duration}}"}'
+              {{#ifEqual value.type 'element'}}{{else}}data-setup='{}'{{/ifEqual}}>
+            <source src="{{value.mp4}}" type='video/mp4'/>
+            <source src="{{value.webm}}" type='video/webm'/>
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a web browser
+              that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+          </video>
+        {{#if value.ratio}}</div>{{/if}}
+        {{> story/caption}}
+      </figure>
+    {{/each}}
+  </div>
+  {{> story/caption}}
+</figure>
+</div>

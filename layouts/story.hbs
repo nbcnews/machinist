@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}} {{titleSeperator}} {{name}}</title>
+    <style media="screen">
+      {{{filedata.[styles/main.css]}}}
+    </style>
+  </head>
+  <body>
+  <div id="np-{{projectName}}" class="np-specials">
+    {{> stats}}
+    {{{typogrFormat contents}}}
+    {{> scripts}}
+  </div>
+  </body>
+</html>

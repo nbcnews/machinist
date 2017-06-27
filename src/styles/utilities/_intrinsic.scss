@@ -1,0 +1,26 @@
+.intrinsic {
+  background-color: $lighter-grey;
+  // This element must maintain position: relative.
+  // The padding-bottom creates the proper ratio.
+  // Examples:
+  //     4:3 = padding-bottom: 75%;
+  //     16:9 = padding-bottom: 56.25%;
+  //     (does not necessarily have to be "common ratios",
+  //     it can be based off image dimensions of the design)
+  height: 0;
+  // padding-bottom: 75%; // if this is a global class, you do not want to define
+  // this property. Do it in another class, example .ratio--4x3
+  position: relative;
+}
+
+.intrinsic__element {
+  // This class needs no further customization,
+  // if this class is applied to the elemtent and is contained
+  // within .intrinsic > .intrinsic__wrapper > *current element*
+  // the element should scale in correct perspective
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

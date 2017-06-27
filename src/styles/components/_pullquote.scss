@@ -1,0 +1,22 @@
+.pullquote {
+  @include setType(4, $ms-up2);
+
+  font-weight: 900;
+  margin-bottom: emRhythm(2, $ms-up2);
+  padding-left: $gutter;
+  padding-right: $gutter;
+
+  @media (min-width: $screen-xs-min) {
+    margin-bottom: emRhythm($base-line-multi, $ms-up2);
+  }
+
+  q {
+    display: block;
+    margin-left: $gutter * -1;
+    padding-left: $gutter;
+  }
+}
+
+.pullquote q::before {
+  margin-left: $gutter * -1;
+}

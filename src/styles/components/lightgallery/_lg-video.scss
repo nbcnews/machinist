@@ -1,0 +1,107 @@
+.lg-outer {
+  .lg-video-cont {
+    display: inline-block;
+    max-height: 100%;
+    max-width: 1140px;
+    padding: 0 5px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .lg-video {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+
+    .lg-object {
+      display: inline-block;
+      height: 100% !important;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100% !important;
+    }
+
+    .lg-video-play {
+      cursor: pointer;
+      height: 59px;
+      left: 50%;
+      margin-left: -42px;
+      margin-top: -30px;
+      position: absolute;
+      top: 50%;
+      width: 84px;
+      z-index: $zindex-playbutton;
+    }
+  }
+
+  .lg-has-vimeo {
+
+    .lg-video-play {
+      background: url("#{$lg-path-images}/vimeo-play.png") no-repeat scroll 0 0 transparent;
+    }
+
+    &:hover {
+
+      .lg-video-play {
+        background: url("#{$lg-path-images}/vimeo-play.png") no-repeat scroll 0 -58px transparent;
+      }
+
+    }
+  }
+
+  .lg-has-html5 {
+    .lg-video-play {
+      background: transparent url("#{$lg-path-images}/video-play.png") no-repeat scroll 0 0;
+      height: 64px;
+      margin-left: -32px;
+      margin-top: -32px;
+      opacity: 0.8;
+      width: 64px;
+    }
+    &:hover {
+      .lg-video-play {
+        opacity: 1;
+      }
+
+    }
+  }
+
+  .lg-has-youtube {
+    .lg-video-play {
+      background: url("#{$lg-path-images}/youtube-play.png") no-repeat scroll 0 0 transparent;
+    }
+    &:hover {
+      .lg-video-play {
+        background: url("#{$lg-path-images}/youtube-play.png") no-repeat scroll 0 -60px transparent;
+      }
+
+    }
+  }
+  .lg-video-object {
+    height: 100% !important;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+  }
+
+  .lg-has-video {
+    .lg-video-object {
+      visibility: hidden;
+    }
+
+    &.lg-video-playing {
+      .lg-object,
+      .lg-video-play {
+        display: none;
+      }
+
+      .lg-video-object {
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.credits {
+  margin-bottom: emRhythm(13);
+  margin-top: emRhythm(10);
+  padding-left: $gutter;
+  padding-right: $gutter;
+  text-align: center;
+}
+
+.credits__content {
+  border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $column-width;
+}
+
+.credits__heading {
+  @include setType(3, $ms-down1);
+
+  margin-bottom: emRhythm(2, $ms-down1);
+  margin-top: emRhythm(2, $ms-down1);
+}
+
+.credits__person {
+  margin-bottom: emRhythm(1);
+}
+
+.credits__responsibility {
+  color: $secondary-text-color;
+  font-family: $font-sans;
+  font-size: $ms-down1;
+  text-transform: uppercase;
+}

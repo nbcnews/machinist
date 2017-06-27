@@ -1,0 +1,46 @@
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+<div id="{{value.part}}-{{plusOne @index}}" class="episode" data-videoid="{{value.id}}" data-listid="{{value.list}}">
+  <a class="js-player-link" href="{{value.url}}">
+    <div class="episode__number">
+      <h3>Ep.{{plusOne @index}} {{value.title}}</h3>
+    </div>
+    <div class="episode__thumbnail">
+    <button class="button button--txt button--invert button--play" data-videoid="{{value.id}}" data-listid="{{value.list}}">
+      <svg data-videoid="{{value.id}}" data-listid="{{value.list}}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+      <path data-videoid="{{value.id}}" data-listid="{{value.list}}" d="M15,10.001c0,0.299-0.305,0.514-0.305,0.514l-8.561,5.303C5.51,16.227,5,15.924,5,15.149V4.852
+      c0-0.777,0.51-1.078,1.135-0.67l8.561,5.305C14.695,9.487,15,9.702,15,10.001z"/>
+    </button>
+    <div class="scrim scrim--thumbnail" data-videoid="{{value.id}}" data-listid="{{value.list}}"></div>
+      <img class="lazyload" src="{{value.thumbnail}}" alt="{{value.title}}" itemprop="thumbnail" data-videoid="{{value.id}}" data-listid="{{value.list}}">
+    </div>
+  </a>
+  {{#if value.material}}
+  <div class="episode__material-btn">
+    <button class="js-episode-material-button button button--txt button--material" data-materialid="m-{{plusOne @index}}">Related Materials<span class="icon-closed"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+       y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+    <path d="M4.516,7.548c0.436-0.446,1.043-0.481,1.576,0L10,11.295l3.908-3.747c0.533-0.481,1.141-0.446,1.574,0
+      c0.436,0.445,0.408,1.197,0,1.615c-0.406,0.418-4.695,4.502-4.695,4.502C10.57,13.888,10.285,14,10,14s-0.57-0.112-0.789-0.335
+      c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/>
+    </svg></span><span class="icon-open"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+    <path d="M15.484,12.452c-0.436,0.446-1.043,0.481-1.576,0L10,8.705l-3.908,3.747c-0.533,0.481-1.141,0.446-1.574,0
+    	c-0.436-0.445-0.408-1.197,0-1.615c0.406-0.418,4.695-4.502,4.695-4.502C9.43,6.112,9.715,6,10,6s0.57,0.112,0.789,0.335
+    	c0,0,4.287,4.084,4.695,4.502C15.893,11.255,15.92,12.007,15.484,12.452z"/>
+    </svg></span></button>
+  </div>
+  {{/if}}
+</div>
+{{#if value.material}}
+  {{> story/episode/material}}
+{{/if}}
+</div>

@@ -1,0 +1,39 @@
+.offcanvas {
+  background-color: $background-color;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+  height: 100%;
+  left: -100%;
+  max-width: 400px;
+  padding: ($gutter * 2) $gutter $gutter $gutter;
+  position: fixed;
+  top: 0;
+  transition: left 0.2s ease-out;
+  width: 100%;
+  z-index: 7;
+}
+
+.offcanvas.is-active {
+  left: 0;
+}
+
+[data-sset="offcanvas"] {
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.offcanvas__close {
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: $gutter / 2;
+}
+
+.offcanvas__scroll {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding: ($gutter * 2) $gutter $gutter $gutter;
+}

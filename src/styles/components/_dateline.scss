@@ -1,0 +1,12 @@
+.dateline {
+  font-family: $font-sans;
+  text-transform: uppercase;
+}
+
+.dateline--block {
+  display: block;
+}
+
+.dateline--entry {
+  @include setType(2, $ms-down1);
+}

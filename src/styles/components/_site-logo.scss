@@ -1,0 +1,16 @@
+.site-logo {
+  font-size: 24px;
+  font-weight: 900;
+  height: 30px;
+  line-height: $site-header-height;
+  margin-right: $gutter;
+  margin-top: 5px;
+  position: relative;
+  width: 39px;
+  z-index: 8;
+
+  svg {
+    height: 30px;
+    width: 39px;
+  }
+}

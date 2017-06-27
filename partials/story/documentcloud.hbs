@@ -1,0 +1,40 @@
+<div class="gutter--horizontal">
+  <div class="
+  {{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+  {{~#ifEqual value.style 'hangright'}}hang hang--right{{/ifEqual}}
+  {{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+  {{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+  {{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+  {{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+  {{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+  {{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+  {{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+  <figure class="media">
+    {{#if value.title}}
+      {{> story/mediaTitle}}
+    {{/if}}
+    <div id="DV-viewer-{{value.id}}-{{value.file}}" class="DV-container"></div>
+    <script src="//assets.documentcloud.org/viewer/loader.js"></script>
+    <script>
+      document.getElementById('DV-viewer-{{value.id}}-{{value.file}}').style.maxHeight = '60vh';
+      DV.load("https://www.documentcloud.org/documents/{{value.id}}-{{value.file}}.js", {
+        text: false,
+        page: 1,
+        container: "#DV-viewer-{{value.id}}-{{value.file}}",
+        responsive: true,
+        sidebar: true
+      });
+    </script>
+    <script>
+    </script>
+    <noscript>
+     <a href="https://assets.documentcloud.org/documents/{{value.id}}/{{value.file}}.pdf">{{value.file}} (PDF)</a>
+     <br />
+     <a href="https://assets.documentcloud.org/documents/{{value.id}}/{{value.file}}.txt">{{value.file}} (Text)</a>
+    </noscript>
+    {{#ifOr value.caption value.source}}
+      {{> story/caption}}
+    {{/ifOr}}
+  </figure>
+  </div>
+</div>

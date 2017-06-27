@@ -1,0 +1,22 @@
+{
+  "projectInitDate": {
+    "year": "####",
+    "month": "##"
+  },
+  "robotsDisallow": true,
+  "summary": "TKTKTK",
+  "dest": "www",
+  "src": "src",
+  "projectName": "TKTKTK",
+  "assetPath": {
+    "development": "/",
+    "stage": "/",
+    "production": null
+  },
+  "googleDocJson": {
+    "fileId": "######",
+    "output": "./src/data/models/googledoc.json"
+  },
+  "scripts": [
+  ]
+}

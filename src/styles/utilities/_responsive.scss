@@ -1,0 +1,62 @@
+.hidden {
+  display: none;
+}
+
+.hidden--xs {
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.hidden--sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: none;
+  }
+}
+
+.hidden--md {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+
+.hidden--lg {
+  @media (min-width: $screen-lg-min) {
+    display: none;
+  }
+}
+
+.visible {
+  display: block;
+}
+
+.visible--xs,
+.visible--sm,
+.visible--md,
+.visible--lg {
+  display: none;
+}
+
+.visible--xs {
+  @media (max-width: $screen-xs-max) {
+    display: block;
+  }
+}
+
+.visible--sm {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: block;
+  }
+}
+
+.visible--md {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: block;
+  }
+}
+
+.visible--lg {
+  @media (min-width: $screen-lg-min) {
+    display: block;
+  }
+}

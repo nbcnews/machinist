@@ -1,0 +1,17 @@
+.set--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.set--left {
+  float: left;
+
+  figure,
+  aside {
+    float: right;
+  }
+}
+
+.set--right {
+  float: right;
+}

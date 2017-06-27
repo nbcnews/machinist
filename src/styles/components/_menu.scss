@@ -1,0 +1,35 @@
+.menu {
+  border: 0;
+  display: block;
+  float: left;
+  height: $site-header-height;
+  line-height: $site-header-height;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  z-index: 8;
+
+  @media (min-width: $screen-sm-min) {
+    display: none;
+  }
+}
+
+.menu__icon {
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.menu__icon--close {
+  display: none;
+
+  .is-active & {
+    display: block;
+  }
+}
+
+.menu__icon--open {
+  .is-active & {
+    display: none;
+  }
+}

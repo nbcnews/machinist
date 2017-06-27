@@ -1,0 +1,81 @@
+.story-nav {
+  @include setType(2, $ms-down1);
+
+  align-items: center;
+  background-color: $text-color;
+  border: 2px solid $text-color;
+  display: flex;
+  font-family: $font-sans;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translateY(0);
+  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
+  transition: top 0.2s ease-in-out;
+  will-change: transform;
+}
+
+.scrollStoryActive .story-nav {
+  position: fixed;
+  z-index: 1;
+
+  &.is-up {
+    top: $bar-height + 3px;
+  }
+
+  &.is-down {
+    top: $bar-height + $site-header-height + $base-vertical-unit;
+  }
+
+  @media (min-height: 768px) and (min-width: 1025px) {
+    &.is-up,
+    &.is-down {
+      top: $site-header-height + $gutter;
+    }
+  }
+}
+
+.story-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+
+  li {
+    width: $gutter * 2;
+
+    a:link,
+    a:visited {
+      background-color: $text-color;
+      background-image: none;
+      border-left: 2px solid $text-color;
+      color: #fff;
+      display: block;
+      padding-bottom: $gutter / 2;
+      padding-top: $gutter / 2;
+      text-align: center;
+      text-shadow: none;
+      transition: all 0.25s ease;
+    }
+
+    a:hover,
+    a:active {
+      background-color: #fff;
+      color: $text-color;
+    }
+  }
+}
+
+.story-nav ul li a.active {
+  background-color: #fff;
+  color: $text-color;
+}
+
+.story-nav__title {
+  background-color: #fff;
+  letter-spacing: 1px;
+  padding: $gutter / 2;
+}

@@ -1,0 +1,98 @@
+$scrollstory-min-height: 672px;
+
+.scrollstory__story {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .media {
+    max-width: $column-width * 2;
+  }
+
+  @media (min-width: $screen-md-min) and (min-height: $scrollstory-min-height) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100vh;
+  }
+}
+
+.is-first.inviewport.active .scrollstory__story__block--target {
+  opacity: 1;
+}
+
+.is-first.inviewport .scrollstory__story__block--target {
+  opacity: 1;
+}
+
+.scrollStoryActiveItem-story0-1 .is-first.inviewport .scrollstory__story__block--target {
+  opacity: 0;
+}
+
+.scrollstory__story__block {
+  figcaption {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+}
+
+.scrollstory__story__block--non {
+  & > p {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+
+  @media (min-width: $screen-md-min) and (min-height: $scrollstory-min-height) {
+    align-self: center;
+    max-width: $column-width;
+    order: -1;
+    padding-right: $gutter;
+    width: 25%;
+  }
+}
+
+.scrollstory__story__block--target {
+  transform: translate3d(0, 0, 0);
+
+  img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+  }
+
+  @media (min-width: $screen-md-min) and (min-height: $scrollstory-min-height) {
+    align-self: center;
+    max-width: 75%;
+    transition: opacity 0.25s linear;
+    width: 100%;
+
+    .scrollStory & {
+      opacity: 0;
+    }
+
+    .active & {
+      opacity: 1;
+    }
+  }
+}
+
+.scrollStoryActive .scrollstory__story__block--target {
+  @media (min-width: $screen-md-min) and (min-height: $scrollstory-min-height) {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+
+.active .scrollstory__story__block--target.is-bottom {
+  @media (min-width: $screen-md-min) and (min-height: $scrollstory-min-height) {
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+  }
+}
+
+.scrollstory__story__block--target.is-bottom {
+  opacity: 1;
+}

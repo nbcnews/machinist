@@ -1,0 +1,25 @@
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+<blockquote>
+    <p>{{value.text}}</p>
+    {{#ifOr value.credit value.source}}
+      <cite>
+        {{#if value.credit}}
+          {{value.credit}}
+        {{/if}}
+        {{#ifAnd value.credit value.source}} | {{/ifAnd}}
+        {{#if value.source}}
+          {{{value.source}}}
+        {{/if}}
+      </cite>
+    {{/ifOr}}
+</blockquote>
+</div>

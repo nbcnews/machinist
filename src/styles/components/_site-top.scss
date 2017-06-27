@@ -1,0 +1,25 @@
+.site-top {
+  display: none;
+  line-height: $site-header-height;
+
+  a {
+    display: block;
+    line-height: $site-header-height;
+  }
+
+  svg {
+    height: 18px;
+    vertical-align: middle;
+    width: 18px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    margin-right: $gutter;
+  }
+
+  .is-top & {
+    @media (min-width: $screen-sm-min) {
+      display: block;
+    }
+  }
+}

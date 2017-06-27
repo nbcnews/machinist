@@ -1,0 +1,211 @@
+// default theme
+.lg-actions {
+  .lg-next,
+  .lg-prev {
+    background-color: $lg-next-prev-bg;
+    border-radius: $lg-border-radius-base;
+    color: $lg-next-prev-color;
+    cursor: pointer;
+    display: block;
+    font-family: $font-sans;
+    font-size: 2em;
+    margin-top: -47px;
+    padding: 8px 10px 9px;
+    position: absolute;
+    top: 50%;
+    z-index: $zindex-controls;
+
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: $lg-next-prev-hover-color;
+    }
+  }
+
+  .lg-next {
+    right: 20px;
+
+    &:before {
+      content: "\203A";
+    }
+  }
+
+  .lg-prev {
+    left: 20px;
+
+    &:after {
+      content: "\2039";
+    }
+  }
+}
+
+@include keyframes(lg-right-end) {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: -30px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@include keyframes(lg-left-end) {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: 30px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.lg-outer {
+  &.lg-right-end {
+    .lg-object {
+      @include animation(lg-right-end 0.3s);
+      position: relative;
+    }
+  }
+
+  &.lg-left-end {
+    .lg-object {
+      @include animation(lg-left-end 0.3s);
+      position: relative;
+    }
+  }
+}
+
+// lg toolbar
+.lg-toolbar {
+  background-color: $lg-toolbar-bg;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $zindex-toolbar;
+
+  .lg-icon {
+    color: $lg-toolbar-icon-color;
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+    height: 47px;
+    line-height: 27px;
+    outline: medium none;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none !important;
+    width: 50px;
+
+    &:hover {
+      color: $lg-toolbar-icon-hover-color;
+    }
+  }
+
+  .lg-close {
+    &:after {
+      content: "\00D7";
+    }
+  }
+
+  .lg-download {
+    &:after {
+      content: "\e0f2";
+    }
+  }
+}
+
+// lightGallery title
+.lg-sub-html {
+  background-color: $lg-sub-html-bg;
+  bottom: 0;
+  color: $lg-sub-html-color;
+  font-size: $ms-down1;
+  left: 0;
+  line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $column-width * 2;
+  padding: 18px 40px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  z-index: $zindex-subhtml;
+
+  h4 {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    margin: 5px 0 0;
+  }
+}
+
+// lg image counter
+#lg-counter {
+  color: $lg-icon-color;
+  display: inline-block;
+  font-size: $lg-counter-font-size;
+  padding-left: 20px;
+  padding-top: 12px;
+  vertical-align: middle;
+}
+
+// for idle state
+.lg-toolbar,
+.lg-prev,
+.lg-next {
+  @include transitionCustom(transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s);
+  opacity: 1;
+}
+
+.lg-hide-items {
+  .lg-prev {
+    @include translate3d(-10px, 0, 0);
+    opacity: 0;
+  }
+
+  .lg-next {
+    @include translate3d(10px, 0, 0);
+    opacity: 0;
+  }
+
+  .lg-toolbar {
+    @include translate3d(0, -10px, 0);
+    opacity: 0;
+  }
+}
+
+// Starting effect
+body:not(.lg-from-hash) {
+  .lg-outer {
+    &.lg-start-zoom {
+      .lg-object {
+        @include scale3d(0.5, 0.5, 0.5);
+        @include transform-origin(50% 50%);
+        @include transitionCustom(transform 250ms ease 0s, opacity 250ms !important);
+        opacity: 0;
+      }
+      .lg-item.lg-complete {
+        .lg-object {
+          @include scale3d(1, 1, 1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

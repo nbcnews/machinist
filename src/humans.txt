@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+{{name}}{{#if twitterHandle}} --- {{twitterHandle}}{{/if}}
+
+# TECHNOLOGY COLOPHON
+
+{{#each dependencies}}
+  {{~@key}},
+{{~/each}}

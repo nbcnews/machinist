@@ -1,0 +1,46 @@
+.share {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.share li {
+  display: inline-block;
+  margin-right: $gutter / 3;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    display: block;
+    line-height: $site-header-height;
+  }
+
+  a,
+  a:link,
+  a:visited,
+  svg {
+    background-image: none;
+    color: $dark-grey;
+    fill: $dark-grey;
+    transition-duration: 0.5s, 0.5s;
+    transition-property: fill, color;
+    transition-timing-function: ease, ease;
+  }
+
+  a:hover,
+  a:active,
+  a:hover svg,
+  a:active svg {
+    color: lighten($dark-grey, 35%);
+    fill: lighten($dark-grey, 35%);
+    text-decoration: none;
+  }
+}
+
+.share svg {
+  height: 18px;
+  vertical-align: middle;
+  width: 18px;
+}

@@ -1,0 +1,57 @@
+$backdrop-opacity: 1 !default;
+$lg-toolbar-bg: rgba(255, 255, 255, 0.5) !default;
+$lg-border-radius-base: 2px !default;
+$lg-theme-highlight: rgb(169, 7, 7) !default;
+$lg-theme: #fff !default;
+
+// basic icon colours
+$lg-icon-bg: rgba(255, 255, 255, 0.5) !default;
+$lg-icon-color: $text-color !default;
+$lg-icon-hover-color: $dark !default;
+
+// counter
+$lg-counter-color: $secondary-text-color !default;
+$lg-counter-font-size: 16px !default;
+
+// Next prev icons
+$lg-next-prev-bg: $lg-icon-bg !default;
+$lg-next-prev-color: $lg-icon-color !default;
+$lg-next-prev-hover-color: $lg-icon-hover-color !default;
+
+// toolbar icons
+$lg-toolbar-icon-color: $lg-icon-color !default;
+$lg-toolbar-icon-hover-color: $lg-icon-hover-color !default;
+
+// autoplay progress bar
+$lg-progress-bar-bg: #333 !default;
+$lg-progress-bar-active-bg: $lg-theme-highlight !default;
+$lg-progress-bar-height: 5px !default;
+
+// paths
+$lg-path-fonts: "../fonts" !default;
+$lg-path-images: "http://nodeassets.nbcnews.com/cdnassets/projects/" !default;
+
+// Zoom plugin
+$zoom-transition-duration: 0.3s !default;
+
+// Sub html - titile
+$lg-sub-html-bg: rgba(255, 255, 255, 0.5) !default;
+$lg-sub-html-color: $secondary-text-color !default;
+
+// thumbnail toggle button
+$lg-thumb-toggle-bg: #0d0a0a !default;
+$lg-thumb-toggle-color: $lg-icon-color !default;
+$lg-thumb-toggle-hover-color: $lg-icon-hover-color !default;
+$lg-thumb-bg: #0d0a0a !default;
+
+// z-index
+$zindex-outer: 1050 !default;
+$zindex-progressbar: 1080 !default;
+$zindex-controls: 1080 !default;
+$zindex-toolbar: 1080 !default;
+$zindex-subhtml: 1080 !default;
+$zindex-thumbnail: 1080 !default;
+$zindex-pager: 1080 !default;
+$zindex-playbutton: 1080 !default;
+$zindex-item: 1060 !default;
+$zindex-backdrop: 1040 !default;

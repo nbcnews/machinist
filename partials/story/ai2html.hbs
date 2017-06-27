@@ -1,0 +1,20 @@
+<div class="gutter--horizontal">
+  <div class="
+  {{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+  {{~#ifEqual value.style 'hangright'}}hang hang--right{{/ifEqual}}
+  {{~#ifEqual value.style 'halfLeft'}}column--half set--left{{/ifEqual}}
+  {{~#ifEqual value.style 'halfRight'}}column--half set--right{{/ifEqual}}
+  {{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+  {{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+  {{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+  <figure class="media">
+    {{#if value.title}}
+      {{> story/mediaTitle}}
+    {{/if}}
+      {{{value.code}}}
+    {{#ifOr value.caption value.source}}
+      {{> story/caption}}
+    {{/ifOr}}
+  </figure>
+  </div>
+</div>

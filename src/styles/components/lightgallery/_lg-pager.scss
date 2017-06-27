@@ -1,0 +1,90 @@
+.lg-outer {
+  .lg-pager-outer {
+    bottom: 60px;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    z-index: $zindex-pager;
+
+    &.lg-pager-hover {
+      .lg-pager-cont {
+        overflow: visible;
+      }
+    }
+  }
+
+  .lg-pager-cont {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+
+    &:hover {
+      .lg-pager-thumb-cont {
+        @include translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+
+    &.lg-pager-active {
+      .lg-pager {
+        box-shadow: 0 0 0 2px white inset;
+      }
+    }
+  }
+
+  .lg-pager-thumb-cont {
+    @include transitionCustom(opacity 0.15s ease 0s, transform 0.15s ease 0s);
+    @include translate3d(0, 5px, 0);
+    background-color: #fff;
+    border-radius: 3px;
+    bottom: 100%;
+    color: #fff;
+    height: 83px;
+    left: 0;
+    margin-bottom: 20px;
+    margin-left: -60px;
+    opacity: 0;
+    padding: 5px;
+    position: absolute;
+    width: 120px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .lg-pager {
+    @include transition(box-shadow 0.3s ease 0s);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.7) inset;
+    display: block;
+    height: 12px;
+    width: 12px;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 8px white inset;
+    }
+  }
+
+  .lg-caret {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px dashed;
+    bottom: -10px;
+    display: inline-block;
+    height: 0;
+    left: 50%;
+    margin-left: -5px;
+    position: absolute;
+    vertical-align: middle;
+    width: 0;
+  }
+}
