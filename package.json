@@ -6,7 +6,9 @@
   "pre-commit": "lint-staged",
   "scripts": {
     "setup": "node bin/machinist",
+    "presetup": "npm install",
     "git-init": "rm -rf .git && git init",
+    "postsetup": "npm run git-init",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "doc-ingest": "node ./lib/googledocjson.js",
