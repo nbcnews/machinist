@@ -1,4 +1,4 @@
-# Machinist
+# Machinist - {{projectName}}
 
 An opinionated boilerplate for storytelling.
 
@@ -21,7 +21,7 @@ An opinionated boilerplate for storytelling.
 
 - [node.js](https://nodejs.org/en/)
 
-## How to Setup
+## Setup
 
 ### 1. Clone
 
@@ -29,55 +29,17 @@ An opinionated boilerplate for storytelling.
 git clone https://github.com/nbcnews/machinist.git
 ```
 
-### 2. Install Dependencies
+### 2. Scaffold Project
 
+Setup will run `npm install`
+
+```sh
+$ npm run setup new-project-name
+$ npm run git-init
 ```
-$ npm install
-```
-### 3. Configure Project
 
 Edit the `./config.json` as you see fit.
 
-```json
-{
-  "name": "Person or Org",
-  "title": "Global Title",
-  "titleSeperator": "|",
-  "domain": "blank.org",
-  "url": "http://blank.org",
-  "description": "Global Description",
-  "keywords": null,
-  "dest": "./www/",
-  "src": "./src/",
-  "assetPath": {
-    "development": "/",
-    "stage": "/",
-    "production": "/"
-  },
-  "googleVerification": null,
-  "analytics": {
-    "provider": false,
-    "google": {
-      "trackingId": "GA-######"
-    }
-  },
-  "twitter": {
-    "username": "@username"
-  },
-  "facebook": {
-    "username": null,
-    "appId": null,
-    "publisher": null
-  },
-  "openGraph": {
-    "image": null
-  },
-  "googleDocJson": {
-    "fileId": "<Google Doc ID>",
-    "output": "./src/data/models/googledoc.json"
-  }
-}
-```
 
 #### Google Doc Data
 
@@ -106,8 +68,6 @@ Develop with Metalsmith debugging.
 ```
 npm run debug
 ```
-
- 
 
 ### Build
 

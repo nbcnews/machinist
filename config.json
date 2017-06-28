@@ -1,13 +1,13 @@
 {
   "projectInitDate": {
-    "year": "####",
-    "month": "##"
+    "year": "{{year}}",
+    "month": "{{month}}"
   },
   "robotsDisallow": true,
   "summary": "TKTKTK",
   "dest": "www",
   "src": "src",
-  "projectName": "TKTKTK",
+  "projectName": "{{projectName}}",
   "assetPath": {
     "development": "/",
     "stage": "/",
@@ -17,6 +17,5 @@
     "fileId": "######",
     "output": "./src/data/models/googledoc.json"
   },
-  "scripts": [
-  ]
+  "scripts": []
 }
