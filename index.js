@@ -52,6 +52,8 @@ const monthString = config.projectInitDate.month
 const configProjectNameProp = config.projectName
 const convertedProjectName = configProjectNameProp.replace(/\s+/g, '-').toLowerCase()
 const objectsLocation = 'machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName + '/'
+const dateNow = new Date()
+const UTCDate = dateNow.toISOString()
 
 if (devBuild) {
   assetPath = config.assetPath.development
@@ -77,6 +79,7 @@ config.devBuild = devBuild
 config.debugMode = debugMode
 config.dest = './' + config.dest + '/'
 config.src = './' + config.src + '/'
+config.buildDate = UTCDate
 
 // Adds metadata from files
 const data = {}
