@@ -29,12 +29,9 @@ An opinionated boilerplate for storytelling.
 git clone https://github.com/nbcnews/machinist.git
 ```
 
-### 2. Install Dependencies
+### 2. Scaffold Project
 
-```
-$ npm install
-```
-### 3. Configure Project
+Setup will run `npm install`
 
 ```sh
 $ npm run setup new-project-name
