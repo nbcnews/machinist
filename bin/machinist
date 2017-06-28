@@ -1,12 +1,13 @@
 #!/usr/bin/env node
-
-const exists = require('fs').existsSync;
+const fs = require('fs');
+const exists = fs.existsSync;
 const join = require('path').join;
 const program = require('commander');
+const hbs = require('handlebars');
 const resolve = require('path').resolve;
+const packageJson = require('../package.json');
 
-var files = [
-  'package.json',
+var templateFiles = [
   'config.json',
   'README.md'
 ];
@@ -17,7 +18,7 @@ var files = [
 
 program
   .option('-p, --project <project>', 'the name (slug) of project')
-  .usage('<project> <month> <year>');
+  .usage('<project> [month, year]');
 
 /**
  * Help.
@@ -26,7 +27,7 @@ program
 program.on('--help', function(){
   console.log('  Examples:');
   console.log();
-  console.log('    # create a new project from machinist template');
+  console.log('    # create a new project from template, with optional month and year setting.');
   console.log('    $ machinist my-project-name 7 2017');
   console.log();
 });
@@ -54,15 +55,35 @@ process.on('exit', function(){
  */
 
 const projectName = program.args[0];
-const month = program.args[1] || new Date().getMonth() + 1;
+let month = program.args[1] || new Date().getMonth() + 1;
+
+if (month.toString().length == 1) {
+    month = '0' + month;
+}
+
 const year = program.args[2] || new Date().getYear() + 1900;
-const dir = program.project;
-console.log(projectName, month, year);
+const data = { projectName, month, year };
+
+console.log('data:', data);
 
 /**
  * Modify files
  */
 
- files.forEach(function (file) {
-   console.log('modified', file);
- });
+function compileTemplate(data, source) {
+  const template = hbs.compile(source);
+  return template(data);
+}
+
+templateFiles.forEach(function (file) {
+  if (exists(file)) {
+    console.log('found:', file);
+    const fileText = fs.readFileSync(file, 'utf8');
+    const compiled = compileTemplate(data, fileText);
+    fs.writeFileSync(file, compiled);
+    console.log(file, '...modified');
+  }
+});
+
+packageJson.name = `Machinist-${data.projectName}`;
+fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2) + '\n');

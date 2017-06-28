@@ -1,4 +1,4 @@
-# Machinist
+# Machinist - {{projectName}}
 
 An opinionated boilerplate for storytelling.
 

@@ -5,6 +5,8 @@
   "main": "index.js",
   "pre-commit": "lint-staged",
   "scripts": {
+    "setup": "node bin/machinist",
+    "clean": "rm -rf .git && git init",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "doc-ingest": "node ./lib/googledocjson.js",
@@ -20,6 +22,9 @@
     "style-lint": "stylelint '**/*.scss'",
     "lint": "standard --verbose && stylelint '**/*.scss' && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
     "lint-staged": "lint-staged"
+  },
+  "bin": {
+    "machinist": "bin/machinist"
   },
   "repository": {
     "type": "git",
@@ -70,6 +75,7 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
+    "commander": "2.10.0",
     "googledoc-to-json": "^0.3.0",
     "handlebars": "^4.0.5",
     "handlebars-helpers": "^0.7.5",
