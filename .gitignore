@@ -40,7 +40,7 @@ www
 .DS_store
 
 # Configurations
-/configs/
+/configs/**
 .env
 
 cdnassets/**
