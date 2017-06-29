@@ -100,12 +100,3 @@ Fix lint errors in your styles and scripts.
 ```
 npm run format
 ```
-
-## Helpful Packages
-
-- https://github.com/sachinchoolur/lightGallery (NBC News Digital has a license)
-- https://github.com/c3js/c3
-- https://github.com/sachinchoolur/lightslider
-- https://github.com/sjwilliams/scrollstory
-- https://github.com/imakewebthings/waypoints
-- https://github.com/d3/d3
