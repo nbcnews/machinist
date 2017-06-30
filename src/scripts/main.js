@@ -1,1 +1,1 @@
-/* globals */
+console.log('hello world')
