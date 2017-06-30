@@ -15,13 +15,13 @@
     "dev": "npm start -- development",
     "build": "npm start -- production",
     "stage": "npm start -- staging",
-    "format": "standard --fix && stylefmt -R src/styles/",
+    "format": "eslint \"src/scripts/**\" \"lib/**\" --fix && stylefmt -R src/styles/",
     "s3": "gulp publish-story",
     "cdn": "gulp publish-assets",
     "publish": "npm run build && npm run s3",
-    "script-lint": "standard --verbose",
+    "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
     "style-lint": "stylelint '**/*.scss'",
-    "lint": "standard --verbose && stylelint '**/*.scss' && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
+    "lint": "npm run script-lint && npm run style-lint && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
     "lint-staged": "lint-staged"
   },
   "bin": {
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ianrose@github.com/ianrose/machinist.git"
+    "url": "git+https://github.com/nbcnews/machinist.git"
   },
   "keywords": [
     "metalsmith",
@@ -40,23 +40,12 @@
   "author": "Ian Rose",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ianrose/machinist/issues"
+    "url": "https://github.com/nbcnews/machinist/issues"
   },
-  "homepage": "https://github.com/ianrose/machinist#readme",
+  "homepage": "https://github.com/nbcnews/machinist#readme",
   "lint-staged": {
     "*.scss": "style-lint",
     "*.js": "script-lint"
-  },
-  "standard": {
-    "globals": [
-      "$",
-      "jQuery"
-    ],
-    "ignore": [
-      "**/vendor/**",
-      "**/admin/**",
-      "admin.js"
-    ]
   },
   "stylelint": {
     "ignoreFiles": [
@@ -107,6 +96,7 @@
   },
   "devDependencies": {
     "dotenv": "^4.0.0",
+    "eslint": "^4.1.1",
     "git-assert-clean": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-awspublish": "^3.3.0",
