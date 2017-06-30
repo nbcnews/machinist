@@ -20,7 +20,7 @@
     "cdn": "gulp publish-assets",
     "publish": "npm run build && npm run s3",
     "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
-    "style-lint": "stylelint '**/*.scss'",
+    "style-lint": "stylelint \"**/*.scss\"",
     "lint": "npm run script-lint && npm run style-lint && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
     "lint-staged": "lint-staged"
   },
