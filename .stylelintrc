@@ -1,0 +1,13 @@
+{
+  "ignoreFiles": [
+    "src/styles/vendor/*.scss",
+    "src/styles/components/_lightgallery.scss",
+    "src/styles/components/lightgallery/*.scss",
+    "**/**/_lightslider.scss",
+    "**/**/_video-default-js.scss"
+  ],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "function-name-case": null
+  }
+}
