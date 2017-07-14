@@ -112,28 +112,50 @@ h6,
   margin-bottom: emRhythm(1, $ms-down1);
 }
 
-a,
-a:link {
-  background-image: linear-gradient($link-color, $link-color);
-  background-position: 0 95%;
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
-  color: $link-color;
-  text-decoration: none;
-  text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
+@if $link-underline-descenders {
+  a,
+  a:link {
+    background-image: linear-gradient($link-color, $link-color);
+    background-position: 0 95%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    color: $link-color;
+    text-decoration: none;
+    text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
+  }
+
+  a:visited {
+    color: $link-color;
+  }
+
+  a:hover {
+    background-size: 1px 2px;
+    color: $link-color;
+  }
+
+  a:active {
+    color: lighten($link-color, 15%);
+  }
 }
 
-a:visited {
-  color: $link-color;
-}
+@else {
+  a,
+  a:link {
+    color: $link-color;
+    text-decoration: underline;
+  }
 
-a:hover {
-  background-size: 1px 2px;
-  color: $link-color;
-}
+  a:visited {
+    color: $link-color;
+  }
 
-a:active {
-  color: lighten($link-color, 15%);
+  a:hover {
+    color: lighten($link-color, 25%);
+  }
+
+  a:active {
+    color: lighten($link-color, 10%);
+  }
 }
 
 p {
