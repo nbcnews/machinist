@@ -1,4 +1,5 @@
-module.exports = function (value) {
-  console.log('initial value ' + value)
-  return value * 2
-}
+export const sayHello = name => `Hello ${name}!`
+
+export const sayBye = name => `Bye ${name}!`
+
+console.log('hello world')
