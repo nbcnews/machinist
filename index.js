@@ -115,8 +115,8 @@ const ms = Metalsmith(__dirname)
   .use(sass({
     outputStyle: devBuild ? 'expanded' : 'compressed',
     outputDir: 'styles',
-    sourceMapContents: devBuild || true,
-    sourceMapEmbed: devBuild || true
+    sourceMapContents: devBuild,
+    sourceMapEmbed: devBuild
   }))
   .use(postcss({
     pattern: ['**/*.css', '!**/_*/*', '!**/_*'],
