@@ -1,7 +1,8 @@
 {{#each scripts}}
 <script src="{{this}}" charset="utf-8"></script>
 {{/each}}
-<script src="{{assetPath}}scripts/{{#if devBuild}}main.js{{else}}main.{{webpackStats.hash}}.js{{/if}}"></script>
+
+<script src="{{assetPath}}scripts/{{#if devBuild}}main.bundle.js{{else}}main.{{webpackStats.hash}}.bundle.js{{/if}}"></script>
 {{#if analytics.google.trackingId}}
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

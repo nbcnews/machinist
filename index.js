@@ -29,7 +29,7 @@ const helpers = require('metalsmith-register-helpers')
 const postcss = require('metalsmith-with-postcss')
 const paths = require('metalsmith-paths')
 const drafts = require('metalsmith-drafts')
-const webpack = require('metalsmith-webpack')
+const webpack = require('metalsmith-webpack2')
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin.js')
 const models = require('metalsmith-models')
 const filedata = require('metalsmith-filedata')
@@ -115,14 +115,14 @@ const ms = Metalsmith(__dirname)
   .use(sass({
     outputStyle: devBuild ? 'expanded' : 'compressed',
     outputDir: 'styles',
-    sourceMap: devBuild || false,
-    sourceMapContents: devBuild || false
+    sourceMapContents: devBuild,
+    sourceMapEmbed: devBuild
   }))
   .use(postcss({
     pattern: ['**/*.css', '!**/_*/*', '!**/_*'],
     from: '*.scss',
     to: '*.css',
-    map: devBuild ? {inline: false} : false,
+    map: devBuild ? {inline: true} : false,
     plugins: {
       'autoprefixer': {browsers: ['> 0.5%', 'Explorer >= 10']}
     }
@@ -131,33 +131,35 @@ const ms = Metalsmith(__dirname)
     pattern: ['styles/*.css']
   }))
   .use(webpack({
-    resolveLoader: { root: path.join(__dirname, 'node_modules') },
-    module: {
-      loaders: [
-        {
-          test: /\.jsx?$/,
-          loader: 'babel-loader',
-          exclude: /node_modules/,
-          query: {
-            presets: ['es2015']
-          }
-        }
-      ]
-    },
-    context: config.src + 'scripts/',
+    context: path.resolve(__dirname, config.src + 'scripts/'),
     entry: {
       main: './main.js'
     },
-    devtool: devBuild ? 'source-map' : null,
+    devtool: devBuild ? 'cheap-module-eval-source-map' : false,
     output: {
       path: path.resolve(__dirname, config.dest + 'scripts/'),
-      filename: devBuild ? '[name].js' : '[name].[hash].js'
+      filename: devBuild ? '[name].bundle.js' : '[name].[hash].bundle.js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [{
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015', 'stage-0']
+            }
+          }
+          ]
+        }
+      ]
     },
     plugins: [
       new UglifyJsPlugin({
-        exclude: /admin/,
+        sourceMap: true,
         compress: {
-          warnings: true
+          warnings: false
         }
       })
     ]
