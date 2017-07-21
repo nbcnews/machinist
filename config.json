@@ -9,7 +9,7 @@
   "src": "src",
   "projectName": "{{projectName}}",
   "assetPath": {
-    "domain": "//static-projects.nbcnews.com",
+    "domain": "https://static-projects.nbcnews.com",
     "development": "/",
     "stage": "/",
     "production": null
