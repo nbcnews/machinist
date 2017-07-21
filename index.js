@@ -66,6 +66,8 @@ if (stageBuild) {
 if (productionBuild) {
   if (config.assetPath.production) {
     assetPath = config.assetPath.production
+  } else if (config.assetPath.domain) {
+    assetPath = config.assetPath.domain + '/' + objectsLocation
   } else {
     assetPath = '//s3-' + awsConfig.region + '.amazonaws.com/' + awsConfig.bucketName + '/' + objectsLocation
   }
