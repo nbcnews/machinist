@@ -11,6 +11,12 @@ if (debugMode) {
   process.env.DEBUG = 'metalsmith:*'
 }
 
+if (devBuild) {
+  process.env.development = true
+} else {
+  process.env.production = true
+}
+
 // Dependencies
 const fs = require('fs')
 const path = require('path')
@@ -222,7 +228,7 @@ const ms = Metalsmith(__dirname)
 if (devBuild) {
   ms.use(browserSync({
     server: config.dest,
-    files: [config.src + '**/*.*', 'layouts/*.*', 'partials/**/*.*', 'config.json'],
+    files: [config.src + '**/*.*', 'layouts/*.*', 'partials/**/*.*', 'config.json', 'assets/**/*.*'],
     open: false,
     notify: false,
     online: true

@@ -11,7 +11,9 @@
     {{#if value.title}}
       {{> story/mediaTitle}}
     {{/if}}
-      {{{value.code}}}
+    {{#if value.fileName}}
+      {{> story/readAsset path=(assetsURL value.fileName)}}
+    {{/if}}
     {{#ifOr value.caption value.source}}
       {{> story/caption}}
     {{/ifOr}}

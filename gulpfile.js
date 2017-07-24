@@ -5,6 +5,8 @@ const awspublish = require('gulp-awspublish')
 const rename = require('gulp-rename')
 const log = require('log-utils')
 const assertClean = require('git-assert-clean')
+const inlineImagePath = require('gulp-rewrite-image-path')
+const md5 = require('gulp-md5-plus')
 const prompt = require('gulp-prompt')
 const config = require('./config.json')
 
@@ -67,9 +69,9 @@ gulp.task('publish-assets', function () {
     .pipe(publisherAssets.publish({}, {simulate: SIM, createOnly: true}))
     .pipe(publisherAssets.cache())
     .pipe(awspublish.reporter(''))
-  .on('finish', function () {
-    log.ok('Published to: http://s3-' + awsAssetsConfig.region + '.amazonaws.com/' + awsAssetsConfig.bucketName + '/cdnassets/projects/')
-  })
+    .on('finish', function () {
+      log.ok('Published to: http://s3-' + awsAssetsConfig.region + '.amazonaws.com/' + awsAssetsConfig.bucketName + '/cdnassets/projects/')
+    })
 })
 
 gulp.task('publish-story', function () {
@@ -93,7 +95,26 @@ gulp.task('publish-story', function () {
     .pipe(publisherStory.publish({}, {simulate: SIM}))
     .pipe(publisherStory.sync('machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName))
     .pipe(awspublish.reporter(''))
-  .on('finish', function () {
-    log.ok('Published to: http://s3-' + awsStoryConfig.region + '.amazonaws.com/' + awsStoryConfig.bucketName + objectsLocation)
-  })
+    .on('finish', function () {
+      log.ok('Published to: http://s3-' + awsStoryConfig.region + '.amazonaws.com/' + awsStoryConfig.bucketName + objectsLocation)
+    })
+})
+
+gulp.task('md5Assets', function () {
+  gulp.src('./assets/*.{jpg,png,gif,svg}')
+    .pipe(md5(10, '.tmp/assets/*.html'))
+    .pipe(gulp.dest('.tmp/assets'))
+})
+
+gulp.task('copyAssets', function () {
+  gulp.src('.tmp/assets/**')
+    .pipe(gulp.dest('./www/assets/'))
+})
+
+gulp.task('rewriteAssetPath', function () {
+  gulp.src('./assets/*.html')
+    .pipe(inlineImagePath({
+      path: config.assetPath.domain + '/machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName
+    }))
+    .pipe(gulp.dest('.tmp/assets'))
 })

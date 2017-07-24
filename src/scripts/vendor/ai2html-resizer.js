@@ -1,6 +1,7 @@
-'use strict';
-
 (function() {
+    var options = {
+      trailing: false
+    }
     // only want one resizer on the page
     if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
     document.documentElement.className += " g-resizer-v3-init";
@@ -26,16 +27,10 @@
             if (window.parent && window.parent.$) {
                 window.parent.$("body").trigger("resizedcontent", [window]);
             }
-            if (window.require) {
-                require(['foundation/main'], function() {
-                    require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
-                        AppCommunicator.triggerResize();
-                    });
-                });
-            }
+
         } catch(e) { console.log(e); }
     }
-
+    console.log('hello world')
     document.addEventListener('DOMContentLoaded', resizer);
     // feel free to replace throttle with _.throttle, if available
     window.addEventListener('resize', throttle(resizer, 200));
@@ -68,6 +63,4 @@
             return result;
         };
     }
-
-
 })();
