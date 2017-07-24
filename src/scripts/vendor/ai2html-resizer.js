@@ -30,7 +30,7 @@
 
         } catch(e) { console.log(e); }
     }
-
+    console.log('hello world')
     document.addEventListener('DOMContentLoaded', resizer);
     // feel free to replace throttle with _.throttle, if available
     window.addEventListener('resize', throttle(resizer, 200));
