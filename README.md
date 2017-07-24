@@ -9,7 +9,7 @@ An opinionated boilerplate for storytelling.
 - [StandardJS](https://github.com/feross/standard)
 - [Sass](https://github.com/sass/sass)
 - [Stylelint Standard](https://github.com/stylelint/stylelint-config-standard)
-- [Webpack](https://github.com/christophercliff/metalsmith-webpack)
+- [Webpack2](https://github.com/ianrose/metalsmith-webpack2)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [HTMLHint](https://github.com/yaniswang/HTMLHint)
 - [Editorconfig](http://editorconfig.org/)
