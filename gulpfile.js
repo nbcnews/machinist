@@ -86,7 +86,7 @@ gulp.task('publish-story', function () {
   checkProjectInitDate()
   return gulp.src([
     config.dest + '/**',
-    '!' + config.dest + '/**/*.html'
+    '!' + config.dest + '/**/*.{ai,html,jsx}'
   ])
     .pipe(prompt.confirm('Publish to production?'))
     .pipe(rename(function (path) {
