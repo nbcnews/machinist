@@ -24,7 +24,7 @@ function secureCheck (files) {
   return warnings
 }
 
-const files = glob.sync('{,!(node_modules)/**/}*.{js,css,hbs}')
+const files = glob.sync('{,!(node_modules)/**/}*.{js,css,scss,hbs,html}')
 console.log(files.length, 'files checked for insecure assets!') // eslint-disable-line
 const warnings = secureCheck(files)
 if (warnings.length) {
