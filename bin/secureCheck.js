@@ -1,5 +1,6 @@
 const fs = require('fs')
 const glob = require('glob')
+const log = require('log-utils')
 
 function secureCheck (files) {
   const warnings = []
@@ -30,3 +31,4 @@ const warnings = secureCheck(files)
 if (warnings.length) {
   throw Error('secure-check failed on:' + JSON.stringify(warnings))
 }
+log.ok('Assets look good')
