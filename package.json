@@ -5,6 +5,7 @@
   "main": "index.js",
   "pre-commit": "lint-staged",
   "scripts": {
+    "secure-check": "node bin/secureCheck",
     "setup": "node bin/machinist",
     "presetup": "npm install",
     "git-init": "rm -rf .git && git init",
@@ -18,7 +19,7 @@
     "format": "eslint \"src/scripts/**\" \"lib/**\" --fix && stylelint \"src/styles/**/*.scss\" --fix",
     "s3": "gulp publish-story",
     "cdn": "gulp publish-assets",
-    "publish": "gulp rewriteAssetPath && gulp md5Assets && npm run build && gulp copyAssets && npm run s3",
+    "publish": "gulp rewriteAssetPath && gulp md5Assets && npm run build && gulp copyAssets && npm run secure-check && npm run s3",
     "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
     "style-lint": "stylelint \"**/*.scss\"",
     "lint": "npm run script-lint && npm run style-lint && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
