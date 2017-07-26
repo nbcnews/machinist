@@ -11,10 +11,10 @@ function secureCheck (files) {
     const lines = content.split(/\r?\n/g)
 
     lines.forEach(function (line, i) {
-      var matches = line.match(/\w{3}=("|')http:\/\/[^\s'"]+/ig) || []
+      var matches = line.match(/\w{3}(=|\()("|')http:\/\/[^\s'"]+/ig) || []
       matches.forEach(function (match) {
         match = { url: match, file, line: i + 1 }
-        if (match.url.indexOf('src=') > -1) {
+        if (match.url.match(/src=|url\(/ig)) {
           console.log(`${match.file}:${match.line} -- ${match.url}`) // eslint-disable-line
           warnings.push(match)
         }
