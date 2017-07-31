@@ -3,8 +3,5 @@
   "globals": {
     "$": true,
     "jQuery": true
-  },
-  "rules": {
-    "no-console": 1
   }
 }
