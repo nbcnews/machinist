@@ -14,7 +14,7 @@
     "doc-ingest": "node ./lib/googledocjson.js",
     "debug": "npm start -- debug",
     "dev": "npm start -- development",
-    "build": "gulp rewriteAssetPath && gulp md5Assets && npm start -- production && gulp copyAssets",
+    "build": "gulp rewriteAssetPath && gulp md5Assets && npm start -- production && gulp copyAssets && npm run secure-check",
     "stage": "npm start -- staging",
     "format": "eslint \"src/scripts/**\" \"lib/**\" --fix && stylelint \"src/styles/**/*.scss\" --fix",
     "s3": "gulp publish-story",
