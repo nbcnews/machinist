@@ -1,20 +1,10 @@
 require('dotenv').config()
 // Set a true or false for production/development. Use to run certain plugins
-const envArg = process.argv[2].trim().toLowerCase()
-var devBuild = envArg === 'development'
-const stageBuild = envArg === 'staging'
-const productionBuild = envArg === 'production'
-const debugMode = envArg === 'debug'
+const BUILD = process.env.BUILD
+const BUILD_DEBUG = process.env.BUILD_DEBUG
 
-if (debugMode) {
-  devBuild = true
+if (BUILD_DEBUG) {
   process.env.DEBUG = 'metalsmith:*'
-}
-
-if (devBuild) {
-  process.env.development = true
-} else {
-  process.env.production = true
 }
 
 // Dependencies
@@ -26,7 +16,7 @@ const layouts = require('metalsmith-layouts')
 const assets = require('metalsmith-assets')
 const collections = require('metalsmith-collections')
 const permalinks = require('metalsmith-permalinks')
-const browserSync = devBuild ? require('metalsmith-browser-sync') : null
+const browserSync = require('metalsmith-browser-sync')
 const globaldata = require('metalsmith-metadata')
 const sass = require('metalsmith-sass')
 const inplace = require('metalsmith-in-place')
@@ -36,7 +26,6 @@ const postcss = require('metalsmith-with-postcss')
 const paths = require('metalsmith-paths')
 const drafts = require('metalsmith-drafts')
 const webpack = require('metalsmith-webpack2')
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin.js')
 const models = require('metalsmith-models')
 const filedata = require('metalsmith-filedata')
 const writemetadata = require('metalsmith-writemetadata')
@@ -46,8 +35,6 @@ const pkg = require('./package.json')
 const config = require('./config.json')
 
 // Global Configuration
-var assetPath
-
 const awsConfig = {
   bucketName: process.env.BUCKET_NAME,
   region: process.env.AWS_DEFAULT_REGION
@@ -57,25 +44,16 @@ const yearString = config.projectInitDate.year
 const monthString = config.projectInitDate.month
 const configProjectNameProp = config.projectName
 const convertedProjectName = configProjectNameProp.replace(/\s+/g, '-').toLowerCase()
-const objectsLocation = 'machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName + '/'
+const objectsLocation = `machinist/dist/${yearString}/${monthString}/${convertedProjectName}/`
 const dateNow = new Date()
 const UTCDate = dateNow.toISOString()
 
-if (devBuild) {
-  assetPath = config.assetPath.development
-}
-
-if (stageBuild) {
-  assetPath = config.assetPath.stage
-}
-
-if (productionBuild) {
-  if (config.assetPath.production) {
-    assetPath = config.assetPath.production
-  } else if (config.assetPath.domain) {
-    assetPath = config.assetPath.domain + '/' + objectsLocation
-  } else {
-    assetPath = '//s3-' + awsConfig.region + '.amazonaws.com/' + awsConfig.bucketName + '/' + objectsLocation
+let assetPath = config.assetPath[BUILD] || '/'
+if (BUILD === 'production') {
+  if (config.assetPath.domain) {
+    assetPath = `${config.assetPath.domain}/${objectsLocation}`
+  } else if (!config.assetPath.production) {
+    assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
   }
 }
 
@@ -83,10 +61,10 @@ config.assetPath = assetPath
 config.version = pkg.version
 config.dependencies = pkg.dependencies
 config.repository = pkg.repository.url
-config.devBuild = devBuild
-config.debugMode = debugMode
-config.dest = './' + config.dest + '/'
-config.src = './' + config.src + '/'
+config.devBuild = (BUILD === 'development')
+config.debugMode = (BUILD_DEBUG)
+config.dest = `./${config.dest}/`
+config.src = `./${config.src}/`
 config.buildDate = UTCDate
 
 // Adds metadata from files
@@ -121,16 +99,16 @@ const ms = Metalsmith(__dirname)
     }
   }))
   .use(sass({
-    outputStyle: devBuild ? 'expanded' : 'compressed',
+    outputStyle: config.devBuild ? 'expanded' : 'compressed',
     outputDir: 'styles',
-    sourceMapContents: devBuild,
-    sourceMapEmbed: devBuild
+    sourceMapContents: config.devBuild,
+    sourceMapEmbed: config.devBuild
   }))
   .use(postcss({
     pattern: ['**/*.css', '!**/_*/*', '!**/_*'],
     from: '*.scss',
     to: '*.css',
-    map: devBuild ? {inline: true} : false,
+    map: config.devBuild ? {inline: true} : false,
     plugins: {
       'autoprefixer': {browsers: ['> 0.5%', 'Explorer >= 10']}
     }
@@ -138,44 +116,7 @@ const ms = Metalsmith(__dirname)
   .use(filedata({
     pattern: ['styles/*.css']
   }))
-  .use(webpack({
-    context: path.resolve(__dirname, config.src + 'scripts/'),
-    entry: {
-      main: './main.js'
-    },
-    devtool: devBuild ? 'cheap-module-eval-source-map' : false,
-    output: {
-      path: path.resolve(__dirname, config.dest + 'scripts/'),
-      filename: devBuild ? '[name].bundle.js' : '[name].[hash].bundle.js'
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: [{
-            loader: 'babel-loader',
-            options: {
-              presets: ['es2015', 'stage-0']
-            }
-          }
-          ]
-        },
-        {
-          test: /\.coffee$/,
-          use: [ 'coffee-loader' ]
-        }
-      ]
-    },
-    plugins: [
-      new UglifyJsPlugin({
-        sourceMap: true,
-        compress: {
-          warnings: false
-        }
-      })
-    ]
-  }))
+  .use(webpack(require('./webpack.config.js')(config)))
   .use(fingerprint({
     pattern: 'styles/main.css',
     keep: true
@@ -229,7 +170,7 @@ const ms = Metalsmith(__dirname)
     destination: './assets' // relative to the build directory
   }))
 
-if (devBuild) {
+if (config.devBuild) {
   ms.use(browserSync({
     server: config.dest,
     files: [config.src + '**/*.*', 'layouts/*.*', 'partials/**/*.*', 'config.json', 'assets/**/*.*'],
@@ -243,9 +184,9 @@ ms.use(debug({
   files: false,
   match: '**/*.md'
 }))
-  .build(function (error) {
-    console.log((devBuild ? 'Development' : 'Production'), 'build success, version', pkg.version)
-    if (error) {
-      console.log(error)
-    }
-  })
+.build(function (error) {
+  console.log((config.devBuild ? 'Development' : 'Production'), 'build success, version', pkg.version)
+  if (error) {
+    console.log(error)
+  }
+})
