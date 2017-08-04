@@ -160,6 +160,10 @@ const ms = Metalsmith(__dirname)
             }
           }
           ]
+        },
+        {
+          test: /\.coffee$/,
+          use: [ 'coffee-loader' ]
         }
       ]
     },
