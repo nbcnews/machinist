@@ -1,0 +1,227 @@
+// // Chart
+// .bb {
+//   margin-right: $gutter / 2;
+// }
+//
+// .bb svg {
+//   font-size: $ms-down1;
+// }
+//
+// .bb path,
+// .bb line {
+//   fill: none;
+//   stroke: $light-grey;
+// }
+//
+// .bb text {
+//   fill: $grey;
+//   -moz-user-select: none;
+//   -webkit-user-select: none;
+//   user-select: none;
+// }
+//
+// .bb-legend-item-tile,
+// .bb-xgrid-focus,
+// .bb-ygrid,
+// .bb-event-rect,
+// .bb-bars path {
+//   shape-rendering: crispEdges;
+// }
+//
+// .bb-chart-arc path {
+//   stroke: #fff;
+// }
+//
+// .bb-chart-arc text {
+//   fill: #fff;
+//   font-size: 1em;
+// }
+//
+// // Axis
+// // Grid
+// .bb-grid line {
+//   stroke: $lighter-grey;
+// }
+//
+// .bb-xgrid-line line {
+//   stroke: $grey;
+// }
+//
+// .bb-grid text {
+//   fill: $secondary-text-color;
+// }
+//
+// .bb-xgrid,
+// .bb-ygrid {
+//   stroke-dasharray: 2 2;
+// }
+//
+// // Text on Chart
+// .bb-text.bb-empty {
+//   fill: #808080;
+//   font-size: 1em;
+// }
+//
+// // Line
+// .bb-line {
+//   stroke-width: 2px;
+// }
+//
+// // Point
+// .bb-circle._expanded_ {
+//   stroke: white;
+//   stroke-width: 1px;
+// }
+//
+// .bb-selected-circle {
+//   fill: white;
+//   stroke-width: 2px;
+// }
+//
+// // Bar
+// .bb-bar {
+//   stroke-width: 0;
+// }
+//
+// .bb-bar._expanded_ {
+//   fill-opacity: 0.75;
+// }
+//
+// // Focus
+// .bb-target.bb-focused {
+//   opacity: 1;
+// }
+//
+// .bb-target.bb-focused path.bb-line,
+// .bb-target.bb-focused path.bb-step {
+//   stroke-width: 2px;
+// }
+//
+// .bb-target.bb-defocused {
+//   opacity: 0.3 !important;
+// }
+//
+// // Region
+// .bb-region {
+//   fill: steelblue;
+//   fill-opacity: 0.1;
+// }
+//
+// // Brush
+// .bb-brush .extent {
+//   fill-opacity: 0.1;
+// }
+//
+// // Select - Drag
+// // Legend
+// .bb-legend-item {
+//   font-size: 1em;
+// }
+//
+// .bb-legend-item-hidden {
+//   opacity: 0.15;
+// }
+//
+// .bb-legend-background {
+//   fill: white;
+//   opacity: 0.75;
+//   stroke: lightgray;
+//   stroke-width: 1;
+// }
+//
+// // Tooltip
+// .bb-tooltip-container {
+//   z-index: 10;
+// }
+//
+// .bb-tooltip {
+//   background-color: #fff;
+//   border-collapse: collapse;
+//   border-spacing: 0;
+//   -moz-box-shadow: 7px 7px 12px -9px #777;
+//   -webkit-box-shadow: 7px 7px 12px -9px #777;
+//   box-shadow: 7px 7px 12px -9px #777;
+//   empty-cells: show;
+//   opacity: 0.9;
+// }
+//
+// .bb-tooltip tr {
+//   border: 1px solid #ccc;
+// }
+//
+// .bb-tooltip th {
+//   background-color: $grey;
+//   color: #fff;
+//   font-size: 14px;
+//   padding: 2px 5px;
+//   text-align: left;
+// }
+//
+// .bb-tooltip td {
+//   background-color: #fff;
+//   border-left: 1px dotted #999;
+//   font-size: 13px;
+//   padding: 3px 6px;
+// }
+//
+// .bb-tooltip td > span {
+//   display: inline-block;
+//   height: 10px;
+//   margin-right: 6px;
+//   width: 10px;
+// }
+//
+// .bb-tooltip td.value {
+//   text-align: right;
+// }
+//
+// // Area
+// .bb-area {
+//   opacity: 0.2;
+//   stroke-width: 0;
+// }
+//
+// // Arc
+// .bb-chart-arcs-title {
+//   dominant-baseline: middle;
+//   font-size: 1.3em;
+// }
+//
+// .bb-chart-arcs .bb-chart-arcs-background {
+//   fill: #e0e0e0;
+//   stroke: none;
+// }
+//
+// .bb-chart-arcs .bb-chart-arcs-gauge-unit {
+//   fill: #000;
+//   font-size: 16px;
+// }
+//
+// .bb-chart-arcs .bb-chart-arcs-gauge-max {
+//   fill: #777;
+// }
+//
+// .bb-chart-arcs .bb-chart-arcs-gauge-min {
+//   fill: #777;
+// }
+//
+// .bb-chart-arc .bb-gauge-value {
+//   fill: #000;
+// }
+
+@import "billboard/chart";
+@import "billboard/axis";
+@import "billboard/grid";
+@import "billboard/text";
+@import "billboard/line";
+@import "billboard/point";
+@import "billboard/bar";
+@import "billboard/focus";
+@import "billboard/region";
+@import "billboard/brush";
+@import "billboard/select-drag";
+@import "billboard/legend";
+@import "billboard/title";
+@import "billboard/tooltip";
+@import "billboard/area";
+@import "billboard/arc";

@@ -23,6 +23,7 @@ An opinionated boilerplate for storytelling.
 - Add structured data to a specific Markdown file by adding in the frontmatter `model: file_name.json`, with `file_name.json` living in `./src/models/`
 - Google Doc to JSON using ArchieML
 - An ai2html pipeline
+- Boilerplate CSS/Markup for story components
 
 ## Requirements
 
@@ -52,7 +53,7 @@ Edit the `./config.json` as you see fit.
 
 To get the latest content from the Google Doc.
 
-```
+```sh
 npm run doc-ingest
 ```
 
@@ -66,13 +67,13 @@ To push to s3 put your s3 credientials in `./env`
 
 Runs your project locally at `localhost:3000` with BrowserSync. Edit contents of `./layouts`, `./lib`, `./partials`, and `./src`.
 
-```
+```sh
 npm run dev
 ```
 
 Develop with Metalsmith debugging.
 
-```
+```sh
 npm run debug
 ```
 
@@ -84,6 +85,7 @@ Can be changed, but by default:
 - Install `ai2html.jsx` for Illustrator. [Docs](http://ai2html.org/#how-to-install-ai2html)
 - Uncomment `ai2html-resizer.js` in `src/scripts/main.js`
 - If using Google Doc for data, use the following ArchieML to place the graphic in the body
+
 ```
 {.ai2html}
 title: Optional title
@@ -93,6 +95,7 @@ caption: Optional caption
 source: Optional Source
 {}
 ```
+
 - Design and Develop
 - `npm run publish` will update ai2html image paths and rev assets
 
@@ -100,7 +103,7 @@ source: Optional Source
 
 Generates your dist to be deployed in the folder `./www`.
 
-```
+```sh
 npm run build
 ```
 
@@ -108,7 +111,7 @@ npm run build
 
 Generates your dist be deployed and publishes the dist to s3.
 
-```
+```sh
 npm run publish
 ```
 
@@ -116,7 +119,7 @@ npm run publish
 
 Lints your styles, scripts, and markup.
 
-```
+```sh
 npm run lint
 ```
 
@@ -124,6 +127,6 @@ npm run lint
 
 Fix lint errors in your styles and scripts.
 
-```
+```sh
 npm run format
 ```

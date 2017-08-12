@@ -1,0 +1,39 @@
+.bb {
+  margin-right: $gutter / 2;
+
+  svg {
+    font-size: $ms-down1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  path,
+  line {
+    fill: none;
+    stroke: $light-grey;
+  }
+
+  text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+}
+
+.bb-legend-item-tile,
+.bb-xgrid-focus,
+.bb-ygrid,
+.bb-event-rect,
+.bb-bars path {
+  shape-rendering: crispEdges;
+}
+
+.bb-chart-arc {
+  path {
+    stroke: #fff;
+  }
+
+  text {
+    fill: #fff;
+    font-size: 1em;
+  }
+}
