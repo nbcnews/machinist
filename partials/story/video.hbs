@@ -20,7 +20,7 @@
       {{#if value.ratio}}<div class="intrinsic ratio--{{value.ratio}}">{{/if}}
         <video id="{{#if value.id}}{{value.id}}{{else}}video-{{@index}}{{/if}}"
             class="{{#ifEqual value.type 'element'}}{{#if value.ratio}} intrinsic__element{{/if}}{{else}}video-js vjs-default-skin vjs-16-9{{/ifEqual}}"
-            preload="none" poster="{{value.thumbnail}}"
+            preload="none" poster="{{value.thumbnail}}" {{#if value.playsinline}}playsinline{{/if}}
             {{#if value.autoplay}} autoplay{{/if}}
             {{#if value.loop}} loop{{/if}}
             {{#if value.muted}} muted{{/if}}{{#unless value.noControls}} controls{{/unless}}
