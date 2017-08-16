@@ -28,7 +28,7 @@
               {{#if value.autoplay}} autoplay{{/if}}
               {{#if value.loop}} loop{{/if}}
               {{#if value.muted}} muted{{/if}}{{#unless value.noControls}} controls{{/unless}}
-              data-meta='{"title":"{{title}}","guid":"{{guid}}", "duration":"{{duration}}"}'
+              data-meta='{"title":"{{title}}","guid":"{{guid}}", "duration":{{toInt value.duration}} }'
               {{#ifEqual value.type 'element'}}{{else}}data-setup='{}'{{/ifEqual}}>
             <source src="{{value.mp4}}" type='video/mp4'/>
             <source src="{{value.webm}}" type='video/webm'/>
