@@ -68,6 +68,7 @@ $center-big-play-button: false; // true default
   border: 1px solid $primary-foreground-color;
   // 0.3em = 9px default
   border-radius: 0;
+  z-index: 1;
 
   @if $center-big-play-button {
     // Align center
@@ -146,7 +147,7 @@ $slider-bg-color: lighten($primary-background-color, 33%);
   // Need to fix centered page layouts
   text-align: left;
 
-  border: 6px solid rgba($primary-background-color, $primary-background-transparency);
+  border: 3px solid rgba($primary-background-color, $primary-background-transparency);
   // border: 6px solid rgba(43, 51, 63, 0.5);
 
   box-sizing: border-box;
@@ -165,7 +166,7 @@ $slider-bg-color: lighten($primary-background-color, 33%);
 .vjs-loading-spinner:after {
   content: "";
   position: absolute;
-  margin: -6px;
+  margin: -3px;
   box-sizing: inherit;
   width: inherit;
   height: inherit;
