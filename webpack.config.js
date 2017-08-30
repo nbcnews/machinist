@@ -7,7 +7,7 @@ module.exports = function (config) {
     entry: {
       main: './main.js'
     },
-    devtool: config.devBuild ? 'cheap-module-eval-source-map' : false,
+    devtool: config.devBuild ? 'eval-source-map' : false,
     output: {
       path: path.resolve(__dirname, config.dest + 'scripts/'),
       filename: config.devBuild ? '[name].bundle.js' : '[name].[hash].bundle.js'
