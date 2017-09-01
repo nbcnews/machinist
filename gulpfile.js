@@ -30,12 +30,14 @@ const yearString = config.projectInitDate.year
 const monthString = config.projectInitDate.month
 const configProjectNameProp = config.projectName
 const convertedProjectName = configProjectNameProp.replace(/\s+/g, '-').toLowerCase()
-const objectsLocation = '/machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName + '/'
+const objectsLocation = `/machinist/dist/${yearString}/${monthString}/${convertedProjectName}/`
+const publishedCdnMsg = `Published to: http://s3-${awsAssetsConfig.region}.amazonaws.com/${awsAssetsConfig.bucketName}/cdnassets/projects/`
+const publishedStoryMsg = `Published to: http://s3-${awsStoryConfig.region}.amazonaws.com/${awsStoryConfig.bucketName}${objectsLocation}`
 
 function cleanStaging () {
   assertClean(function (err) {
     if (err) {
-      throw new Error(log.error + ' Please commit changes before publishing.')
+      throw new Error(`${log.error} Please commit changes before publishing.`)
     }
   })
 }
@@ -45,11 +47,11 @@ function checkProjectInitDate () {
   const reMonth = new RegExp('^(1[0-2]|0[1-9])$')
 
   if (!reYear.test(yearString) || typeof yearString !== 'string' || typeof monthString !== 'string' || !reMonth.test(monthString)) {
-    throw new Error(log.error + ' Please enter the project initial year as YYYY (ex. "2017") and month as MM (ex. "01")')
+    throw new Error(`${log.error} Please enter the project initial year as YYYY (ex. "2017") and month as MM (ex. "01")`)
   }
 
   if (!config.projectInitDate.year || !config.projectInitDate.month) {
-    throw new Error(log.error + ' You must supply projectInitDate with Year and Month in ./config.json')
+    throw new Error(`${log.error} You must supply projectInitDate with Year and Month in ./config.json`)
   }
 }
 
@@ -64,13 +66,13 @@ gulp.task('publish-assets', function () {
 
   return gulp.src('cdnassets/**/*.{jpg,png,gif,mp3,ogg,flac,mp4,mov,avi,webm,zip,rar,webp,txt}')
     .pipe(rename(function (path) {
-      path.dirname = '/cdnassets/projects/' + path.dirname
+      path.dirname = `/cdnassets/projects/${path.dirname}`
     }))
     .pipe(publisherAssets.publish({}, {simulate: SIM, createOnly: true}))
     .pipe(publisherAssets.cache())
     .pipe(awspublish.reporter(''))
     .on('finish', function () {
-      log.ok('Published to: http://s3-' + awsAssetsConfig.region + '.amazonaws.com/' + awsAssetsConfig.bucketName + '/cdnassets/projects/')
+      log.ok(publishedCdnMsg)
     })
 })
 
@@ -93,10 +95,10 @@ gulp.task('publish-story', function () {
       path.dirname = objectsLocation + path.dirname
     }))
     .pipe(publisherStory.publish({}, {simulate: SIM}))
-    .pipe(publisherStory.sync('machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName))
+    .pipe(publisherStory.sync(`machinist/dist/${yearString}/${monthString}/${convertedProjectName}`))
     .pipe(awspublish.reporter(''))
     .on('finish', function () {
-      log.ok('Published to: http://s3-' + awsStoryConfig.region + '.amazonaws.com/' + awsStoryConfig.bucketName + objectsLocation)
+      log.ok(publishedStoryMsg)
     })
 })
 
@@ -114,7 +116,7 @@ gulp.task('copyAssets', function () {
 gulp.task('rewriteAssetPath', function () {
   gulp.src('./assets/*.html')
     .pipe(inlineImagePath({
-      path: config.assetPath.domain + '/machinist/dist/' + yearString + '/' + monthString + '/' + convertedProjectName
+      path: `${config.assetPath.domain}/machinist/dist/${yearString}/${monthString}/${convertedProjectName}`
     }))
     .pipe(gulp.dest('.tmp/assets'))
 })
