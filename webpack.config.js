@@ -5,7 +5,8 @@ module.exports = function (config) {
   return {
     context: path.resolve(__dirname, config.src + 'scripts/'),
     entry: {
-      main: './main.js'
+      main: './main.js',
+      dataviz: './dataviz.js'
     },
     devtool: config.devBuild ? 'eval-source-map' : false,
     output: {
