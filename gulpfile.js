@@ -64,9 +64,9 @@ gulp.task('publish-assets', function () {
     httpOptions: { timeout: 300000 }
   })
 
-  return gulp.src('cdnassets/**/*.{jpg,png,gif,mp3,ogg,flac,mp4,mov,avi,webm,zip,rar,webp,txt}')
+  return gulp.src('cdnassets/**/*.{jpg,png,gif,mp3,ogg,flac,mp4,mov,avi,webm,zip,rar,webp,txt,csv,json}')
     .pipe(rename(function (path) {
-      path.dirname = `/cdnassets/projects/${path.dirname}`
+      path.dirname = `/cdnassets/projects/${yearString}/${monthString}/${convertedProjectName}/${path.dirname}`
     }))
     .pipe(publisherAssets.publish({}, {simulate: SIM, createOnly: true}))
     .pipe(publisherAssets.cache())
