@@ -10,7 +10,7 @@ $revealBtn.click(function (e) {
   e.preventDefault()
   var revealSelector = $(this).data('id')
   var $revealEl = $('#' + revealSelector)
-  var $revealElContainer = $('#' + revealSelector + ' ' + '.reveal__container *')
+  var $revealElContainer = $('#' + revealSelector + ' ' + '.reveal__container')
   $revealEl.height($revealElContainer.outerHeight(true))
   if ($revealEl.hasClass('is-active')) {
     $revealEl.removeClass('is-active')
@@ -21,3 +21,4 @@ $revealBtn.click(function (e) {
     $revealEl.height($revealElContainer.outerHeight(true))
   }
 })
+
