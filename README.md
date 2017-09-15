@@ -130,6 +130,13 @@ Lints your styles, scripts, and markup.
 npm run lint
 ```
 
+## CDN
+Resize images for the web and add them to the `cdnassets` file. 
+
+Then run `npm run cdn` to upload those images to S3. 
+
+The response will give you the image slugs to add to the Google Doc.
+
 ### Format
 
 Fix lint errors in your styles and scripts.
