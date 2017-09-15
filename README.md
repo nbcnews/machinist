@@ -34,7 +34,7 @@ An opinionated boilerplate for storytelling.
 ### 1. Clone
 
 ```
-git clone https://github.com/nbcnews/machinist.git
+$ git clone https://github.com/nbcnews/machinist.git
 ```
 
 ### 2. Scaffold Project
@@ -42,6 +42,7 @@ git clone https://github.com/nbcnews/machinist.git
 Setup will run `npm install`
 
 ```sh
+$ nvm use # (.nvmrc 8)
 $ npm run setup new-project-name
 $ npm run git-init
 ```
@@ -51,10 +52,16 @@ Edit the `./config.json` as you see fit.
 
 #### Google Doc Data
 
-To get the latest content from the Google Doc.
+Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs. 
+
+Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.json`. 
+
+To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the google docs configuration as `configs/config_gdocs.json`. 
+
+To ingest the latest content from the Google Doc.
 
 ```sh
-npm run doc-ingest
+$ npm run doc-ingest
 ```
 
 #### Publishing
