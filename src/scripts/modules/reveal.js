@@ -21,4 +21,3 @@ $revealBtn.click(function (e) {
     $revealEl.height($revealElContainer.outerHeight(true))
   }
 })
-

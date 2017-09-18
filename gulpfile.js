@@ -8,6 +8,7 @@ const assertClean = require('git-assert-clean')
 const inlineImagePath = require('gulp-rewrite-image-path')
 const md5 = require('gulp-md5-plus')
 const prompt = require('gulp-prompt')
+const filter = require('gulp-filter')
 const config = require('./config.json')
 
 const SIM = false
@@ -64,10 +65,15 @@ gulp.task('publish-assets', function () {
     httpOptions: { timeout: 300000 }
   })
 
-  return gulp.src('cdnassets/**/*.{jpg,png,gif,mp3,ogg,flac,mp4,mov,avi,webm,zip,rar,webp,txt,csv,json}')
+  const gzipFilter = filter(['cdnassets/**/*.{txt,csv,json,js,css}'], {restore: true})
+
+  return gulp.src('cdnassets/**/*.{jpg,png,gif,mp3,ogg,flac,mp4,mov,avi,webm,zip,rar,webp,txt,csv,json,pdf}')
     .pipe(rename(function (path) {
       path.dirname = `/cdnassets/projects/${yearString}/${monthString}/${convertedProjectName}/${path.dirname}`
     }))
+    .pipe(gzipFilter)
+    .pipe(awspublish.gzip())
+    .pipe(gzipFilter.restore)
     .pipe(publisherAssets.publish({}, {simulate: SIM, createOnly: true}))
     .pipe(publisherAssets.cache())
     .pipe(awspublish.reporter(''))
