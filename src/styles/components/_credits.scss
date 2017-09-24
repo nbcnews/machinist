@@ -1,17 +1,14 @@
 .credits {
-  margin-bottom: emRhythm(13);
-  margin-top: emRhythm(10);
+  text-align: center;
   padding-left: $gutter;
   padding-right: $gutter;
-  text-align: center;
+  margin: emRhythm(10) auto emRhythm(13) auto;
+  max-width: $column-width;
 }
 
 .credits__content {
   border-bottom: 1px solid $light-grey;
   border-top: 1px solid $light-grey;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $column-width;
 }
 
 .credits__heading {
