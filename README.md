@@ -10,6 +10,8 @@ An opinionated boilerplate for storytelling.
 - [Sass](https://github.com/sass/sass)
 - [Stylelint Standard](https://github.com/stylelint/stylelint-config-standard)
 - [Webpack2](https://github.com/ianrose/metalsmith-webpack2)
+- [Babel Preset es2015](https://github.com/babel/babel/tree/master/packages/babel-preset-es2015)
+- [Babel Preset Stage 0](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [HTMLHint](https://github.com/yaniswang/HTMLHint)
 - [Editorconfig](http://editorconfig.org/)
