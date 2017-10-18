@@ -1,6 +1,7 @@
 import {sayHello} from './modules/a'
+import multi3 from './modules/b'
 // import './vendor/ai2html-resizer'
+// import utils from './modules/utils'
 
-const element = document.createElement('h1')
-
-element.innerHTML = sayHello('World')
+// eslint-disable-next-line
+console.log(sayHello('World'), multi3(3))
