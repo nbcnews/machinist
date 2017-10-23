@@ -101,6 +101,26 @@ a.media__gallery__item {
   }
 }
 
+.media__gallery__item--2-tweet {
+  $calc-gutter: $gutter / 2;
+
+  width: 100%;
+
+  @media (min-width: 760px) {
+    width: calc(50% - #{$calc-gutter});
+  }
+}
+
+.media__gallery__item--3-tweet {
+  $calc-gutter: ($gutter / 3) * 2;
+
+  width: 100%;
+
+  @media (min-width: 760px) {
+    width: calc(33.333333% - #{$calc-gutter});
+  }
+}
+
 .media__subtitle {
   color: $grey;
   display: block;
