@@ -73,6 +73,7 @@ h6,
 h1,
 .h1 {
   @include setType(4, $ms-up3); // [2]
+
   margin-bottom: emRhythm(1, $ms-up3, $silent: true); // [1]
 
   @media (min-width: $screen-sm-min) {
