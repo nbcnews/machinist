@@ -58,7 +58,7 @@ Create a new doc or optionally duplicate the [example project](https://docs.goog
 
 Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.json`. 
 
-To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the google docs configuration as `configs/config_gdocs.json`. 
+To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `.env`.
 
 To ingest the latest content from the Google Doc.
 
