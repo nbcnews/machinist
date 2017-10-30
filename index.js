@@ -10,6 +10,7 @@ if (BUILD_DEBUG) {
 // Dependencies
 const fs = require('fs')
 const path = require('path')
+const yaml = require('js-yaml')
 const Metalsmith = require('metalsmith')
 const markdown = require('metalsmith-markdown')
 const layouts = require('metalsmith-layouts')
@@ -29,10 +30,11 @@ const webpack = require('metalsmith-webpack2')
 const models = require('metalsmith-models')
 const filedata = require('metalsmith-filedata')
 const writemetadata = require('metalsmith-writemetadata')
+const defaultvalues = require('metalsmith-default-values')
 const raw = require('metalsmith-raw')
 const fingerprint = require('metalsmith-fingerprint-ignore')
 const pkg = require('./package.json')
-const config = require('./config.json')
+const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
 
 // Global Configuration
 const awsConfig = {
@@ -70,10 +72,10 @@ config.buildDate = UTCDate
 // Adds metadata from files
 const data = {}
 if (fs.existsSync(config.src + 'data/globals/')) {
-  const dataFiles = fs.readdirSync(path.join(__dirname, config.src + 'data', 'globals'))
+  const dataFiles = fs.readdirSync(path.join(__dirname, `${config.src}data`, 'globals'))
 
   dataFiles.forEach(function (filename) {
-    data[filename.split('.')[0]] = 'data/globals/' + filename
+    data[filename.split('.')[0]] = `data/globals/${filename}`
   })
 }
 
@@ -84,26 +86,17 @@ const ms = Metalsmith(__dirname)
   .metadata(config)
   .use(globaldata(data))
   .use(models({
-    directory: config.src + 'data/models'
+    directory: `${config.src}data/models`
   }))
-  .use(collections({
-    posts: {
-      pattern: 'posts/**/!(index.md)',
-      sortBy: 'date',
-      reverse: true
-    },
-    collection2: {
-      pattern: 'collection2/**/!(index.md)',
-      sortBy: 'date',
-      reverse: true
-    }
-  }))
-  .use(sass({
-    outputStyle: config.devBuild ? 'expanded' : 'compressed',
-    outputDir: 'styles',
-    sourceMapContents: config.devBuild,
-    sourceMapEmbed: config.devBuild
-  }))
+if (config.collections) {
+  ms.use(collections(config.collections))
+}
+ms.use(sass({
+  outputStyle: config.devBuild ? 'expanded' : 'compressed',
+  outputDir: 'styles',
+  sourceMapContents: config.devBuild,
+  sourceMapEmbed: config.devBuild
+}))
   .use(postcss({
     pattern: ['**/*.css', '!**/_*/*', '!**/_*'],
     from: '*.scss',
@@ -136,11 +129,15 @@ const ms = Metalsmith(__dirname)
     tables: true,
     langPrefix: 'language-'
   }))
+  .use(defaultvalues([{
+    pattern: 'embed.html',
+    defaults: {'publish': config.publish}
+  }]))
   .use(layouts({
     engine: 'handlebars',
     directory: 'layouts',
     partials: 'partials',
-    default: 'default.hbs',
+    default: 'story.hbs',
     pattern: '**/*.html'
   }))
   .use(writemetadata({
@@ -173,7 +170,7 @@ const ms = Metalsmith(__dirname)
 if (config.devBuild) {
   ms.use(browserSync({
     server: config.dest,
-    files: [config.src + '**/*.*', 'layouts/*.*', 'partials/**/*.*', 'config.json', 'assets/**/*.*'],
+    files: [`${config.src}**/*.*`, 'layouts/*.*', 'partials/**/*.*', './config.yml', 'assets/**/*.*'],
     open: false,
     notify: false,
     online: true

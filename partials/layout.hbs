@@ -1,8 +1,0 @@
-<!doctype html>
-<html class="no-js">
-  {{> head}}
-  <body class="{{#if paths.dir}}{{stem paths.href}}-page{{else}}{{paths.name}}-page{{/if}}{{#if paths.dir}} {{segments paths.dir '0' '1'}}-route{{/if}}">
-{{> @partial-block }}
-    {{> scripts}}
-  </body>
-</html>
