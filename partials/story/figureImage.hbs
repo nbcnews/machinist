@@ -26,9 +26,7 @@
             alt="{{value.alt}}" />
       {{#if value.ratio}}</div>{{/if}}
     </a>
-    {{#ifOr value.caption value.source}}
-      {{> story/caption}}
-    {{/ifOr}}
+    {{> story/caption}}
   </figure>
 </div>
 {{#if value.objectClass}}</div>{{/if}}
