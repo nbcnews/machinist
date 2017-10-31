@@ -87,6 +87,11 @@
     {{#ifEqual type 'nav'}}
       {{> story/nav}}
     {{/ifEqual}}
+    {{#ifEqual type 'addendum'}}
+      <div class="addendum">
+        <p>{{{value.text}}}</p>
+      </div>
+    {{/ifEqual}}
   {{/each}}
 </div>
 <div class="shade"></div>
