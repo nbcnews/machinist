@@ -87,5 +87,5 @@ templateFiles.forEach(function (file) {
   }
 });
 
-packageJson.name = `Machinist-${data.projectName}`;
+packageJson.name = `machinist-${data.projectName}`;
 fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2) + '\n');
