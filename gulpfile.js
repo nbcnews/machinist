@@ -1,6 +1,8 @@
 require('dotenv').config({silent: true})
 
+const fs = require('fs')
 const gulp = require('gulp')
+const yaml = require('js-yaml')
 const awspublish = require('gulp-awspublish')
 const rename = require('gulp-rename')
 const log = require('log-utils')
@@ -9,7 +11,7 @@ const inlineImagePath = require('gulp-rewrite-image-path')
 const md5 = require('gulp-md5-plus')
 const prompt = require('gulp-prompt')
 const filter = require('gulp-filter')
-const config = require('./config.json')
+const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
 
 const SIM = false
 
