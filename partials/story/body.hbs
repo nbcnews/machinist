@@ -10,6 +10,16 @@
         </section>
       {{/ifEqual}}
     {{/ifEqual}}
+    {{#ifEqual type 'group'}}
+      {{#ifEqual value.type 'start'}}
+        <div id="{{#if value.id}}{{value.id}}{{else}}story__group-{{@index}}{{/if}}" class="{{#if value.objectClass}}{{value.objectClass}}{{else}}story__group{{/if}}">
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'group'}}
+      {{#ifEqual value.type 'end'}}
+        </div>
+      {{/ifEqual}}
+    {{/ifEqual}}
     {{#ifEqual type 'p||div||h1||h2||h3||h4||h5||h6||ul||ol'}}
       <{{type}}>{{{value}}}</{{type}}>
     {{/ifEqual}}
