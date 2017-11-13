@@ -1,4 +1,4 @@
-publish: false # Publish property set to embed.json
+hiddenPublish: false # Publish property set to embed.json
 projectInitDate:
   year: '{{year}}'
   month: '{{month}}'
