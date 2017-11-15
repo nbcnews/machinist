@@ -11,7 +11,7 @@
     "git-init": "rm -rf .git && git init",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "doc-ingest": "node ./lib/googledocjson.js",
+    "doc-ingest": "node ./lib/googledocjson.js && node ./lib/dropboxpaperjson.js",
     "debug": "BUILD_DEBUG=true BUILD=development npm start",
     "dev": "BUILD=development npm start",
     "build": "gulp rewriteAssetPath && gulp md5Assets && BUILD=production npm start && gulp copyAssets && npm run secure-check",
@@ -84,6 +84,7 @@
     "metalsmith-with-postcss": "^1.0.0",
     "metalsmith-writemetadata": "^0.4.5",
     "moment": "^2.18.1",
+    "paper2json": "^0.2.2",
     "typesettings": "^4.0.0",
     "typogr": "^0.6.6"
   },

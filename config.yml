@@ -15,6 +15,9 @@ assetPath:
 googleDocJson:
   fileId: null # Google Doc ID ex. 1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY
   output: ./src/data/models/googledoc.json # Where the resulting JSON is saved via ./lib/googledocjson.js
+dropboxPaperJson:
+  fileId: null # Dropbox Paper ID ex. S7sSIlM2E0g6p3OXhhts4
+  output: ./src/data/models/dropboxpaper.json # Where the resulting JSON is saved via ./lib/dropboxpaperjson.js
 # Add external scripts globally ./partials/scripts.hbs
 scripts:
 -
