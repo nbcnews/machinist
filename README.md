@@ -24,6 +24,7 @@ An opinionated boilerplate for storytelling.
 - Add structured data globally in JSON or YAML in the `./src/globaldata/`
 - Add structured data to a specific Markdown file by adding in the frontmatter `model: file_name.json`, with `file_name.json` living in `./src/models/`
 - Google Doc to JSON using ArchieML
+- Dropbox Paper to JSON using ArchieML
 - An ai2html pipeline
 - Boilerplate CSS/Markup for story components
 
@@ -61,6 +62,18 @@ Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhR
 To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `./env`.
 
 To ingest the latest content from the Google Doc.
+
+```sh
+$ npm run doc-ingest
+```
+
+#### Dropbox Paper Data
+
+Create a new Paper document.
+
+Get the file ID from the URL. It should look like: `S7sSIlM2E0g6p3OXhhts4`
+
+To ingest the Dropbox Paper you will need to have access to it. [Generate an access token for your own account](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) and add the token to `./env`.
 
 ```sh
 $ npm run doc-ingest
