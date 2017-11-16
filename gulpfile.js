@@ -132,11 +132,9 @@ gulp.task('rewriteAssetPath', function () {
 
 gulp.task('combineJson', function () {
   gulp.src([
-    config.dest + '/embed.json',
-    config.dest + '/styles/main.json'
+    `${config.dest}/embed.json`,
+    `${config.dest}/styles/main.json`
   ])
-  .pipe(jsoncombine('remoteData.json', function (data) {
-    return Buffer.from(JSON.stringify({embed: data.embed, styles: data.main}))
-  }))
+  .pipe(jsoncombine('remoteData.json', (data) => Buffer.from(JSON.stringify({embed: data.embed, styles: data.main}))))
   .pipe(gulp.dest(config.dest))
 })
