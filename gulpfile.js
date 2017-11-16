@@ -65,7 +65,7 @@ function checkProjectInitDate () {
 }
 
 // Pushes the contents in ./cdnassets to nodeassets.nbcnews.com which is the generic CDN for NBC News
-gulp.task('publish-assets', function () {
+gulp.task('publish-cdnassets', function () {
   const publisherAssets = awspublish.create({
     region: awsAssetsConfig.region,
     params: {Bucket: awsAssetsConfig.bucketName},
@@ -93,7 +93,7 @@ gulp.task('publish-assets', function () {
 
 // Pushes the contents of ./www, the generated output, to s3 as configured in ./config.yml
 // Excludes Adobe Illustrator Files, HTML and JSX which are related to the ai2html workflow
-gulp.task('publish-story', function () {
+gulp.task('publish-dist-s3', function () {
   const publisherStory = awspublish.create({
     region: awsStoryConfig.region,
     params: {Bucket: awsStoryConfig.bucketName},
