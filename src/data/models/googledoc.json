@@ -41,7 +41,7 @@
 	"lastPublished": "05/07/2016",
 	"socialImage": "",
 	"mainArtImage": {
-		"url": "http://placehold.it/2000x1333",
+		"url": "https://placehold.it/2000x1333",
 		"alt": "Alt Text",
 		"caption": "Caption Text"
 	},
@@ -51,7 +51,7 @@
 			"value": {
 				"objectClass": "toc",
 				"kicker": "Video Interviews",
-				"code": "<div class=\"toc\"><img src=\"http://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char1\" width=\"50\" height=\"50\" /><img src=\"http://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char2\" width=\"50\" height=\"50\" /><img src=\"http://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char3\" width=\"50\" height=\"50\" />",
+				"code": "<div class=\"toc\"><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char1\" width=\"50\" height=\"50\" /><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char2\" width=\"50\" height=\"50\" /><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char3\" width=\"50\" height=\"50\" />",
 				"style": "hangRight"
 			}
 		},
@@ -109,7 +109,7 @@
 		{
 			"type": "adaptiveIframe",
 			"value": {
-				"src": "http://ianrose.me",
+				"src": "https://ianrose.me",
 				"width": "350",
 				"height": "900",
 				"style": "full"
@@ -117,7 +117,7 @@
 		},
 		{
 			"type": "p",
-			"value": "<span class=\"dropcap\">B</span>ody copy. Call me Ishmael. Some years ago—never mind how long precisely—having little or no <mark data-sset=\"offcanvas\" data-ocid=\"oc-1\">money in my purse</mark>, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself <mark data-sset=\"offcanvas\" data-ocid=\"oc-2\">growing grim about</mark> the mouth; whenever it is a damp, <a href=\"https://www.goodreads.com/author/quotes/1624.Herman_Melville\">drizzly November</a> in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral <span class=\"soundcite\" data-url=\"http://nodeassets.nbcnews.com/cdnassets/projects/bach-cello-suite.mp3\" data-start=\"0\" data-end=\"44000\" data-plays=\"1\">listen to bach</span> principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me."
+			"value": "<span class=\"dropcap\">B</span>ody copy. Call me Ishmael. Some years ago—never mind how long precisely—having little or no <mark data-sset=\"offcanvas\" data-ocid=\"oc-1\">money in my purse</mark>, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself <mark data-sset=\"offcanvas\" data-ocid=\"oc-2\">growing grim about</mark> the mouth; whenever it is a damp, <a href=\"https://www.goodreads.com/author/quotes/1624.Herman_Melville\">drizzly November</a> in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral <span class=\"soundcite\" data-url=\"https://nodeassets.nbcnews.com/cdnassets/projects/bach-cello-suite.mp3\" data-start=\"0\" data-end=\"44000\" data-plays=\"1\">listen to bach</span> principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me."
 		},
 		{
 			"type": "offcanvas",
@@ -139,7 +139,7 @@
 					{
 						"type": "image",
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"caption": "Caption text",
 							"source": "Source text",
@@ -177,13 +177,13 @@
 		{
 			"type": "video",
 			"value": {
-				"mp4": "http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4",
-				"webm": "http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm",
+				"mp4": "https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4",
+				"webm": "https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm",
 				"caption": "Caption text",
 				"source": "Source text",
 				"style": "wide",
 				"id": "guide-video",
-				"thumbnail": "http://placehold.it/1280x720"
+				"thumbnail": "https://placehold.it/1280x720"
 			}
 		},
 		{
@@ -205,7 +205,7 @@
 		{
 			"type": "adaptiveIframe",
 			"value": {
-				"src": "http://ianrose.me",
+				"src": "https://ianrose.me",
 				"width": "350",
 				"height": "900",
 				"style": "full"
@@ -218,7 +218,7 @@
 		{
 			"type": "image",
 			"value": {
-				"url": "http://placehold.it/2000x1333",
+				"url": "https://placehold.it/2000x1333",
 				"alt": "Alt Text",
 				"caption": "Caption text",
 				"source": "Source text",
@@ -234,7 +234,7 @@
 			"type": "callout",
 			"value": {
 				"kicker": "Chapter One",
-				"url": "http://www.nbcnews.com/specials/donald-trump-republican-party",
+				"url": "https://www.nbcnews.com/specials/donald-trump-republican-party",
 				"type": "related",
 				"heading": "United States of Trump",
 				"description": "Trump Voters Live in Economically Challenged Areas",
@@ -245,7 +245,7 @@
 		{
 			"type": "image",
 			"value": {
-				"url": "http://placehold.it/2000x1333",
+				"url": "https://placehold.it/2000x1333",
 				"alt": "Alt Text",
 				"caption": "Caption text",
 				"source": "Source text",
@@ -259,7 +259,7 @@
 		{
 			"type": "image",
 			"value": {
-				"url": "http://placehold.it/2000x1333",
+				"url": "https://placehold.it/2000x1333",
 				"alt": "Alt Text",
 				"caption": "Caption text",
 				"source": "Source text",
@@ -273,7 +273,7 @@
 		{
 			"type": "image",
 			"value": {
-				"url": "http://placehold.it/2000x1333",
+				"url": "https://placehold.it/2000x1333",
 				"alt": "Alt Text",
 				"caption": "Caption text",
 				"source": "Source text",
@@ -343,50 +343,50 @@
 				"images": [
 					{
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"source": "Source Text",
-							"thumb": "http://placehold.it/201x134"
+							"thumb": "https://placehold.it/201x134"
 						}
 					},
 					{
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"source": "Source Text",
-							"thumb": "http://placehold.it/201x134"
+							"thumb": "https://placehold.it/201x134"
 						}
 					},
 					{
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"source": "Source Text",
-							"thumb": "http://placehold.it/201x134"
+							"thumb": "https://placehold.it/201x134"
 						}
 					},
 					{
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"source": "Source Text",
-							"thumb": "http://placehold.it/201x134"
+							"thumb": "https://placehold.it/201x134"
 						}
 					},
 					{
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"source": "Source Text",
-							"thumb": "http://placehold.it/201x134"
+							"thumb": "https://placehold.it/201x134"
 						}
 					},
 					{
 						"value": {
-							"url": "http://placehold.it/2000x1333",
+							"url": "https://placehold.it/2000x1333",
 							"alt": "Alt Text",
 							"source": "Source Text",
-							"thumb": "http://placehold.it/201x134"
+							"thumb": "https://placehold.it/201x134"
 						}
 					}
 				]
@@ -399,7 +399,7 @@
 		{
 			"type": "image",
 			"value": {
-				"url": "http://placehold.it/2000x1333",
+				"url": "https://placehold.it/2000x1333",
 				"alt": "Alt Text",
 				"caption": "Caption text",
 				"source": "Source text",
@@ -456,7 +456,7 @@
 		},
 		{
 			"type": "text",
-			"value": "url: http://placehold.it/2000x1333"
+			"value": "url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -512,11 +512,11 @@
 		},
 		{
 			"type": "text",
-			"value": "mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4"
+			"value": "mp4: https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4"
 		},
 		{
 			"type": "text",
-			"value": "webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm"
+			"value": "webm : https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm"
 		},
 		{
 			"type": "text",
@@ -536,7 +536,7 @@
 		},
 		{
 			"type": "text",
-			"value": "thumbnail: http://placehold.it/1280x720"
+			"value": "thumbnail: https://placehold.it/1280x720"
 		},
 		{
 			"type": "text",
@@ -572,7 +572,7 @@
 		},
 		{
 			"type": "text",
-			"value": "url: http://placehold.it/2000x1333"
+			"value": "url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -604,11 +604,11 @@
 		},
 		{
 			"type": "text",
-			"value": "mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4"
+			"value": "mp4: https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4"
 		},
 		{
 			"type": "text",
-			"value": "webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm"
+			"value": "webm : https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm"
 		},
 		{
 			"type": "text",
@@ -628,7 +628,7 @@
 		},
 		{
 			"type": "text",
-			"value": "thumbnail: http://placehold.it/1280x720"
+			"value": "thumbnail: https://placehold.it/1280x720"
 		},
 		{
 			"type": "text",
@@ -644,11 +644,11 @@
 		},
 		{
 			"type": "text",
-			"value": "mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4"
+			"value": "mp4: https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4"
 		},
 		{
 			"type": "text",
-			"value": "webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm"
+			"value": "webm : https://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm"
 		},
 		{
 			"type": "text",
@@ -668,7 +668,7 @@
 		},
 		{
 			"type": "text",
-			"value": "thumbnail: http://placehold.it/1280x720"
+			"value": "thumbnail: https://placehold.it/1280x720"
 		},
 		{
 			"type": "text",
@@ -792,7 +792,7 @@
 		},
 		{
 			"type": "text",
-			"value": "url: http://placehold.it/2000x1333"
+			"value": "url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -896,7 +896,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -908,7 +908,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -920,7 +920,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -988,7 +988,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1000,7 +1000,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1012,7 +1012,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1024,7 +1024,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1036,7 +1036,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1048,7 +1048,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1116,7 +1116,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1128,7 +1128,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1140,7 +1140,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1152,7 +1152,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1204,7 +1204,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1216,7 +1216,7 @@
 		},
 		{
 			"type": "text",
-			"value": "value.url: http://placehold.it/2000x1333"
+			"value": "value.url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1252,7 +1252,7 @@
 		},
 		{
 			"type": "text",
-			"value": "source: <a href=\"http://www.newyorker.com/books/page-turner/what-moby-dick-means-to-me\">What “Moby-Dick” Means to Me</a>"
+			"value": "source: <a href=\"https://www.newyorker.com/books/page-turner/what-moby-dick-means-to-me\">What “Moby-Dick” Means to Me</a>"
 		},
 		{
 			"type": "text",
@@ -1268,7 +1268,7 @@
 		},
 		{
 			"type": "text",
-			"value": "url: http://placehold.it/2000x1333"
+			"value": "url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1300,7 +1300,7 @@
 		},
 		{
 			"type": "text",
-			"value": "url: http://placehold.it/2000x1333"
+			"value": "url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1332,7 +1332,7 @@
 		},
 		{
 			"type": "text",
-			"value": "url: http://placehold.it/2000x1333"
+			"value": "url: https://placehold.it/2000x1333"
 		},
 		{
 			"type": "text",
@@ -1364,7 +1364,7 @@
 		},
 		{
 			"type": "text",
-			"value": "render at http://storysmith-guide.herokuapp.com/specials/story-guide"
+			"value": "render at https://storysmith-guide.herokuapp.com/specials/story-guide"
 		},
 		{
 			"type": "text",
