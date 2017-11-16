@@ -136,12 +136,7 @@ gulp.task('combineJson', function () {
     config.dest + '/styles/main.json'
   ])
   .pipe(jsoncombine('remoteData.json', function (data) {
-    const result = {}
-
-    result.embed = data.embed
-    result.styles = data.main
-
-    return Buffer.from(JSON.stringify(result))
+    return Buffer.from(JSON.stringify({embed: data.embed, styles: data.main}))
   }))
   .pipe(gulp.dest(config.dest))
 })
