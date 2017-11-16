@@ -11,6 +11,7 @@ const inlineImagePath = require('gulp-rewrite-image-path')
 const md5 = require('gulp-md5-plus')
 const prompt = require('gulp-prompt')
 const filter = require('gulp-filter')
+const jsoncombine = require('gulp-jsoncombine')
 const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
 
 const SIM = false
@@ -127,4 +128,20 @@ gulp.task('rewriteAssetPath', function () {
       path: `${config.assetPath.domain}/machinist/dist/${yearString}/${monthString}/${convertedProjectName}`
     }))
     .pipe(gulp.dest('.tmp/assets'))
+})
+
+gulp.task('combineJson', function () {
+  gulp.src([
+    config.dest + '/embed.json',
+    config.dest + '/styles/main.json'
+  ])
+  .pipe(jsoncombine('remoteData.json', function (data) {
+    const result = {}
+
+    result.embed = data.embed
+    result.styles = data.main
+
+    return Buffer.from(JSON.stringify(result))
+  }))
+  .pipe(gulp.dest(config.dest))
 })
