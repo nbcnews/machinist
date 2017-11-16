@@ -50,7 +50,7 @@ $ npm run setup new-project-name
 $ npm run git-init
 ```
 
-Edit the `./config.json` as you see fit.
+Edit the `./config.yml` as you see fit.
 
 
 #### Google Doc Data
