@@ -13,7 +13,6 @@ projectInitDate:
   year: '{{year}}'
   month: '{{month}}'
 robotsDisallow: true # Allow robots from visit any page(s) on the site
-summary: TKTKTK
 dest: www # Metalsmith output directory
 src: src # Metalsmith source directory
 projectName: '{{projectName}}'
