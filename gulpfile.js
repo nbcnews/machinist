@@ -16,6 +16,7 @@ const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
 
 const SIM = false
 
+// AWS config for publishing generated story
 const awsStoryConfig = {
   bucketName: process.env.BUCKET_NAME,
   region: process.env.AWS_DEFAULT_REGION,
@@ -23,6 +24,7 @@ const awsStoryConfig = {
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 }
 
+// AWS config for generic NBC News CDN, nodeassets.nbcnews.com
 const awsAssetsConfig = {
   bucketName: process.env.ASSETS_BUCKET_NAME,
   region: process.env.ASSETS_AWS_DEFAULT_REGION,
@@ -30,6 +32,7 @@ const awsAssetsConfig = {
   secretAccessKey: process.env.ASSETS_AWS_SECRET_ACCESS_KEY
 }
 
+// Dates, Names and file paths used in Gulp tasks
 const yearString = config.projectInitDate.year
 const monthString = config.projectInitDate.month
 const configProjectNameProp = config.projectName
@@ -38,6 +41,7 @@ const objectsLocation = `/machinist/dist/${yearString}/${monthString}/${converte
 const publishedCdnMsg = `Published to: http://s3-${awsAssetsConfig.region}.amazonaws.com/${awsAssetsConfig.bucketName}/cdnassets/projects/`
 const publishedStoryMsg = `Published to: http://s3-${awsStoryConfig.region}.amazonaws.com/${awsStoryConfig.bucketName}${objectsLocation}`
 
+// Checks that there are no lingering files in stage. Safeguard that is run on `npm run publish`
 function cleanStaging () {
   assertClean(function (err) {
     if (err) {
@@ -46,6 +50,7 @@ function cleanStaging () {
   })
 }
 
+// Checks that a valid project data has been added to ./config.yml
 function checkProjectInitDate () {
   const reYear = new RegExp('^[12][0-9]{3}$')
   const reMonth = new RegExp('^(1[0-2]|0[1-9])$')
@@ -59,6 +64,7 @@ function checkProjectInitDate () {
   }
 }
 
+// Pushes the contents in ./cdnassets to nodeassets.nbcnews.com which is the generic CDN for NBC News
 gulp.task('publish-assets', function () {
   const publisherAssets = awspublish.create({
     region: awsAssetsConfig.region,
@@ -85,6 +91,8 @@ gulp.task('publish-assets', function () {
     })
 })
 
+// Pushes the contents of ./www, the generated output, to s3 as configured in ./config.yml
+// Excludes Adobe Illustrator Files, HTML and JSX which are related to the ai2html workflow
 gulp.task('publish-story', function () {
   const publisherStory = awspublish.create({
     region: awsStoryConfig.region,
@@ -111,17 +119,20 @@ gulp.task('publish-story', function () {
     })
 })
 
+// Adds unique hash to image files and updates the src paths with the new image names. i.e. Cache busting
 gulp.task('md5Assets', function () {
   gulp.src('./assets/*.{jpg,png,gif,svg}')
     .pipe(md5(10, '.tmp/assets/*.html'))
     .pipe(gulp.dest('.tmp/assets'))
 })
 
+// Copies the hashed elements from assets to a temporary folder to then later be used by other Gulp Tasks
 gulp.task('copyAssets', function () {
   gulp.src('.tmp/assets/**')
     .pipe(gulp.dest('./www/assets/'))
 })
 
+// Runs on production builds, not development builds. Rewrites the assets paths for being hosted
 gulp.task('rewriteAssetPath', function () {
   gulp.src('./assets/*.html')
     .pipe(inlineImagePath({
@@ -130,6 +141,7 @@ gulp.task('rewriteAssetPath', function () {
     .pipe(gulp.dest('.tmp/assets'))
 })
 
+// Takes resulting metadata JSON from build and combines to make a single JSON file that contains markup, styles and model
 gulp.task('combineJson', function () {
   gulp.src([
     `${config.dest}/embed.json`,
