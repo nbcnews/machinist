@@ -1,9 +1,18 @@
-hiddenPublish: false # Publish property set to embed.json
+metadata:
+  hiddenPublish: false # Publish property set to embed.json
+  pageTitle: Testing Page Title  # SEO Page Title
+  description: Testing description # SEO Description
+  ogTitle: Testing og title # OpenGraph Title used by Facebook
+  ogDescription: Testing og description  # OpenGraph Description Facebook
+  ogType: article
+  twitterCard: summary_large_image # https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
+  twitterTitle: Testing twitter title
+  twitterDescription: Testing twitter description
+  socialImage: https://nodeassets.nbcnews.com/cdnassets/projects/2017/10/deal-island/170625-Deal-Island-Brecher-09-840px.jpg # URL to Image assets ideally 1200x630
 projectInitDate:
   year: '{{year}}'
   month: '{{month}}'
 robotsDisallow: true # Allow robots from visit any page(s) on the site
-summary: TKTKTK
 dest: www # Metalsmith output directory
 src: src # Metalsmith source directory
 projectName: '{{projectName}}'
