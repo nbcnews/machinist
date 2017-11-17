@@ -131,7 +131,7 @@ ms.use(sass({
   }))
   .use(defaultvalues([{
     pattern: 'embed.html',
-    defaults: {'publish': config.publish}
+    defaults: {'metadata': config.metadata}
   }]))
   .use(layouts({
     engine: 'handlebars',
