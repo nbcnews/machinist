@@ -32,6 +32,7 @@ const filedata = require('metalsmith-filedata')
 const writemetadata = require('metalsmith-writemetadata')
 const defaultvalues = require('metalsmith-default-values')
 const raw = require('metalsmith-raw')
+const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
 const pkg = require('./package.json')
 const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
@@ -175,6 +176,7 @@ if (config.devBuild) {
     notify: false,
     online: true
   }))
+  .use(debugUi.report('Debug'))
 }
 
 ms.use(debug({
