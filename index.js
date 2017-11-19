@@ -80,9 +80,14 @@ if (fs.existsSync(config.src + 'data/globals/')) {
   })
 }
 
+let ms = Metalsmith(__dirname)
+
+if (config.debugMode) {
+  debugUi.patch(ms) // http://localhost:3000/debug-ui/index.html
+}
+
 // Metalsmith Build
-const ms = Metalsmith(__dirname)
-  .source(config.src)
+ms.source(config.src)
   .destination(config.dest)
   .metadata(config)
   .use(globaldata(data))
@@ -176,7 +181,6 @@ if (config.devBuild) {
     notify: false,
     online: true
   }))
-  .use(debugUi.report('Debug'))
 }
 
 ms.use(debug({
