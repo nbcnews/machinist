@@ -5,6 +5,10 @@ const gulp = require('gulp')
 const yaml = require('js-yaml')
 const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
 
+// pre-process config data
+config.projectSlug = config.projectName.replace(/\s+/g, '-').toLowerCase()
+config.objectsLocation = `/machinist/dist/${config.projectInitDate.year}/${config.projectInitDate.month}/${config.projectSlug}/`
+
 // TODO: use 'require-dir', at some point
 const buildTasks = require('./gulp-tasks/build')
 const publishStory = require('./gulp-tasks/publish-story')

@@ -3,7 +3,6 @@ const awspublish = require('gulp-awspublish')
 const rename = require('gulp-rename')
 const log = require('log-utils')
 const filter = require('gulp-filter')
-// const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
 
 const SIM = false
 
@@ -20,7 +19,6 @@ const awsConfig = {
 function publish (config) {
   return function () {
     const initDate = config.projectInitDate
-    const dashedProjectName = config.projectName.replace(/\s+/g, '-').toLowerCase()
     const publisherAssets = awspublish.create({
       region: awsConfig.region,
       params: {Bucket: awsConfig.bucketName},
@@ -29,12 +27,11 @@ function publish (config) {
       httpOptions: { timeout: 300000 }
     })
 
-    const publishMsg = `Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/cdnassets/projects/`
     const gzipFilter = filter(['cdnassets/**/*.{txt,csv,json,js,css}'], {restore: true})
 
     return gulp.src('cdnassets/**/*.{jpg,png,gif,mp3,ogg,flac,mp4,mov,avi,webm,zip,rar,webp,txt,csv,json,pdf}')
       .pipe(rename(function (path) {
-        path.dirname = `/cdnassets/projects/${initDate.year}/${initDate.month}/${dashedProjectName}/${path.dirname}`
+        path.dirname = `/cdnassets/projects/${initDate.year}/${initDate.month}/${config.projectSlug}/${path.dirname}`
       }))
       .pipe(gzipFilter)
       .pipe(awspublish.gzip())
@@ -43,7 +40,7 @@ function publish (config) {
       .pipe(publisherAssets.cache())
       .pipe(awspublish.reporter(''))
       .on('finish', function () {
-        log.ok(publishMsg)
+        log.ok(`Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/cdnassets/projects/`)
       })
   }
 }
