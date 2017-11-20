@@ -62,7 +62,16 @@ function publish (config) {
       config.dest + '/**',
       '!' + config.dest + '/**/*.{ai,html,jsx}'
     ])
-      .pipe(prompt.confirm('Publish to production?'))
+      .pipe(prompt.prompt({
+        type: 'input',
+        name: 'flag',
+        message: 'Updating story data on production, to proceed, enter flag:'
+      }, function (res) {
+        if (res.flag !== '--production') {
+          console.log('Exiting publish of remoteData.json')
+          process.exit(1)
+        }
+      }))
       .pipe(rename(function (path) {
         const objectsLocation = `/machinist/dist/${initDate.year}/${initDate.month}/${dashedProjectName}/`
         path.dirname = objectsLocation + path.dirname
