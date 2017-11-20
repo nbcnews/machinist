@@ -42,13 +42,9 @@ function checkProjectInitDate (config) {
 
 // Pushes the contents of ./www, the generated output, to s3 as configured in ./config.yml
 // Excludes Adobe Illustrator Files, HTML and JSX which are related to the ai2html workflow
-// gulp.task('publish-dist-s3')
-
 function publish (config) {
   return function () {
     const initDate = config.projectInitDate
-    const dashedProjectName = config.projectName.replace(/\s+/g, '-').toLowerCase()
-    const objectsLocation = `/machinist/dist/${initDate.year}/${initDate.month}/${dashedProjectName}/`
     const publisherStory = awspublish.create({
       region: awsConfig.region,
       params: {Bucket: awsConfig.bucketName},
@@ -73,15 +69,13 @@ function publish (config) {
         }
       }))
       .pipe(rename(function (path) {
-        const objectsLocation = `/machinist/dist/${initDate.year}/${initDate.month}/${dashedProjectName}/`
-        path.dirname = objectsLocation + path.dirname
+        path.dirname = config.objectsLocation + path.dirname
       }))
       .pipe(publisherStory.publish({}, {simulate: SIM}))
-      .pipe(publisherStory.sync(`machinist/dist/${initDate.year}/${initDate.month}/${dashedProjectName}`))
+      .pipe(publisherStory.sync(`machinist/dist/${initDate.year}/${initDate.month}/${config.projectSlug}`))
       .pipe(awspublish.reporter(''))
       .on('finish', function () {
-        const publishMsg = `Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}${objectsLocation}`
-        log.ok(publishMsg)
+        log.ok(`Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}${config.objectsLocation}`)
       })
   }
 }

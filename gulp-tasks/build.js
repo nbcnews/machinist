@@ -19,10 +19,9 @@ function copyAssets () {
 // Runs on production builds, not development builds. Rewrites the assets paths for being hosted
 function rewriteAssetPath (config) {
   return function () {
-    const dashedProjectName = config.projectName.replace(/\s+/g, '-').toLowerCase()
     gulp.src('./assets/*.html')
       .pipe(inlineImagePath({
-        path: `${config.assetPath.domain}/machinist/dist/${config.projectInitDate.year}/${config.projectInitDate.month}/${dashedProjectName}`
+        path: `${config.assetPath.domain}/machinist/dist/${config.projectInitDate.year}/${config.projectInitDate.month}/${config.projectSlug}`
       }))
       .pipe(gulp.dest('.tmp/assets'))
   }
