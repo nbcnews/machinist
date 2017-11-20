@@ -147,6 +147,6 @@ gulp.task('combineJson', function () {
     `${config.dest}/embed.json`,
     `${config.dest}/styles/main.json`
   ])
-  .pipe(jsoncombine('remoteData.json', (data) => Buffer.from(JSON.stringify({embed: data.embed, styles: data.main}))))
+  .pipe(jsoncombine('remoteData.json', (data) => Buffer.from(JSON.stringify({config, embed: data.embed, styles: data.main}))))
   .pipe(gulp.dest(config.dest))
 })

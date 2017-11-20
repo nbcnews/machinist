@@ -64,7 +64,6 @@
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "petasittek/metalsmith-collections",
-    "metalsmith-default-values": "^2.0.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-filedata": "^0.1.0",
     "metalsmith-fingerprint-ignore": "^1.1.2",

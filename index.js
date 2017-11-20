@@ -30,7 +30,6 @@ const webpack = require('metalsmith-webpack2')
 const models = require('metalsmith-models')
 const filedata = require('metalsmith-filedata')
 const writemetadata = require('metalsmith-writemetadata')
-const defaultvalues = require('metalsmith-default-values')
 const raw = require('metalsmith-raw')
 const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
@@ -135,10 +134,6 @@ ms.use(sass({
     tables: true,
     langPrefix: 'language-'
   }))
-  .use(defaultvalues([{
-    pattern: 'embed.html',
-    defaults: {'metadata': config.metadata}
-  }]))
   .use(layouts({
     engine: 'handlebars',
     directory: 'layouts',
