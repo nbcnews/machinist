@@ -46,6 +46,12 @@
 		"caption": "Caption Text"
 	},
 	"body": [
+    {
+      "type": "ai2html",
+      "value": {
+        "fileName": "17-ai2html-machinist-template.html"
+      }
+    },
 		{
 			"type": "callout",
 			"value": {
