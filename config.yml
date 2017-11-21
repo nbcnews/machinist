@@ -10,12 +10,12 @@ metadata:
   twitterDescription: Testing twitter description
   socialImage: https://nodeassets.nbcnews.com/cdnassets/projects/2017/10/deal-island/170625-Deal-Island-Brecher-09-840px.jpg # URL to Image assets ideally 1200x630
 projectInitDate:
-  year: '{{year}}'
-  month: '{{month}}'
+  year: '1880'
+  month: '01'
 robotsDisallow: true # Allow robots from visit any page(s) on the site
 dest: www # Metalsmith output directory
 src: src # Metalsmith source directory
-projectName: '{{projectName}}'
+projectName: 'test'
 assetPath:
   domain: https://static-projects.nbcnews.com
   development: /
