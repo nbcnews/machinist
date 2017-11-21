@@ -68,6 +68,7 @@ function publish (config) {
           process.exit(1)
         }
       }))
+      .pipe(prompt.confirm('Publish to Production?'))
       .pipe(rename(function (path) {
         path.dirname = config.objectsLocation + path.dirname
       }))
