@@ -3,7 +3,7 @@ metadata:
   pageTitle: Testing Page Title  # SEO Page Title
   description: Testing description # SEO Description
   ogTitle: Testing og title # OpenGraph Title used by Facebook
-  ogDescription: Testing og description  # OpenGraph Description Facebook
+  ogDescription: Testing og description # OpenGraph Description Facebook
   ogType: article
   twitterCard: summary_large_image # https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
   twitterTitle: Testing twitter title
