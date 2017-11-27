@@ -32,7 +32,7 @@ dropboxPaperJson:
   output: ./src/data/models/dropboxpaper.json # Where the resulting JSON is saved via ./lib/dropboxpaperjson.js
 # Add external scripts globally ./partials/scripts.hbs
 scripts:
--
--
+# - https://code.jquery.com/jquery-3.2.1.min.js
+# - https://cdnjs.cloudflare.com/ajax/libs/video.js/5.20.1/video.min.js
 # https://github.com/segmentio/metalsmith-collections
 collections: false
