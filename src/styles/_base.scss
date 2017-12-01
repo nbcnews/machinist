@@ -191,12 +191,14 @@ figure {
 }
 
 figcaption {
-  @include setType(2, $ms-down1);
+  @include setType(2.5, $ms-down1, $silent: true);
 
   color: $secondary-text-color;
-  font-family: $font-sans;
+  font-family: $font-mono;
   font-weight: 400;
+  letter-spacing: -0.04em;
   margin-top: $base-vertical-unit;
+  word-spacing: -0.19em;
 }
 
 blockquote {
