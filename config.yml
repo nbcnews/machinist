@@ -30,9 +30,7 @@ googleDocJson:
 dropboxPaperJson:
   fileId: null # Dropbox Paper ID ex. S7sSIlM2E0g6p3OXhhts4
   output: ./src/data/models/dropboxpaper.json # Where the resulting JSON is saved via ./lib/dropboxpaperjson.js
-# Add external scripts globally ./partials/scripts.hbs
-scripts:
+scripts: # Add external scripts globally ./partials/scripts.hbs
 # - https://code.jquery.com/jquery-3.2.1.min.js
 # - https://cdnjs.cloudflare.com/ajax/libs/video.js/5.20.1/video.min.js
-# https://github.com/segmentio/metalsmith-collections
-collections: false
+collections: false # https://github.com/segmentio/metalsmith-collections
