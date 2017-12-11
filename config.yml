@@ -8,6 +8,7 @@ metadata:
   twitterCard: summary_large_image # https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
   twitterTitle: Testing twitter title
   twitterDescription: Testing twitter description
+  twitterText: # Message for twitter, gets combined with canonical URL and property handle
   overrideTwitterText: # When sharing via buttons, overrides the generated tweet and takes this field verbatim
   overrideEmailSubject: # When sharing via buttons, overrides the generated subject line and takes this field verbatim
   overrideEmailBody: # When sharing via buttons, overrides the generated body field and takes this field verbatim
