@@ -26,8 +26,8 @@
             {{#if value.muted}} muted{{/if}}{{#unless value.noControls}} controls{{/unless}}
             data-meta='{"title":"{{value.title}}","guid":"{{#if value.id}}{{value.id}}{{else}}video-{{@index}}{{/if}}", "duration":{{toInt value.duration}} }'
             {{#ifEqual value.type 'element'}}{{else}}data-setup='{}'{{/ifEqual}}>
-          <source src="{{value.mp4}}" type='video/mp4'/>
-          <source src="{{value.webm}}" type='video/webm'/>
+          {{#if value.mp4}}<source src="{{value.mp4}}" type='video/mp4'/>{{/if}}
+          {{#if value.webm}}<source src="{{value.webm}}" type='video/webm'/>{{/if}}
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser
             that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
