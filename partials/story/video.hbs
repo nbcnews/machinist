@@ -28,10 +28,13 @@
             {{#ifEqual value.type 'element'}}{{else}}data-setup='{}'{{/ifEqual}}>
           {{#if value.mp4}}<source src="{{value.mp4}}" type='video/mp4'/>{{/if}}
           {{#if value.webm}}<source src="{{value.webm}}" type='video/webm'/>{{/if}}
-          <p class="vjs-no-js">
+          {{#ifEqual value.type 'element'}}
+          {{else}}
+            <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser
             that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
           </p>
+          {{/ifEqual}}
         </video>
       {{#if value.ratio}}</div>{{/if}}
   </div>
