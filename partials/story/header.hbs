@@ -9,8 +9,8 @@
   {{/if}}
   {{#if mainArtVideo}}
     <video id="js-story-header-bg" playsinline class="story-header__bg" {{#if mainArtVideo.autoplay}}autoplay{{/if}} {{#if mainArtVideo.loop}}loop{{/if}}  muted preload="auto" poster="{{mainArtVideo.thumbnail}}">
-      <source src="{{mainArtVideo.mp4}}" type="video/mp4"/>
-      <source src="{{mainArtVideo.webm}}" type="video/webm"/>
+      {{#if mainArtVideo.mp4}}<source src="{{mainArtVideo.mp4}}" type="video/mp4"/>{{/if}}
+      {{#if mainArtVideo.webm}}<source src="{{mainArtVideo.webm}}" type="video/webm"/>{{/if}}
       <img src="{{mainArtVideo.thumbnail}}" title="Your browser does not support the video tag" alt="{{mainArtVideo.alt}}"/>
     </video>
   {{/if}}
