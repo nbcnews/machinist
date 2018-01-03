@@ -5,8 +5,6 @@ const log = require('log-utils')
 const assertClean = require('git-assert-clean')
 const prompt = require('gulp-prompt')
 
-const SIM = false
-
 // AWS config for publishing generated story
 // TODO: only use env vars for secret keys
 const awsConfig = {
@@ -44,7 +42,6 @@ function checkProjectInitDate (config) {
 // Excludes Adobe Illustrator Files, HTML and JSX which are related to the ai2html workflow
 function publish (config) {
   return function () {
-    const initDate = config.projectInitDate
     const publisherStory = awspublish.create({
       region: awsConfig.region,
       params: {Bucket: awsConfig.bucketName},
@@ -72,8 +69,7 @@ function publish (config) {
       .pipe(rename(function (path) {
         path.dirname = config.objectsLocation + path.dirname
       }))
-      .pipe(publisherStory.publish({}, {simulate: SIM}))
-      .pipe(publisherStory.sync(`machinist/dist/${initDate.year}/${initDate.month}/${config.projectSlug}`))
+      .pipe(publisherStory.publish({}, {simulate: false, createOnly: false}))
       .pipe(awspublish.reporter(''))
       .on('finish', function () {
         log.ok(`Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}${config.objectsLocation}`)
