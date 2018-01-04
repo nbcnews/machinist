@@ -2,6 +2,8 @@
 
 # Machinist - {{projectName}}
 
+*If making content edits is your priority look at [./CONTRIBUTING.md](CONTRIBUTING.md)*
+
 An opinionated boilerplate for storytelling.
 
 - [Metalsmith](http://www.metalsmith.io/)
@@ -36,7 +38,7 @@ An opinionated boilerplate for storytelling.
 
 ### 1. Clone
 
-```
+```sh
 $ git clone https://github.com/nbcnews/machinist.git
 ```
 
