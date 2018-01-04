@@ -2,6 +2,7 @@ metadata:
   hiddenPublish: false # Publish property set to embed.json
   pageTitle: Testing Page Title  # SEO Page Title
   description: Testing description # SEO Description
+  keywords: nbc news, specials, reporting # SEO keywords
   ogTitle: Testing og title # OpenGraph Title used by Facebook
   ogDescription: Testing og description # OpenGraph Description Facebook
   ogType: article
