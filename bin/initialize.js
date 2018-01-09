@@ -45,7 +45,8 @@ function projectInit (program) {
   })
 
   // copy core files
-  copy.core()
+  copy.mainFolders()
+  copy.mainFiles()
 
   // copy other files
   copy.assets()

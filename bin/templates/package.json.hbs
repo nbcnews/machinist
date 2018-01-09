@@ -15,7 +15,7 @@
     "paper-ingest": "node ./lib/dropboxpaperjson.js",
     "debug": "BUILD_DEBUG=true BUILD=development npm start",
     "dev": "BUILD=development npm start",
-    "build": "gulp rewriteAssetPath && gulp md5Assets && BUILD=production npm start && gulp copyAssets && gulp combineJson && npm run secure-check",
+    "build": "BUILD=production npm start",
     "stage": "BUILD=stage npm start",
     "format": "eslint \"src/scripts/**\" \"lib/**\" --fix && stylelint \"src/styles/**/*.scss\" --fix",
     "s3": "gulp publish-dist-s3",
