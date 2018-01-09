@@ -5,6 +5,7 @@ const fs = require('fs')
 const exists = fs.existsSync
 const program = require('commander')
 const hbs = require('handlebars')
+const copy = require('./copyFiles')
 console.log('## DEBUG dirname:', __dirname)
 
 const templatePath = `${__dirname}/templates/`
@@ -76,3 +77,5 @@ outputFiles.forEach(function (file) {
     console.log('TODO: copy to root')
   }
 })
+
+copy.assets()
