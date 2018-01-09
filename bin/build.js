@@ -28,8 +28,10 @@ const pkg = require('../package.json')
 const buildTasks = require('../gulp-tasks/build')
 
 module.exports = () => {
+  const cwd = path.join('.')
   const configFile = path.join(__dirname, '../config.yml')
   console.log('## DEBUG - config:', configFile)
+  console.log('## DEBUG - cwd:', cwd, process.cwd())
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
   const webpackConfig = require('../webpack.cli-config.js')(config)
   console.log('## DEBUG - projectName:', config.projectName, 'BUILD:', process.env.BUILD)
