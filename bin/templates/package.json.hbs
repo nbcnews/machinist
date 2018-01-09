@@ -1,14 +1,15 @@
 {
   "name": "machinist-{{projectName}}",
-  "version": "0.1.3",
-  "description": "A boilerplate for a Metalsmith static site.",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A machinist project",
   "main": "index.js",
   "scripts": {
     "machinist": "machinist",
+    "machinist:dev": "machinist dev",
     "secure-check": "node bin/secureCheck",
     "setup": "node bin/machinist",
     "presetup": "npm install",
-    "git-init": "rm -rf .git && git init",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "doc-ingest": "node ./lib/googledocjson.js && node ./lib/dropboxpaperjson.js",
@@ -25,25 +26,8 @@
     "lint": "npm run script-lint && npm run style-lint && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
     "precommit": "lint-staged"
   },
-  "bin": {
-    "machinist": "bin/machinist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nbcnews/machinist.git"
-  },
-  "keywords": [
-    "metalsmith",
-    "boilerplate",
-    "static",
-    "site"
-  ],
   "author": "Ian Rose",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nbcnews/machinist/issues"
-  },
-  "homepage": "https://github.com/nbcnews/machinist#readme",
   "lint-staged": {
     "*.scss": "style-lint",
     "*.js": "script-lint"

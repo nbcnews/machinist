@@ -1,28 +1,17 @@
 #!/usr/bin/env node
-const fs = require('fs')
-// const path = require('path')
-// const join = require('path').join
-const exists = fs.existsSync
 const program = require('commander')
-const hbs = require('handlebars')
-const copy = require('./copyFiles')
-console.log('## DEBUG dirname:', __dirname)
+const init = require('./initialize')
 
-const templatePath = `${__dirname}/templates/`
-var outputFiles = [
-  `package.json`,
-  `config.yml`,
-  `README.md`
-]
+console.log('## DEBUG dirname:', __dirname)
 
 /** Usage */
 
 program
-  .option('-p, --project <project>', 'the name (slug) of project')
-  .usage('<project> [month, year]')
+  .option('-i, --init <project>', 'the name (slug) of project')
+  .parse(process.argv)
+//  .usage('<project> [month, year]')
 
 /** Help **/
-
 program.on('--help', function () {
   console.log('  Examples:')
   console.log()
@@ -31,51 +20,16 @@ program.on('--help', function () {
   console.log()
 })
 
-program.parse(process.argv)
-if (program.args.length < 1) {
+console.log('## DEBUG program.args:', program.args)
+if (program.args[0] === '?') {
   program.help()
 }
 
-/** Padding **/
+// commands
 
-console.log()
-process.on('exit', function () {
-  console.log('.........')
-})
-
-/** Settings **/
-
-const projectName = program.args[0]
-let month = program.args[1] || new Date().getMonth() + 1
-
-if (month.toString().length === 1) {
-  month = '0' + month
+if (program.init) {
+  init.project(program)
 }
 
-const year = program.args[2] || new Date().getYear() + 1900
-const data = { projectName, month, year }
-
-console.log('## DEBUG data:', data)
-
-/** Modify files */
-
-function compileTemplate (data, source) {
-  const template = hbs.compile(source)
-  return template(data)
-}
-
-outputFiles.forEach(function (file) {
-  const srcFile = `${templatePath}${file}.hbs`
-  if (exists(srcFile)) {
-    console.log('found:', srcFile)
-    const fileText = fs.readFileSync(srcFile, 'utf8')
-    const compiled = compileTemplate(data, fileText)
-    fs.writeFileSync(file, compiled)
-    console.log(file, '...generated')
-  } else {
-    console.log(`template: ${srcFile} not found`)
-    console.log('TODO: copy to root')
-  }
-})
-
-copy.assets()
+/** completion msg **/
+process.on('exit', () => console.log('\n....machinist complete....\n'))
