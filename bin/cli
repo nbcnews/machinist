@@ -40,8 +40,6 @@ if (program.args.length < 1) {
 console.log()
 process.on('exit', function () {
   console.log('.........')
-  console.log('To init a fresh project: npm run git-init')
-  console.log('.........')
 })
 
 /** Settings **/
