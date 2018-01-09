@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander')
 const init = require('./initialize')
+const build = require('./build')
 
 console.log('## DEBUG dirname:', __dirname)
 
@@ -8,6 +9,7 @@ console.log('## DEBUG dirname:', __dirname)
 
 program
   .option('-i, --init <project>', 'the name (slug) of project')
+  .option('-b, --build', 'build the project')
   .parse(process.argv)
 //  .usage('<project> [month, year]')
 
@@ -26,9 +28,12 @@ if (program.args[0] === '?') {
 }
 
 // commands
-
 if (program.init) {
   init.project(program)
+}
+
+if (program.build) {
+  build()
 }
 
 /** completion msg **/

@@ -9,7 +9,7 @@
     "secure-check": "node bin/secureCheck",
     "presetup": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/build.js",
+    "start": "machinist --build",
     "doc-ingest": "npm run googledoc-ingest && npm run paper-ingest",
     "googledoc-ingest": "node ./lib/googledocjson.js",
     "paper-ingest": "node ./lib/dropboxpaperjson.js",
