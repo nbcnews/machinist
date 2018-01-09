@@ -26,7 +26,7 @@ const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
 const pkg = require('../package.json')
 const buildTasks = require('../gulp-tasks/build')
-const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'))
+const config = yaml.safeLoad(fs.readFileSync('../config.yml', 'utf8'))
 const webpackConfig = require('../webpack.cli-config.js')(config)
 
 module.exports = () => {
