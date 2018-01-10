@@ -5,9 +5,10 @@ const exists = fs.existsSync
 
 const templatePath = `${__dirname}/templates/`
 var outputFiles = [
-  `package.json`,
-  `config.yml`,
-  `README.md`
+  '.gitignore',
+  'package.json',
+  'config.yml',
+  'README.md'
 ]
 
 function projectInit (program) {

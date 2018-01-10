@@ -28,12 +28,12 @@ const pkg = require('../package.json')
 const buildTasks = require('../gulp-tasks/build')
 
 module.exports = () => {
-  const cwd = path.join('.')
-  const configFile = path.join(__dirname, '../config.yml')
+  const cwd = process.cwd()
+  const configFile = path.join(cwd, 'config.yml')
+  console.log('## DEBUG - cwd:', cwd)
   console.log('## DEBUG - config:', configFile)
-  console.log('## DEBUG - cwd:', cwd, process.cwd())
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
-  const webpackConfig = require('../webpack.cli-config.js')(config)
+  const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))(config)
   console.log('## DEBUG - projectName:', config.projectName, 'BUILD:', process.env.BUILD)
 
   // gulp rewriteAssetPath
@@ -90,13 +90,13 @@ module.exports = () => {
   // config.repository = pkg.repository.url
   config.devBuild = (BUILD === 'development')
   config.debugMode = (BUILD_DEBUG)
-  config.dest = `./${config.dest}/`
-  config.src = `./${config.src}/`
+  config.dest = `${cwd}/${config.dest}/`
+  config.src = `${cwd}/${config.src}/`
   config.buildDate = UTCDate
 
   // Adds metadata from files
   const data = {}
-  const globalsDir = path.join(__dirname, '../src/data/globals/')
+  const globalsDir = path.join(cwd, 'src/data/globals/')
   if (fs.existsSync(globalsDir)) {
     console.log('## DEBUG - globals/', globalsDir)
     const dataFiles = fs.readdirSync(globalsDir)
@@ -104,23 +104,27 @@ module.exports = () => {
       data[filename.split('.')[0]] = `data/globals/${filename}`
     })
   } else {
-    console.log('## DEBUG - globals/', globalsDir, 'not found')
+    console.log('## DEBUG - globals/', globalsDir, 'NOT found')
   }
 
-  let ms = Metalsmith(path.join(__dirname, '../')) // move to root
+  const msRoot = path.join(cwd, './')
+  console.log('## DEBUG - msRoot:', msRoot)
+  let ms = Metalsmith(msRoot) // move to root
 
   if (config.debugMode) {
     debugUi.patch(ms) // http://localhost:3000/debug-ui/index.html
   }
 
   // Metalsmith Build
+  console.log('##DEBUG - src/dest:', config.src, config.dest)
   ms.source(config.src)
     .destination(config.dest)
     .metadata(config)
     .use(globaldata(data))
     .use(models({
-      directory: `${config.src}data/models`
+      directory: `${config.src}/data/models`
     }))
+
   if (config.collections) {
     ms.use(collections(config.collections))
   }

@@ -24,9 +24,12 @@ module.exports.mainFolders = () => {
 
 module.exports.mainFiles = () => {
   const files = [
-    'webpack.cli-config.js', '.env.example', '.editorconfig', '.eslintrc', '.nvmrc',
-    '.stylelintrc', '.htmlhintrc', '.gitignore'
+    'webpack.cli-config.js', '.env.example', '.editorconfig',
+    '.eslintrc', '.nvmrc', '.stylelintrc', '.htmlhintrc'
   ]
-  gulp.src(files).pipe(gulp.dest('./'))
-  console.log('Copied: ', files, 'to ./')
+  files.forEach(file => {
+    const src = path.join(__dirname, `../${file}`)
+    console.log('Copied: ', src, `to: ${file}`)
+    gulp.src(src).pipe(gulp.dest('.'))
+  })
 }
