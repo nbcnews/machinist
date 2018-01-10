@@ -25,16 +25,17 @@ const raw = require('metalsmith-raw')
 const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
 const pkg = require('../package.json')
+const cwd = process.cwd()
+const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))
 const buildTasks = require('../gulp-tasks/build')
+const BUILD = process.env.BUILD
+const BUILD_DEBUG = process.env.BUILD_DEBUG
 
 module.exports = () => {
   const cwd = process.cwd()
   const configFile = path.join(cwd, 'config.yml')
-  console.log('## DEBUG - cwd:', cwd)
-  console.log('## DEBUG - config:', configFile)
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
-  const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))
-  console.log('## DEBUG - projectName:', config.projectName, 'BUILD:', process.env.BUILD)
+  console.log('## DEBUG - projectName:', config.projectName, 'env.BUILD:', process.env.BUILD)
 
   // gulp rewriteAssetPath
   buildTasks.rewriteAssetPath(config)()
@@ -53,9 +54,6 @@ module.exports = () => {
 
   // start of 'npm start'
   // Set a true or false for production/development. Use to run certain plugins
-
-  const BUILD = process.env.BUILD
-  const BUILD_DEBUG = process.env.BUILD_DEBUG
 
   if (BUILD_DEBUG) {
     process.env.DEBUG = 'metalsmith:*'
@@ -98,25 +96,22 @@ module.exports = () => {
   const data = {}
   const globalsDir = path.join(cwd, 'src/data/globals/')
   if (fs.existsSync(globalsDir)) {
-    console.log('## DEBUG - globals/', globalsDir)
     const dataFiles = fs.readdirSync(globalsDir)
     dataFiles.forEach(function (filename) {
       data[filename.split('.')[0]] = `data/globals/${filename}`
     })
   } else {
-    console.log('## DEBUG - globals/', globalsDir, 'NOT found')
+    // console.log('## DEBUG - globals/', globalsDir, 'NOT found')
   }
 
-  const msRoot = path.join(cwd, './')
-  console.log('## DEBUG - msRoot:', msRoot)
-  let ms = Metalsmith(msRoot) // move to root
+//  const msRoot = path.join(cwd, './')
+  const ms = Metalsmith(__dirname) // move to root
 
   if (config.debugMode) {
     debugUi.patch(ms) // http://localhost:3000/debug-ui/index.html
   }
 
   // Metalsmith Build
-  console.log('##DEBUG - src/dest:', config.src, config.dest)
   ms.source(config.src)
     .destination(config.dest)
     .metadata(config)
