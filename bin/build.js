@@ -33,7 +33,7 @@ module.exports = () => {
   console.log('## DEBUG - cwd:', cwd)
   console.log('## DEBUG - config:', configFile)
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
-  const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))(config)
+  const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))
   console.log('## DEBUG - projectName:', config.projectName, 'BUILD:', process.env.BUILD)
 
   // gulp rewriteAssetPath
@@ -146,7 +146,7 @@ module.exports = () => {
     .use(filedata({
       pattern: ['styles/*.css']
     }))
-    .use(webpack(webpackConfig))
+    .use(webpack(webpackConfig(config)))
     .use(fingerprint({
       pattern: 'styles/main.css',
       keep: true
