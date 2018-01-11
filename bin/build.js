@@ -1,5 +1,3 @@
-require('dotenv').config()
-const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
 const Metalsmith = require('metalsmith')
@@ -24,19 +22,11 @@ const writemetadata = require('metalsmith-writemetadata')
 const raw = require('metalsmith-raw')
 const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
-const pkg = require('../package.json')
 const cwd = process.cwd()
 const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))
 const buildTasks = require('../gulp-tasks/build')
-const BUILD = process.env.BUILD
-const BUILD_DEBUG = process.env.BUILD_DEBUG
 
-module.exports = () => {
-  const cwd = process.cwd()
-  const configFile = path.join(cwd, 'config.yml')
-  const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
-  console.log('## DEBUG - projectName:', config.projectName, 'env.BUILD:', process.env.BUILD)
-
+module.exports = (config) => {
   // gulp rewriteAssetPath
   buildTasks.rewriteAssetPath(config)()
   // && gulp md5Assets
@@ -52,46 +42,6 @@ module.exports = () => {
     // TODO: npm run secure-check
   }
 
-  // start of 'npm start'
-  // Set a true or false for production/development. Use to run certain plugins
-
-  if (BUILD_DEBUG) {
-    process.env.DEBUG = 'metalsmith:*'
-  }
-
-  // Global Configuration
-  const awsConfig = {
-    bucketName: process.env.BUCKET_NAME,
-    region: process.env.AWS_DEFAULT_REGION
-  }
-
-  const yearString = config.projectInitDate.year
-  const monthString = config.projectInitDate.month
-  const configProjectNameProp = config.projectName
-  const convertedProjectName = configProjectNameProp.replace(/\s+/g, '-').toLowerCase()
-  const objectsLocation = `machinist/dist/${yearString}/${monthString}/${convertedProjectName}/`
-  const dateNow = new Date()
-  const UTCDate = dateNow.toISOString()
-
-  let assetPath = config.assetPath[BUILD] || '/'
-  if (BUILD === 'production') {
-    if (config.assetPath.domain) {
-      assetPath = `${config.assetPath.domain}/${objectsLocation}`
-    } else if (!config.assetPath.production) {
-      assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
-    }
-  }
-
-  config.assetPath = assetPath
-  config.version = pkg.version
-  config.dependencies = pkg.dependencies
-  // config.repository = pkg.repository.url
-  config.devBuild = (BUILD === 'development')
-  config.debugMode = (BUILD_DEBUG)
-  config.dest = `${cwd}/${config.dest}/`
-  config.src = `${cwd}/${config.src}/`
-  config.buildDate = UTCDate
-
   // Adds metadata from files
   const data = {}
   const globalsDir = path.join(cwd, 'src/data/globals/')
@@ -105,7 +55,7 @@ module.exports = () => {
   }
 
 //  const msRoot = path.join(cwd, './')
-  const ms = Metalsmith(__dirname) // move to root
+  const ms = Metalsmith(cwd) // move to root
 
   if (config.debugMode) {
     debugUi.patch(ms) // http://localhost:3000/debug-ui/index.html
@@ -214,7 +164,7 @@ module.exports = () => {
       console.log(error)
       return
     }
-    console.log((config.devBuild ? 'Development' : 'Production'), 'build success, version', pkg.version)
+    console.log((config.devBuild ? 'Development' : 'Production'), 'build success, version', config.version)
     postBuild()
   })
 }

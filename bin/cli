@@ -1,15 +1,22 @@
 #!/usr/bin/env node
 const program = require('commander')
+const config = require('./config')()
 const init = require('./initialize')
 const build = require('./build')
+const publish = require('./publish')
 
-console.log('## DEBUG dirname:', __dirname)
+let taskName = null
+
+console.log('## DEBUG - projectName:', config.projectName, 'env.BUILD:', process.env.BUILD)
+console.log('## DEBUG - dirname:', __dirname)
+console.log('## DEBUG - cwd:', process.cwd())
+console.log('## DEBUG - devBuild:', config.devBuild)
 
 /** Usage */
-
 program
   .option('-i, --init <project>', 'the name (slug) of project')
   .option('-b, --build', 'build the project')
+  .option('-p, --publish <type>', 'publish assets|story')
   .parse(process.argv)
 //  .usage('<project> [month, year]')
 
@@ -18,23 +25,31 @@ program.on('--help', function () {
   console.log('  Examples:')
   console.log()
   console.log('    # create a new project from template, with optional month and year setting.')
-  console.log('    $ machinist my-project-name 7 2017')
+  console.log('    $ machinist -i my-project-name 7 2017')
   console.log()
 })
 
-console.log('## DEBUG program.args:', program.args)
+console.log('## DEBUG - program.args:', program.args)
 if (program.args[0] === '?') {
+  taskName = 'help'
   program.help()
 }
 
 // commands
 if (program.init) {
+  taskName = 'initialize'
   init.project(program)
 }
 
 if (program.build) {
-  build()
+  taskName = 'build'
+  build(config)
+}
+
+if (program.publish) {
+  taskName = 'publish'
+  publish.assets(config)
 }
 
 /** completion msg **/
-process.on('exit', () => console.log('\n....machinist complete....\n'))
+process.on('exit', () => console.log('\n....machinist', taskName, 'complete....\n'))
