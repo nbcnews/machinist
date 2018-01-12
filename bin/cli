@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 const program = require('commander')
-const config = require('./config')()
+const getConfig = require('./config')
 const init = require('./initialize')
 const build = require('./build')
 const publish = require('./publish')
 
-let taskName = null
+let config = {} // only used for build & publish
+let cmdName = null
 
-console.log('## DEBUG - projectName:', config.projectName, 'env.BUILD:', process.env.BUILD)
 console.log('## DEBUG - dirname:', __dirname)
 console.log('## DEBUG - cwd:', process.cwd())
-console.log('## DEBUG - devBuild:', config.devBuild)
 
 /** Usage */
 program
@@ -31,25 +30,34 @@ program.on('--help', function () {
 
 console.log('## DEBUG - program.args:', program.args)
 if (program.args[0] === '?') {
-  taskName = 'help'
+  cmdName = 'help'
   program.help()
 }
 
-// commands
+// commands: init, build & publish
 if (program.init) {
-  taskName = 'initialize'
+  cmdName = 'initialize'
+  console.log(`## DEBUG - ${cmdName} ${program.init}`)
   init.project(program)
 }
 
-if (program.build) {
-  taskName = 'build'
-  build(config)
+if (program.build || program.publish) {
+  config = getConfig()
+  cmdName = (program.build) ? 'build' : 'publish-' + program.publish
+  console.log(`
+  ### DEBUG - ${cmdName}
+          projectName: ${config.projectName}
+          env.BUILD: ${process.env.BUILD}
+          devBuild:  ${config.devBuild}
+  `)
+  if (program.build) {
+    build(config)
+  }
+
+  if (program.publish) {
+    publish.story(config)
+  }
 }
 
-if (program.publish) {
-  taskName = `publish-${program.publish}`
-  publish.story(config)
-}
-
-/** completion msg **/
-process.on('exit', () => console.log('\n....machinist', taskName, 'complete....\n'))
+/** exit msg **/
+process.on('exit', () => console.log('\n....machinist', cmdName, 'exited process....\n'))
