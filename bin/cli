@@ -47,8 +47,8 @@ if (program.build) {
 }
 
 if (program.publish) {
-  taskName = 'publish'
-  publish.assets(config)
+  taskName = `publish-${program.publish}`
+  publish.story(config)
 }
 
 /** completion msg **/
