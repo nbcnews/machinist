@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander')
-const getConfig = require('./config')
 const init = require('./initialize')
-const build = require('./build')
-const publish = require('./publish')
 
-let config = {} // only used for build & publish
 let cmdName = null
 
 console.log('## DEBUG - dirname:', __dirname)
@@ -42,7 +38,10 @@ if (program.init) {
 }
 
 if (program.build || program.publish) {
-  config = getConfig()
+  // require config, build & publish dependencies
+  const config = require('./config')()
+  const build = require('./build')
+  const publish = require('./publish')
   cmdName = (program.build) ? 'build' : 'publish-' + program.publish
   console.log(`
   ### DEBUG - ${cmdName}

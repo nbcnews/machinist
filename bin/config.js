@@ -1,8 +1,10 @@
 const path = require('path')
 const yaml = require('js-yaml')
 const fs = require('fs')
-
 require('dotenv').config()
+const pkg = require('../package.json')
+const configFile = path.join(process.cwd(), 'config.yml')
+
 const BUILD = process.env.BUILD || 'development'
 const BUILD_DEBUG = process.env.BUILD_DEBUG
 
@@ -11,10 +13,6 @@ if (BUILD_DEBUG) {
 }
 
 module.exports = () => {
-  // must be called after init so files are present
-  const pkg = require('../package.json')
-  const configFile = path.join(process.cwd(), 'config.yml')
-
   console.log('## DEBUG - configFile', configFile)
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
   // Global Configuration
