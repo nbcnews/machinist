@@ -21,7 +21,8 @@
     "publish": "npm run build && npm run s3",
     "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
     "style-lint": "stylelint \"**/*.scss\"",
-    "lint": "npm run script-lint && npm run style-lint && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
+    "htmlhint": "htmlhint **/www/**/*.html --config .htmlhintrc",
+    "lint": "npm run script-lint && npm run style-lint && npm run htmlhint",
     "precommit": "lint-staged"
   },
   "bin": {
@@ -96,7 +97,7 @@
     "gulp-filter": "^5.0.1",
     "gulp-prompt": "^0.2.0",
     "gulp-rename": "^1.2.2",
-    "htmlhint": "^0.9.13",
+    "htmlhint": "^0.9.14",
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
     "log-utils": "^0.2.1",
