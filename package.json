@@ -97,7 +97,7 @@
     "gulp-filter": "^5.0.1",
     "gulp-prompt": "^0.2.0",
     "gulp-rename": "^1.2.2",
-    "htmlhint": "^0.9.14",
+    "htmlhint": "^0.9.13",
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
     "log-utils": "^0.2.1",
