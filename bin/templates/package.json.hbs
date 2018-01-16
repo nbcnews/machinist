@@ -20,7 +20,8 @@
     "publish": "npm run build && BUILD=production machinist -p story",
     "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
     "style-lint": "stylelint \"**/*.scss\"",
-    "lint": "npm run script-lint && npm run style-lint && htmlhint **/*.{hbs,html} --config .htmlhintrc --ignore **/www/**",
+    "htmlhint": "htmlhint **/www/**/*.html --config .htmlhintrc",
+    "lint": "npm run script-lint && npm run style-lint && npm run htmlhint",
     "precommit": "lint-staged"
   },
   "author": "Ian Rose",
