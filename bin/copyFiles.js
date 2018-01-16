@@ -24,8 +24,15 @@ module.exports.mainFolders = () => {
 
 module.exports.mainFiles = () => {
   const files = [
-    'webpack.cli-config.js', '.env.example', '.editorconfig',
-    '.eslintrc', '.nvmrc', '.stylelintrc', '.htmlhintrc'
+    'webpack.cli-config.js',
+    '.gitignore',
+    '.env.example',
+    '.editorconfig',
+    '.eslintrc',
+    '.eslintignore',
+    '.nvmrc',
+    '.stylelintrc',
+    '.htmlhintrc'
   ]
   files.forEach(file => {
     const src = path.join(__dirname, `../${file}`)
