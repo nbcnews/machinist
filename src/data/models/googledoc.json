@@ -57,7 +57,7 @@
 			"value": {
 				"objectClass": "toc",
 				"kicker": "Video Interviews",
-				"code": "<div class=\"toc\"><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char1\" width=\"50\" height=\"50\" /><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char2\" width=\"50\" height=\"50\" /><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char3\" width=\"50\" height=\"50\" />",
+				"code": "<div class=\"toc\"><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char1\" width=\"50\" height=\"50\" /><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char2\" width=\"50\" height=\"50\" /><img src=\"https://nodeassets.nbcnews.com/cdnassets/projects/trump100days_53292032-2000px.jpg\" id=\"char3\" width=\"50\" height=\"50\" /></div>",
 				"style": "hangRight"
 			}
 		},
