@@ -148,7 +148,7 @@ module.exports = (config) => {
   if (config.devBuild) {
     ms.use(browserSync({
       server: config.dest,
-      files: [`${config.src}**/*.*`, 'layouts/*.*', 'partials/**/*.*', './config.yml', 'assets/**/*.*'],
+      files: [`${config.src}/**/*.*`, 'layouts/*.*', 'partials/**/*.*', './config.yml', 'assets/**/*.*'],
       open: false,
       notify: false,
       online: true
