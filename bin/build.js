@@ -25,10 +25,11 @@ const fingerprint = require('metalsmith-fingerprint-ignore')
 const cwd = process.cwd()
 const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))
 const buildTasks = require('../gulp-tasks/build')
+const rewriteAssetPath = require('./rewriteAssetPath')
 
 module.exports = (config) => {
   // gulp rewriteAssetPath
-  buildTasks.rewriteAssetPath(config)()
+  rewriteAssetPath(config)()
   // && gulp md5Assets
   buildTasks.md5Assets()
 
