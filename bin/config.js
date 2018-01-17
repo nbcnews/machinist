@@ -27,10 +27,10 @@ module.exports = () => {
   const convertedProjectName = configProjectNameProp.replace(/\s+/g, '-').toLowerCase()
   const objectsLocation = `machinist/dist/${yearString}/${monthString}/${convertedProjectName}/`
   const dateNow = new Date()
-  const UTCDate = dateNow.toISOString()
-
-  config.devBuild = (BUILD === 'development')
-  config.debugMode = (process.env.BUILD_DEBUG)
+  const buildDate = dateNow.toISOString()
+  const devBuild = (BUILD === 'development')
+  const debugMode = (process.env.BUILD_DEBUG)
+  const { version, dependencies, repository } = pkg
 
   let assetPath = config.assetPath[BUILD] || '/'
   if (BUILD === 'production') {
@@ -41,11 +41,15 @@ module.exports = () => {
     }
   }
 
+  // new config props
+  config.objectsLocation = objectsLocation
   config.assetPath = assetPath
-  config.version = pkg.version
-  config.dependencies = pkg.dependencies
-  config.repository = pkg.repository.url
-  config.buildDate = UTCDate
+  config.version = version
+  config.dependencies = dependencies
+  config.devBuild = devBuild
+  config.debugMode = debugMode
+  config.buildDate = buildDate
+  config.repository = repository.url
 
   return config
 }
