@@ -29,6 +29,7 @@ module.exports = () => {
 
   // calcuated config props
   config.objectsLocation = objectsLocation
+  config.projectSlug = convertedProjectName
   config.version = version
   config.dependencies = dependencies
   config.devBuild = devBuild
