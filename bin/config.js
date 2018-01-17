@@ -15,11 +15,6 @@ if (BUILD_DEBUG) {
 module.exports = () => {
   console.log('## DEBUG - configFile', configFile)
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
-  // Global Configuration
-  const awsConfig = {
-    bucketName: process.env.BUCKET_NAME,
-    region: process.env.AWS_DEFAULT_REGION
-  }
 
   const yearString = config.projectInitDate.year
   const monthString = config.projectInitDate.month
@@ -32,18 +27,8 @@ module.exports = () => {
   const debugMode = (process.env.BUILD_DEBUG)
   const { version, dependencies, repository } = pkg
 
-  let assetPath = config.assetPath[BUILD] || '/'
-  if (BUILD === 'production') {
-    if (config.assetPath.domain) {
-      assetPath = `${config.assetPath.domain}/${objectsLocation}`
-    } else if (!config.assetPath.production) {
-      assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
-    }
-  }
-
-  // new config props
+  // calcuated config props
   config.objectsLocation = objectsLocation
-  config.assetPath = assetPath
   config.version = version
   config.dependencies = dependencies
   config.devBuild = devBuild
