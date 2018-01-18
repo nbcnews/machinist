@@ -49,18 +49,6 @@ $grey: #737373;
 $light-grey: #bdbdbd;
 $lighter-grey: #f0f0f0;
 
-$dark-red: #a50026;
-$red: #d73027;
-$dark-orange: #f46d43;
-$orange: #fdae61;
-$dark-yellow: #fee090;
-$yellow: #ffffbf;
-$lightest-blue: #e0f3f8;
-$lighter-blue: #abd9e9;
-$light-blue: #74add1;
-$blue: #4575b4;
-$dark-blue: #313695;
-
 $background-color: #fff;
 
 $highlight-color: #ffebc0;
@@ -85,11 +73,3 @@ $screen-md-max: ($screen-lg-min - 1px);
 // Layout Settings
 $column-width: 640px;
 $gutter: $base-vertical-unit * 2;
-
-// Site Header
-$site-header-height: 1px;
-
-// Progress
-$bar-height: 5px;
-$bar-background: $grey;
-$bar-color: $lighter-grey;
