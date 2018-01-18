@@ -50,11 +50,11 @@ const objectsLocation = `machinist/dist/${yearString}/${monthString}/${converted
 const dateNow = new Date()
 const UTCDate = dateNow.toISOString()
 
-let assetPath = config.assetPath[BUILD] || '/'
+let assetPath = config.assets[BUILD] || '/'
 if (BUILD === 'production') {
-  if (config.assetPath.domain) {
-    assetPath = `${config.assetPath.domain}/${objectsLocation}`
-  } else if (!config.assetPath.production) {
+  if (config.assets.domain) {
+    assetPath = `${config.assets.domain}/${objectsLocation}`
+  } else if (!config.assets.production) {
     assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
   }
 }

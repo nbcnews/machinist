@@ -33,11 +33,11 @@ module.exports = () => {
   const { version, dependencies, repository } = pkg
 
   // determine assetPath
-  let assetPath = config.cdn[BUILD] || '/'
+  let assetPath = config.assets[BUILD] || '/'
   if (BUILD === 'production') {
-    if (config.cdn.domain) {
-      assetPath = `${config.cdn.domain}/${objectsLocation}`
-    } else if (!config.cdn.production) {
+    if (config.assets.domain) {
+      assetPath = `${config.assets.domain}/${objectsLocation}`
+    } else if (!config.assets.production) {
       assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
     }
   }

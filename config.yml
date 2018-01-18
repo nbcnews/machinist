@@ -21,7 +21,7 @@ robotsDisallow: true # Allow robots from visit any page(s) on the site
 dest: www # Metalsmith output directory
 src: src # Metalsmith source directory
 projectName: '{{projectName}}'
-assetPath:
+assets:
   domain: https://static-projects.nbcnews.com
   development: /
   stage: /
