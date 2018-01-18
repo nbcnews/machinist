@@ -21,7 +21,7 @@ function rewriteAssetPath (config) {
   return function () {
     gulp.src('./assets/*.html')
       .pipe(inlineImagePath({
-        path: `${config.assetPath.domain}/machinist/dist/${config.projectInitDate.year}/${config.projectInitDate.month}/${config.projectSlug}`
+        path: `${config.assets.domain}/machinist/dist/${config.projectInitDate.year}/${config.projectInitDate.month}/${config.projectSlug}`
       }))
       .pipe(gulp.dest('.tmp/assets'))
   }

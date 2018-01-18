@@ -1,0 +1,63 @@
+{
+  "name": "machinist-{{projectName}}",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A machinist project",
+  "main": "index.js",
+  "scripts": {
+    "machinist": "machinist",
+    "secure-check": "node bin/secureCheck",
+    "presetup": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "machinist --build",
+    "doc-ingest": "npm run googledoc-ingest && npm run paper-ingest",
+    "googledoc-ingest": "node ./lib/googledocjson.js",
+    "paper-ingest": "node ./lib/dropboxpaperjson.js",
+    "debug": "BUILD_DEBUG=true BUILD=development npm start",
+    "dev": "BUILD=development npm start",
+    "build": "BUILD=production npm start",
+    "stage": "BUILD=stage npm start",
+    "publish": "npm run build && BUILD=production machinist -p story",
+    "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
+    "style-lint": "stylelint \"**/*.scss\"",
+    "htmlhint": "htmlhint **/www/**/*.html --config .htmlhintrc",
+    "lint": "npm run script-lint && npm run style-lint && npm run htmlhint",
+    "precommit": "lint-staged"
+  },
+  "author": "Ian Rose",
+  "license": "MIT",
+  "lint-staged": {
+    "*.scss": "style-lint",
+    "*.js": "script-lint"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "commander": "2.10.0",
+    "googledoc-to-json": "^0.3.0",
+    "handlebars": "^4.0.5",
+    "handlebars-helpers": "^0.7.5",
+    "js-yaml": "^3.10.0",
+    "moment": "^2.18.1",
+    "paper2json": "^0.2.2",
+    "typesettings": "^4.0.0",
+    "typogr": "^0.6.6"
+  },
+  "devDependencies": {
+    "coffee-loader": "^0.7.3",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.19.0",
+    "git-assert-clean": "^1.0.0",
+    "htmlhint": "^0.9.13",
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "log-utils": "^0.2.1",
+    "machinist": "git+https://github.com/nbcnews/machinist.git#scaffold",
+    "standard": "^10.0.2",
+    "stylelint": "^7.12.0",
+    "stylelint-config-standard": "^16.0.0"
+  }
+}
