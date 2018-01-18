@@ -1,4 +1,4 @@
-<div id="m-{{plusOne @index}}" class="js-episode-material-wrapper episode__material-wrapper">
+<div id="m-{{add @index 1}}" class="js-episode-material-wrapper episode__material-wrapper">
   <ul class="js-episode-material-list episode__material">
     {{#each value.material}}
       {{#ifEqual type 'pdf'}}
