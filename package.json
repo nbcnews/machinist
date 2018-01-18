@@ -1,6 +1,6 @@
 {
   "name": "machinist",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "A boilerplate for a Metalsmith static site.",
   "main": "index.js",
   "scripts": {
