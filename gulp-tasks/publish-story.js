@@ -58,7 +58,7 @@ function publish (config) {
       .pipe(prompt.prompt({
         type: 'input',
         name: 'flag',
-        message: 'Updating story data on production, to proceed, enter flag:'
+        message: `Updating: (${awsConfig.bucketName}/${config.objectsLocation}), to proceed, enter flag:`
       }, function (res) {
         if (res.flag !== '--production') {
           console.log('Exiting publish of remoteData.json')
@@ -72,7 +72,7 @@ function publish (config) {
       .pipe(publisherStory.publish({}, {simulate: false, createOnly: false}))
       .pipe(awspublish.reporter(''))
       .on('finish', function () {
-        log.ok(`Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}${config.objectsLocation}`)
+        log.ok(`Published to: http://s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${config.objectsLocation}`)
       })
   }
 }
