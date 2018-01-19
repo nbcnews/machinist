@@ -18,6 +18,7 @@
     "build": "BUILD=production npm start",
     "stage": "BUILD=stage npm start",
     "publish": "npm run build && BUILD=production machinist -p story",
+    "publish:cdn": "machinist -p assets",
     "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
     "style-lint": "stylelint \"**/*.scss\"",
     "htmlhint": "htmlhint **/www/**/*.html --config .htmlhintrc",
