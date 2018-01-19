@@ -54,7 +54,12 @@ if (program.build || program.publish) {
   }
 
   if (program.publish) {
-    publish.story(config)
+    if (program.publish === 'story') {
+      publish.story(config)
+    }
+    if (program.publish === 'assets') {
+      publish.assets(config)
+    }
   }
 }
 
