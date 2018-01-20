@@ -1,19 +1,19 @@
 metadata:
   hiddenPublish: false # Publish property set to embed.json
-  pageTitle: Testing Page Title  # SEO Page Title
-  description: Testing description # SEO Description
+  pageTitle: Page Title # SEO Page Title
+  description: NBC News Special Coverage # SEO Description
   keywords: nbc news, specials, reporting # SEO keywords
-  ogTitle: Testing og title # OpenGraph Title used by Facebook
-  ogDescription: Testing og description # OpenGraph Description Facebook
-  ogType: article
+  ogTitle: Specials # OpenGraph Title used by Facebook
+  ogDescription: NBC News Special Coverage # OpenGraph Description used by Facebook
+  ogType: article #OpenGraph content type used by Facebook
   twitterCard: summary_large_image # https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
-  twitterTitle: Testing twitter title
-  twitterDescription: Testing twitter description
+  twitterTitle: Specials
+  twitterDescription: NBC News Special Coverage
   twitterText: # Message for twitter, gets combined with canonical URL and property handle
   overrideTwitterText: # When sharing via buttons, overrides the generated tweet and takes this field verbatim
   overrideEmailSubject: # When sharing via buttons, overrides the generated subject line and takes this field verbatim
   overrideEmailBody: # When sharing via buttons, overrides the generated body field and takes this field verbatim
-  socialImage: https://nodeassets.nbcnews.com/cdnassets/projects/2017/10/deal-island/170625-Deal-Island-Brecher-09-840px.jpg # URL to Image assets ideally 1200x630
+  socialImage: https://nodeassets.nbcnews.com/cdnassets/projects/bw-nbc-logo-300x200.gif # URL to Image assets ideally is 1200x630 for large summary
 projectInitDate:
   year: '{{year}}'
   month: '{{month}}'
@@ -36,3 +36,6 @@ scripts: # Add external scripts globally ./partials/scripts.hbs
 # - https://code.jquery.com/jquery-3.2.1.min.js
 # - https://cdnjs.cloudflare.com/ajax/libs/video.js/5.20.1/video.min.js
 collections: false # https://github.com/segmentio/metalsmith-collections
+analytics:
+  google:
+    trackingId: null
