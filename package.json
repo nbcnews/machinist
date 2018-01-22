@@ -17,7 +17,7 @@
     "stage": "BUILD=stage npm start",
     "format": "eslint \"src/scripts/**\" \"lib/**\" --fix && stylelint \"src/styles/**/*.scss\" --fix",
     "s3": "gulp publish-dist-s3",
-    "cdn": "gulp publish-cdnassets",
+    "publish:cdn": "gulp publish-cdnassets",
     "publish": "npm run build && npm run s3",
     "script-lint": "eslint \"src/scripts/**\" \"lib/**\"",
     "style-lint": "stylelint \"**/*.scss\"",

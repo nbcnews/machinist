@@ -39,21 +39,20 @@ An opinionated boilerplate for storytelling.
 ### 1. Clone
 
 ```sh
-$ git clone https://github.com/nbcnews/machinist.git
+git clone https://github.com/nbcnews/machinist.git
 ```
 
 ### 2. Scaffold Project
 
-Setup will run `npm install`. This project manages Node version via [nvm](https://github.com/creationix/nvm).
+Setup will run `npm install`. This project recommends managing Node versions via [nvm](https://github.com/creationix/nvm).
 
 ```sh
-$ nvm use
-$ npm run setup new-project-name
-$ npm run git-init
+nvm use
+npm run setup <new-project-name>
+npm run git-init
 ```
 
-Edit the `./config.yml` as you see fit.
-
+Edit the `./config.yml` as needed.
 
 #### Google Doc Data
 
@@ -139,6 +138,14 @@ Generates your dist be deployed and publishes the dist to s3.
 npm run publish
 ```
 
+## Publish assets
+
+Publish static assets in the `cdnassets` folder, like images, videos and vendor scripts, to the CDN.
+
+```sh
+npm run publish:cdn
+```
+
 ### Lint
 
 Lints your styles, scripts, and markup.
@@ -146,13 +153,6 @@ Lints your styles, scripts, and markup.
 ```sh
 npm run lint
 ```
-
-## CDN
-Resize images for the web and add them to the `cdnassets` file. 
-
-Then run `npm run cdn` to upload those images to S3. 
-
-The response will give you the image slugs to add to the Google Doc.
 
 ### Format
 
