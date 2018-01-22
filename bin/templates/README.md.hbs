@@ -42,25 +42,11 @@ Clone the repo.
 
 ### 2. Install Dependencies
 
-Setup will run `npm install`. This project manages Node version via [nvm](https://github.com/creationix/nvm).
+This project recommends managing Node versions via [nvm](https://github.com/creationix/nvm).
 
 ```sh
 nvm use
 npm install
-```
-
-#### Google Doc Data
-
-Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs. 
-
-Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.json`. 
-
-To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `./env`.
-
-To ingest the latest content from the Google Doc.
-
-```sh
-$ npm run doc-ingest
 ```
 
 #### Dropbox Paper Data
@@ -72,7 +58,21 @@ Get the file ID from the URL. It should look like: `S7sSIlM2E0g6p3OXhhts4`
 To ingest the Dropbox Paper you will need to have access to it. [Generate an access token for your own account](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) and add the token to `./env`.
 
 ```sh
-$ npm run doc-ingest
+npm run doc-ingest
+```
+
+#### Google Doc Data
+
+Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs.
+
+Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.json`.
+
+To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `./env`.
+
+To ingest the latest content from the Google Doc.
+
+```sh
+npm run doc-ingest
 ```
 
 #### Publishing
@@ -135,22 +135,23 @@ npm run publish
 
 ### Lint
 
-Lints your styles, scripts, and markup.
+Lints your styles, scripts, and generted HTML.
 
 ```sh
 npm run lint
 ```
 
-## CDN
-Resize images for the web and add them to the `cdnassets` file. 
+## Publish assets
 
-Then run `npm run cdn` to upload those images to S3. 
+Publish static assets in the `cdnassets` folder, like images and videos, to the CDN
 
-The response will give you the image slugs to add to the Google Doc.
+```sh
+npm run publish:cdn
+```
 
 ### Format
 
-Fix lint errors in your styles and scripts.
+Fix lint auto-fixable errors in your styles and scripts.
 
 ```sh
 npm run format
