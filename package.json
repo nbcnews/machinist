@@ -49,6 +49,7 @@
     "*.js": "script-lint"
   },
   "dependencies": {
+    "async": "^2.6.0",
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -84,19 +85,18 @@
     "metalsmith-mapsite": "^1.0.4",
     "metalsmith-markdown": "^0.2.2",
     "metalsmith-metadata": "0.0.4",
-    "metalsmith-models": "git+https://github.com/ianrose/metalsmith-models.git#handles-no-models",
     "metalsmith-paths": "^3.0.1",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-raw": "^0.2.0",
     "metalsmith-register-helpers": "^0.2.0",
-    "metalsmith-sass": "^1.4.0",
-    "metalsmith-webpack2": "git+https://github.com/ianrose/metalsmith-webpack2.git",
     "metalsmith-with-postcss": "^1.0.0",
     "metalsmith-writemetadata": "^0.4.5",
     "moment": "^2.18.1",
+    "node-sass": "^4.7.2",
     "paper2json": "^0.2.2",
     "typesettings": "^4.0.0",
-    "typogr": "^0.6.6"
+    "typogr": "^0.6.6",
+    "webpack": "^2.7.0"
   },
   "devDependencies": {
     "coffee-loader": "^0.7.3",
