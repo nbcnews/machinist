@@ -1,5 +1,5 @@
 {
-  "name": "machinist",
+  "name": "@nbcnews/machinist",
   "version": "1.0.5",
   "description": "A boilerplate for a Metalsmith static site.",
   "main": "bin/cli",
@@ -70,7 +70,6 @@
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-browser-sync": "^1.1.1",
-    "metalsmith-collections": "petasittek/metalsmith-collections",
     "metalsmith-debug": "^1.1.0",
     "metalsmith-debug-ui": "^0.2.0",
     "metalsmith-drafts": "0.0.1",
@@ -86,12 +85,15 @@
     "metalsmith-raw": "^0.2.0",
     "metalsmith-register-helpers": "^0.2.0",
     "metalsmith-writemetadata": "^0.4.5",
+    "minimatch": "^3.0.4",
     "moment": "^2.18.1",
     "node-sass": "^4.7.2",
     "paper2json": "^0.2.2",
     "postcss": "^6.0.16",
+    "read-metadata": "^1.0.0",
     "typesettings": "^4.0.0",
     "typogr": "^0.6.6",
+    "uniq": "^1.0.1",
     "webpack": "^2.7.0"
   },
   "devDependencies": {
