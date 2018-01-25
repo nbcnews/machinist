@@ -24,7 +24,7 @@ module.exports.mainFolders = () => {
 
 module.exports.mainFiles = () => {
   const files = [
-    'webpack.cli-config.js',
+    'webpack.config.js',
     '.gitignore', // NOTE: won't copy bc npm removes .gitignore files
     '.env.example',
     '.editorconfig',

@@ -24,7 +24,7 @@ const raw = require('metalsmith-raw')
 const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
 const cwd = process.cwd()
-const webpackConfig = require(path.join(cwd, 'webpack.cli-config.js'))
+const webpackConfig = require(path.join(cwd, 'webpack.config.js'))
 const buildTasks = require('../gulp-tasks/build')
 const tasks = require('./tasks')
 
