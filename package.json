@@ -6,7 +6,7 @@
   "scripts": {
     "secure-check": "node bin/secureCheck",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/cli --build",
+    "start": "BUILD=development node bin/cli --build",
     "doc-ingest": "node ./lib/googledocjson.js && node ./lib/dropboxpaperjson.js",
     "debug": "BUILD_DEBUG=true BUILD=development npm start",
     "dev": "BUILD=development npm start",
