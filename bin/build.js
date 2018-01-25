@@ -12,6 +12,7 @@ const sass = require('./metalsmith/sass')
 const inplace = require('metalsmith-in-place')
 const debug = require('metalsmith-debug')
 const helpers = require('metalsmith-register-helpers')
+const discoverPartials = require('metalsmith-discover-partials')
 const postcss = require('./metalsmith/postcss')
 const paths = require('metalsmith-paths')
 const drafts = require('metalsmith-drafts')
@@ -112,10 +113,12 @@ module.exports = (config) => {
       tables: true,
       langPrefix: 'language-'
     }))
+    .use(discoverPartials({
+      directory: 'partials',
+      pattern: /\.hbs$/
+    }))
     .use(layouts({
-      engine: 'handlebars',
       directory: 'layouts',
-      partials: 'partials',
       default: 'story.hbs',
       pattern: '**/*.html'
     }))
