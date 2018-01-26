@@ -15,17 +15,16 @@ metadata:
   overrideEmailBody: # When sharing via buttons, overrides the generated body field and takes this field verbatim
   socialImage: https://nodeassets.nbcnews.com/cdnassets/projects/bw-nbc-logo-300x200.gif # URL to Image assets ideally is 1200x630 for large summary
 projectInitDate:
-  year: '{{year}}'
-  month: '{{month}}'
+  year: '{{year}}' # This was generated
+  month: '{{month}}' # This was generated
 robotsDisallow: true # Allow robots from visit any page(s) on the site
 dest: www # Metalsmith output directory
 src: src # Metalsmith source directory
-projectName: '{{projectName}}'
+projectName: '{{projectName}}' # This was generated
 assets:
-  domain: https://static-projects.nbcnews.com
-  development: /
-  stage: /
-  production:
+  domain: https://static-projects.nbcnews.com # Domain that assets need to live. For relative paths set to null.
+  development: / # Assets path for development
+  production: # Assets path for produciton
 googleDocJson:
   fileId: null # Google Doc ID ex. 1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY
   output: ./src/data/models/googledoc.json # Where the resulting JSON is saved via ./lib/googledocjson.js
