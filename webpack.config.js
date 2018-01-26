@@ -3,14 +3,14 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin.js')
 
 module.exports = function (config) {
   return {
-    context: path.resolve(__dirname, config.src + 'scripts/'),
+    context: path.resolve(__dirname, `${config.src}/scripts`),
     entry: {
       main: './main.js',
       dataviz: './dataviz.js'
     },
     devtool: config.devBuild ? 'eval-source-map' : false,
     output: {
-      path: path.resolve(__dirname, config.dest + 'scripts/'),
+      path: path.resolve(__dirname, `${config.dest}/scripts`),
       filename: config.devBuild ? '[name].bundle.js' : '[name].[hash].bundle.js'
     },
     module: {
