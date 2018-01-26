@@ -25,7 +25,7 @@ const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
 const cwd = process.cwd()
 const webpackConfig = require(path.join(cwd, 'webpack.config.js'))
-const buildTasks = require('../gulp-tasks/build')
+const buildTasks = require('./gulp-tasks/build')
 const tasks = require('./tasks')
 
 module.exports = (config) => {
@@ -52,11 +52,8 @@ module.exports = (config) => {
     dataFiles.forEach(function (filename) {
       data[filename.split('.')[0]] = `data/globals/${filename}`
     })
-  } else {
-    // console.log('## DEBUG - globals/', globalsDir, 'NOT found')
   }
 
-//  const msRoot = path.join(cwd, './')
   const ms = Metalsmith(cwd) // move to root
 
   if (config.debugMode) {

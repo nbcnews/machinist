@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 const program = require('commander')
 const init = require('./initialize')
+const debug = require('debug')('machinist:cli')
 
 let cmdName = null
 
-console.log('## DEBUG - dirname:', __dirname)
-console.log('## DEBUG - cwd:', process.cwd())
+debug('dirname:', __dirname)
+debug('cwd:', process.cwd())
 
 /** Usage */
 program
@@ -24,7 +25,7 @@ program.on('--help', function () {
   console.log()
 })
 
-console.log('## DEBUG - program.args:', program.args)
+debug('program.args:', program.args)
 if (program.args[0] === '?') {
   cmdName = 'help'
   program.help()
@@ -43,11 +44,10 @@ if (program.build || program.publish) {
   const build = require('./build')
   const publish = require('./publish')
   cmdName = (program.build) ? 'build' : 'publish-' + program.publish
-  console.log(`
-  ### DEBUG - ${cmdName}
-          projectName: ${config.projectName}
-          env.BUILD: ${process.env.BUILD}
-          devBuild:  ${config.devBuild}
+  debug(`command: ${cmdName}
+  projectName: ${config.projectName}
+  env.BUILD: ${process.env.BUILD}
+  devBuild:  ${config.devBuild}
   `)
   if (program.build) {
     build(config)
