@@ -40,7 +40,7 @@ Opinionated scaffolding generator for storytelling.
 
 You can either scaffold using the globally installed Machinist or scaffold locally.
 
-Machinist globally 
+Install globally 
 
 1. `npm install -g @nbcnews/machinist`
 1. `cd` into an empty project directory
@@ -76,26 +76,24 @@ npm run debug
 
 Create a new Paper document.
 
-Get the file ID from the URL. It should look like: `S7sSIlM2E0g6p3OXhhts4`
+Get the file ID from the URL. It should look like: `S7sSIlM2E0g6p3OXhhts4`. Add that as the value for `dropboxPaperJson.fileId` in `config.yml`.
 
 To ingest the Dropbox Paper you will need to have access to it. [Generate an access token for your own account](https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) and add the token to `./env`.
 
 ```sh
-$ npm run doc-ingest
+npm run doc-ingest
 ```
 
 #### Google Doc Data
 
 Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs. 
 
-Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.yml`. 
+Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `googleDocJson.fileId` in `config.yml`. 
 
-To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `./env`.
-
-To ingest the latest content from the Google Doc.
+To ingest the Google doc you will need to have access to it. [Generate credentials](https://github.com/bradoyler/googledoc-to-json#getting-credentials) and add credentials to `./env`.
 
 ```sh
-$ npm run doc-ingest
+npm run doc-ingest
 ```
 
 #### ai2html Workflow
