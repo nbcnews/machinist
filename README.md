@@ -1,10 +1,8 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-# Machinist - {{projectName}}
+# Machinist
 
-*If making content edits is your priority look at [./CONTRIBUTING.md](CONTRIBUTING.md)*
-
-An opinionated boilerplate for storytelling.
+Opinionated scaffolding generator for storytelling.
 
 - [Metalsmith](http://www.metalsmith.io/)
 - [Handlebars](http://handlebarsjs.com/)
@@ -20,55 +18,51 @@ An opinionated boilerplate for storytelling.
 - [ai2html](http://ai2html.org/)
 - [ArchieML](http://archieml.org/)
 
+## Quick Start
+
+1. Install [Node.js](https://nodejs.org/) (v8.x required)
+1. `npm install -g @nbcnews/machinist`
+1. `machinist init <project-name>`
+1. `npm i`
+1. `npm run dev`
+1. Visit [`http://localhost:3000`](http://localhost:3000)
+
 ## Features
 
-- Common storytelling components
-- Add structured data globally in JSON or YAML in the `./src/globaldata/`
-- Add structured data to a specific Markdown file by adding in the frontmatter `model: file_name.json`, with `file_name.json` living in `./src/models/`
+- Boilerplate CSS/Markup/JS for story components
+- Add structured data globally via JSON or YAML in the `./src/globaldata/`
+- Add structured data to a specific Markdown file by adding in the frontmatter `model: file-name.json`, with `file-name.json` living in `./src/models/`
 - Google Doc to JSON using ArchieML
 - Dropbox Paper to JSON using ArchieML
 - An ai2html pipeline
-- Boilerplate CSS/Markup for story components
-
-## Requirements
-
-- [node.js](https://nodejs.org/en/)
 
 ## Setup
 
-### 1. Clone
+First install Machinist globally `npm install -g @nbcnews/machinist`
+
+1. `cd` into an empty project directory
+1. `machinist init <project-name>`
+1. `npm i`
+
+## How To Use
+
+Publishing, Google Doc, and Dropbox Paper workflows require credentials in `./env`. You can copy `.env.example` and rename to `.env`.
+
+### Develop
+
+Runs your project locally at `localhost:3000` with BrowserSync. Edit contents of `./layouts`, `./lib`, `./partials`, and `./src`.
 
 ```sh
-git clone https://github.com/nbcnews/machinist.git
+npm run dev
 ```
 
-### 2. Scaffold Project
-
-Setup will run `npm install`. This project recommends managing Node versions via [nvm](https://github.com/creationix/nvm).
+Develop with debugging.
 
 ```sh
-nvm use
-npm run setup <new-project-name>
-npm run git-init
+npm run debug
 ```
 
-Edit the `./config.yml` as needed.
-
-#### Google Doc Data
-
-Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs. 
-
-Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.json`. 
-
-To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `./env`.
-
-To ingest the latest content from the Google Doc.
-
-```sh
-$ npm run doc-ingest
-```
-
-#### Dropbox Paper Data
+#### Dropbox Paper Data (recommended)
 
 Create a new Paper document.
 
@@ -80,34 +74,27 @@ To ingest the Dropbox Paper you will need to have access to it. [Generate an acc
 $ npm run doc-ingest
 ```
 
-#### Publishing
+#### Google Doc Data
 
-To push to s3 put your s3 credientials in `./env`
+Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs. 
 
-## How to use
+Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `fileId` in `googleDocJson` in `config.yml`. 
 
-### Develop
+To ingest the Google doc you will need to have access to it on Google. Either it's your doc or it's been shared with you. You will need to set up your credentials [following this helpful guide](https://github.com/bradoyler/googledoc-to-json#getting-credentials). Add the Google Docs configuration to `./env`.
 
-Runs your project locally at `localhost:3000` with BrowserSync. Edit contents of `./layouts`, `./lib`, `./partials`, and `./src`.
-
-```sh
-npm run dev
-```
-
-Develop with Metalsmith debugging.
+To ingest the latest content from the Google Doc.
 
 ```sh
-npm run debug
+$ npm run doc-ingest
 ```
 
-#### ai2html
+#### ai2html Workflow
 
 Can be changed, but by default:
 
-- Duplicate or Rename `assets/##-ai2html-machinist-template.ai` for your graphic
-- Install `ai2html.jsx` for Illustrator. [Docs](http://ai2html.org/#how-to-install-ai2html)
-- Uncomment `ai2html-resizer.js` in `src/scripts/main.js`
-- If using Google Doc for data, use the following ArchieML to place the graphic in the body
+- Duplicate or rename `assets/##-ai2html-machinist-template.ai` for your graphic
+- Install `./assets/ai2html.jsx` for Illustrator. [Docs](http://ai2html.org/#how-to-install-ai2html)
+- If you are using ArchieML for data, you can use the following to place the graphic in the story
 
 ```
 {.ai2html}
@@ -138,7 +125,7 @@ Generates your dist be deployed and publishes the dist to s3.
 npm run publish
 ```
 
-## Publish assets
+### Publish assets
 
 Publish static assets in the `cdnassets` folder, like images, videos and vendor scripts, to the CDN.
 
@@ -148,7 +135,7 @@ npm run publish:cdn
 
 ### Lint
 
-Lints your styles, scripts, and markup.
+Lints your styles, scripts, and generated markup.
 
 ```sh
 npm run lint
@@ -156,8 +143,12 @@ npm run lint
 
 ### Format
 
-Fix lint errors in your styles and scripts.
+Fix auto-fixable errors in your styles and scripts.
 
 ```sh
 npm run format
 ```
+
+## Contribute
+
+
