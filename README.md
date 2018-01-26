@@ -38,10 +38,20 @@ Opinionated scaffolding generator for storytelling.
 
 ## Setup
 
-First install Machinist globally `npm install -g @nbcnews/machinist`
+You can either scaffold using the globally installed Machinist or scaffold locally.
 
+Machinist globally 
+
+1. `npm install -g @nbcnews/machinist`
 1. `cd` into an empty project directory
 1. `machinist init <project-name>`
+1. `npm i`
+
+Install locally
+
+1. `cd` into an empty project directory
+1. `npm i @nbcnews/machinist`
+1. `$(npm bin)/machinist init <project-name>`
 1. `npm i`
 
 ## How To Use
