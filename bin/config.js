@@ -36,6 +36,12 @@ module.exports = () => {
     } else if (!config.assets.production) {
       assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
     }
+
+    // local prod assetPaths
+    // TODO: replace logic with a localAssets option
+    if (!config.assets.domain && config.assets.production === '/') {
+      assetPath = ''
+    }
   }
 
   // computed props for { config }
