@@ -5,7 +5,8 @@ metadata:
   keywords: nbc news, specials, reporting # SEO keywords
   ogTitle: Specials # OpenGraph Title used by Facebook
   ogDescription: NBC News Special Coverage # OpenGraph Description used by Facebook
-  ogType: article #OpenGraph content type used by Facebook
+  ogType: article # OpenGraph content type used by Facebook
+  ogUrl: # OpenGraph url used by Facebook
   twitterCard: summary_large_image # https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
   twitterTitle: Specials
   twitterDescription: NBC News Special Coverage
