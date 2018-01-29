@@ -20,6 +20,8 @@ Opinionated scaffolding generator for storytelling.
 
 ## Quick Start
 
+*See [Setup](#setup) for recommended local install.*
+
 1. Install [Node.js](https://nodejs.org/) (v8.x required)
 1. `npm install -g @nbcnews/machinist`
 1. `machinist init <project-name>`
@@ -40,18 +42,18 @@ Opinionated scaffolding generator for storytelling.
 
 You can either scaffold using the globally installed Machinist or scaffold locally.
 
-Install globally 
-
-1. `npm install -g @nbcnews/machinist`
-1. `cd` into an empty project directory
-1. `machinist init <project-name>`
-1. `npm install`
-
 Install locally (recommended)
 
 1. `cd` into an empty project directory
 1. `npm install @nbcnews/machinist`
 1. `$(npm bin)/machinist init <project-name>`
+1. `npm install`
+
+Install globally 
+
+1. `npm install -g @nbcnews/machinist`
+1. `cd` into an empty project directory
+1. `machinist init <project-name>`
 1. `npm install`
 
 ## How To Use
