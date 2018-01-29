@@ -1,3 +1,4 @@
+const debug = require('debug')('machinist:tasks')
 const gulp = require('gulp')
 const md5 = require('gulp-md5-plus')
 const inlineImagePath = require('gulp-rewrite-image-path')
@@ -5,6 +6,7 @@ const jsoncombine = require('gulp-jsoncombine')
 
 // Adds unique hash to image files and updates the src paths with the new image names. i.e. Cache busting
 function md5Assets () {
+  debug('md5Assets()')
   gulp.src('./assets/*.{jpg,png,gif,svg}')
     .pipe(md5(10, '.tmp/assets/*.html'))
     .pipe(gulp.dest('.tmp/assets'))
@@ -19,9 +21,10 @@ function copyAssets () {
 // Runs on production builds, not development builds. Rewrites the assets paths for being hosted
 function rewriteAssetPath (config) {
   return function () {
+    debug('rewriteAssetPath()', config.assetPath)
     gulp.src('./assets/*.html')
       .pipe(inlineImagePath({
-        path: `${config.assets.domain}/machinist/dist/${config.projectInitDate.year}/${config.projectInitDate.month}/${config.projectSlug}`
+        path: config.assets.domain ? `${config.assetPath}` : ''
       }))
       .pipe(gulp.dest('.tmp/assets'))
   }
