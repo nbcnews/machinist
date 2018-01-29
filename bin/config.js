@@ -58,6 +58,5 @@ module.exports = () => {
   config.debugMode = debugMode
   config.buildDate = buildDate
   config.repository = repository.url
-  console.log(config)
   return config
 }
