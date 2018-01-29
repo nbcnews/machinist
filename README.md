@@ -47,7 +47,7 @@ Install globally
 1. `machinist init <project-name>`
 1. `npm install`
 
-Install locally
+Install locally (recommended)
 
 1. `cd` into an empty project directory
 1. `npm install @nbcnews/machinist`
