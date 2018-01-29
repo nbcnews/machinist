@@ -127,7 +127,7 @@ Generates your dist to be deployed in the folder `./www`.
 npm run build
 ```
 
-Develop with debugging.
+Build with debugging.
 
 ```sh
 npm run build:debug
