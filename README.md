@@ -50,7 +50,7 @@ Install globally
 Install locally
 
 1. `cd` into an empty project directory
-1. `npm i @nbcnews/machinist`
+1. `npm install @nbcnews/machinist`
 1. `$(npm bin)/machinist init <project-name>`
 1. `npm i`
 
