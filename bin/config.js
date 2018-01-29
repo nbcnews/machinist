@@ -12,10 +12,10 @@ module.exports = () => {
   debug('configFile', configFile)
   const config = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
 
-  const awsConfig = {
-    bucketName: process.env.BUCKET_NAME,
-    region: process.env.AWS_DEFAULT_REGION
-  }
+  // const awsConfig = {
+  //   bucketName: process.env.BUCKET_NAME,
+  //   region: process.env.AWS_DEFAULT_REGION
+  // }
 
   const yearString = config.projectInitDate.year
   const monthString = config.projectInitDate.month
@@ -29,12 +29,20 @@ module.exports = () => {
   const { version, dependencies, repository } = pkg
 
   // determine assetPath
-  let assetPath = config.assets[BUILD] || '/'
+  let assetPath = config.assets[BUILD]
   if (BUILD === 'production') {
     if (config.assets.domain) {
       assetPath = `${config.assets.domain}/${objectsLocation}`
-    } else if (!config.assets.production) {
-      assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
+    }
+
+    // else if (!config.assets.production) {
+    //   assetPath = `//s3-${awsConfig.region}.amazonaws.com/${awsConfig.bucketName}/${objectsLocation}`
+    // }
+
+    // local prod assetPaths
+    // TODO: replace logic with a localAssets option
+    if (!config.assets.domain) {
+      assetPath = config.assets.production
     }
   }
 

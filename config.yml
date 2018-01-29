@@ -25,7 +25,7 @@ projectName: '{{projectName}}' # Set the project name, used for published direct
 assets:
   domain: https://static-projects.nbcnews.com # Domain that assets need to live. For relative paths set to null.
   development: / # Assets path for development
-  production: # Assets path for produciton
+  production: / # Assets path for produciton
 googleDocJson:
   fileId: null # Google Doc ID ex. 1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY
   output: ./src/data/models/googledoc.json # Where the resulting JSON is saved via ./lib/googledocjson.js
