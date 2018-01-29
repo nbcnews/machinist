@@ -167,4 +167,8 @@ npm run format
 
 ## Contribute
 
-
+```sh
+git clone https://github.com/nbcnews/machinist.git
+npm install
+npm run dev
+```
