@@ -2,7 +2,7 @@
 
 # Machinist
 
-Opinionated scaffolding generator for storytelling.
+Opinionated scaffolding and static site generator for storytelling.
 
 - [Metalsmith](http://www.metalsmith.io/)
 - [Handlebars](http://handlebarsjs.com/)
