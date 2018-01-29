@@ -45,14 +45,14 @@ Install globally
 1. `npm install -g @nbcnews/machinist`
 1. `cd` into an empty project directory
 1. `machinist init <project-name>`
-1. `npm i`
+1. `npm install`
 
 Install locally
 
 1. `cd` into an empty project directory
 1. `npm install @nbcnews/machinist`
 1. `$(npm bin)/machinist init <project-name>`
-1. `npm i`
+1. `npm install`
 
 ## How To Use
 
