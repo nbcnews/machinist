@@ -71,7 +71,7 @@ npm run dev
 Develop with debugging.
 
 ```sh
-npm run debug
+npm run dev:debug
 ```
 
 #### Dropbox Paper Data (recommended)
@@ -125,6 +125,12 @@ Generates your dist to be deployed in the folder `./www`.
 
 ```sh
 npm run build
+```
+
+Develop with debugging.
+
+```sh
+npm run build:debug
 ```
 
 ### Publish
