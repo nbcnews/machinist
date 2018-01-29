@@ -4,6 +4,7 @@ const fs = require('fs')
 const debug = require('debug')('machinist:config')
 require('dotenv').config()
 const pkg = require('../package.json')
+const cwdPkg = require(path.join(process.cwd(), 'package.json'))
 const configFile = path.join(process.cwd(), 'config.yml')
 
 const BUILD = process.env.BUILD || 'development'
@@ -51,11 +52,11 @@ module.exports = () => {
   config.objectsLocation = objectsLocation
   config.projectSlug = convertedProjectName
   config.version = version
+  config.cwdVersion = cwdPkg.version
   config.dependencies = dependencies
   config.devBuild = devBuild
   config.debugMode = debugMode
   config.buildDate = buildDate
   config.repository = repository.url
-
   return config
 }
