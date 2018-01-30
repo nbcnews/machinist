@@ -25,30 +25,15 @@
     "lint": "npm run script-lint && npm run style-lint && npm run htmlhint",
     "precommit": "lint-staged"
   },
-  "author": "Ian Rose",
   "license": "MIT",
   "lint-staged": {
     "*.scss": "style-lint",
     "*.js": "script-lint"
   },
   "dependencies": {
-    "autoprefixer": "^6.4.0",
-    "commander": "2.10.0",
-    "googledoc-to-json": "^0.3.0",
-    "handlebars": "^4.0.5",
-    "handlebars-helpers": "^0.7.5",
-    "js-yaml": "^3.10.0",
-    "@nbcnews/machinist": "git+https://github.com/nbcnews/machinist.git#d57a86eae5fb72f988cf4cb9ba343e61258241f0",
-    "moment": "^2.18.1",
-    "paper2json": "^0.2.2",
-    "typesettings": "^4.0.0",
-    "typogr": "^0.6.6"
+    "@nbcnews/machinist": "git+https://github.com/nbcnews/machinist.git#59654c67273fee7c33a78581c26c22d6c1bd65f6"
   },
-  "devDependencies": {
-    "babel-loader": "^7.1.1",
-    "babel-core": "^6.25.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+   "devDependencies": {
     "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
     "git-assert-clean": "^1.0.0",
@@ -58,7 +43,6 @@
     "log-utils": "^0.2.1",
     "standard": "^10.0.2",
     "stylelint": "^7.12.0",
-    "stylelint-config-standard": "^16.0.0",
-    "webpack": "^2.7.0"
+    "stylelint-config-standard": "^16.0.0"
   }
 }
