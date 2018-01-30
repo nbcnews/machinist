@@ -18,6 +18,7 @@ const webpack = require('./metalsmith/webpack')
 const models = require('./metalsmith/models')
 const filedata = require('metalsmith-filedata')
 const writemetadata = require('metalsmith-writemetadata')
+const discoverPartials = require('metalsmith-discover-partials')
 const raw = require('metalsmith-raw')
 const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
@@ -101,10 +102,7 @@ module.exports = (config) => {
     directory: 'lib/helpers'
   }))
   .use(inplace({
-    engine: 'handlebars',
-    pattern: ['**/*.{html,xml,txt,md}', '!admin/*'],
-    directory: config.src,
-    partials: 'partials'
+    pattern: '**/*.hbs'
   }))
   .use(markdown({
     smartypants: true,
@@ -112,10 +110,12 @@ module.exports = (config) => {
     tables: true,
     langPrefix: 'language-'
   }))
+  .use(discoverPartials({
+    directory: 'partials',
+    pattern: /\.hbs$/
+  }))
   .use(layouts({
-    engine: 'handlebars',
     directory: 'layouts',
-    partials: 'partials',
     default: 'story.hbs',
     pattern: '**/*.html'
   }))
