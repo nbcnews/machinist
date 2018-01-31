@@ -53,7 +53,6 @@
     "commander": "2.10.0",
     "debug": "^3.1.0",
     "dotenv": "^4.0.0",
-    "fs-tools": "^0.3.0",
     "git-assert-clean": "^1.0.0",
     "googledoc-to-json": "^0.3.0",
     "gulp": "^3.9.1",
