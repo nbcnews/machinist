@@ -18,7 +18,7 @@ const webpack = require('./metalsmith/webpack')
 const models = require('./metalsmith/models')
 const filedata = require('metalsmith-filedata')
 const writemetadata = require('metalsmith-writemetadata')
-const discoverpartials = require('./metalsmith/discover-partials')
+const registerPartials = require('./metalsmith/register-partials')
 const raw = require('metalsmith-raw')
 const debugUi = require('metalsmith-debug-ui')
 const fingerprint = require('metalsmith-fingerprint-ignore')
@@ -107,9 +107,9 @@ module.exports = (config) => {
     tables: true,
     langPrefix: 'language-'
   }))
-  .use(discoverpartials({
+  .use(registerPartials({
     directory: 'partials',
-    pattern: /\.hbs$/
+    ext: '.hbs'
   }))
   .use(inplace({
     pattern: '**/*.hbs'
