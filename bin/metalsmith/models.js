@@ -1,3 +1,6 @@
+const path = require('path')
+const yaml = require('js-yaml')
+const aml = require('archieml')
 
 let fileCount = 0
 
@@ -22,17 +25,23 @@ module.exports = function (opts) {
       var data = files[file]
 
       if (typeof data.model === 'string') {
-        filePath = metalsmith.path(dir, data.model) + '.json'
+        filePath = metalsmith.path(dir, data.model)
         readFile(filePath, metalsmith, done, function (err, res) {
           try {
-            data.model = JSON.parse(res ? res.contents : {})
+            if (path.extname(filePath) === '.json') {
+              data.model = JSON.parse(res ? res.contents : {})
+            } else if (path.extname(filePath) === '.yml') {
+              data.model = yaml.safeLoad(res ? res.contents : {})
+            } else if (path.extname(filePath) === '.aml') {
+              data.model = aml.load(res.contents.toString('utf8'))
+            }
           } catch (e) {
             throw new Error('Error loading data for file ' + file + '\n\n' + err)
           }
         })
       } else if (typeof data.model === 'object') {
         Object.keys(data.model).forEach(function (key) {
-          filePath = metalsmith.path(dir, data.model[key]) + '.json'
+          filePath = metalsmith.path(dir, data.model[key])
 
           readFile(filePath, metalsmith, done, function (err, res) {
             try {
