@@ -1,0 +1,694 @@
+{kicker}
+text: Chapter Three
+url:
+{}
+
+headline: A Headline Persuades
+
+summary: Content of the standfirst is textually more important than the headline.
+
+[+bylines]
+{.byline}
+name: Herman Melville
+role: Words
+type: author
+twitter:
+email:
+{}
+{.byline}
+name: Ian Rose
+role: Designer and Developer
+type:
+twitter:
+email:
+{}
+{.byline}
+name: Brad Oyler
+role: Senior Developer
+type:
+twitter:
+email:
+{}
+[]
+
+firstPublished: 05/07/2016
+
+lastPublished: 05/07/2016
+
+socialImage:
+
+{mainArtImage}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption Text
+{}
+Story Body
+[+body]
+
+p: The deck elaborates or expands on the headline and topic of the accompanying text. Decks are set in a typeface that is sized somewhere between the headline and body text to provide contrast. From the design point of view intro should be set in bigger type size than body copy but in a much smaller size than the headline. You can also make it in different type style. If you set headline in serif type, you can use sans-serif type for an intro.
+
+{.ai2html}
+title: hello title
+subtitle: hello sub title
+fileName: 17-ai2html-machinist-template.html
+caption: hello caption
+source: hello source
+style: bleed
+{}
+
+{.adaptiveIframe}
+src: http://ianrose.me
+width: 350
+height: 900
+style: full
+{}
+
+p: <span class=”dropcap”>B</span>ody copy. Call me Ishmael. Some years ago—never mind how long precisely—having little or no <mark data-sset=”offcanvas” data-ocid="oc-1”>money in my purse</mark>, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself <mark data-sset=”offcanvas” data-ocid="oc-2”>growing grim about</mark> the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral <span class="soundcite" data-url="http://nodeassets.nbcnews.com/cdnassets/projects/bach-cello-suite.mp3" data-start="0" data-end="44000" data-plays="1">listen to bach</span> principle to prevent me from deliberately stepping into the street, and methodically knocking people's hats off—then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball. With a philosophical flourish Cato throws himself upon his sword; I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me.
+
+{.offcanvas}
+id: oc-1
+[.+body]
+h2: hello world 1
+p: graf one
+p: graf two
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: full
+ratio:
+{}
+[]
+{}
+
+{.offcanvas}
+id: oc-2
+[.+body]
+h2: hello world 2
+p: graf one
+p: graf two
+[]
+{}
+
+h2: Subhead Level Two
+
+{.video}
+mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4
+webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm
+caption: Caption text
+source: Source text
+style: wide
+id: guide-video
+thumbnail: http://placehold.it/1280x720
+{}
+
+
+h3: Subhead Level Three
+h4: Subhead Level Four
+h5: Subhead Level Five
+h6: Subhead Level Six
+
+{.adaptiveIframe}
+src: http://ianrose.me
+width: 350
+height: 900
+style: full
+{}
+
+p: There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: halfLeft
+ratio:
+{}
+
+p: Circumambulate the city of a dreamy Sabbath afternoon. Go from Corlears Hook to Coenties Slip, and from thence, by Whitehall, northward. What do you see?—Posted like silent sentinels all around the town, stand thousands upon thousands of mortal men fixed in ocean reveries. Some leaning against the spiles; some seated <mark>First Name Last Name</mark> upon the pier-heads; some looking over the bulwarks of ships from China; some high aloft in the rigging, as if striving to get a still better seaward peep. But these are all landsmen; of week days pent up in lath and plaster—tied to counters, nailed to benches, clinched to desks. How then is this? Are the green fields gone? What do they here?
+
+{.callout}
+kicker: Chapter One
+url: http://www.nbcnews.com/specials/donald-trump-republican-party
+type: related
+heading: United States of Trump
+description: Trump Voters Live in Economically Challenged Areas
+source:
+style: hangLeft
+{}
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: halfRight
+{}
+
+p: But look! here come more crowds, pacing straight for the water, and seemingly bound for a dive. Strange! Nothing will content them but the extremest limit of the land; loitering under the shady lee of yonder warehouses will not suffice. No. They must get just as nigh the water as they possibly can without falling in. And there they stand—miles of them—leagues. Inlanders all, they come from lanes and alleys, streets and avenues—north, east, south, and west. Yet here they all unite. Tell me, does the magnetic virtue of the needles of the compasses of all those ships attract them thither?
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: full
+{}
+
+p: Once more. Say you are in the country; in some high land of lakes. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream. There is magic in it. Let the most absent-minded of men be plunged in his deepest reveries—stand that man on his legs, set his feet a-going, and he will infallibly lead you to water, if water there be in all that region. Should you ever be athirst in the great American desert, try this experiment, if your caravan happen to be supplied with a metaphysical professor. Yes, as everyone knows, meditation and water are wedded for ever.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: wide
+{}
+
+{.pullquote}
+text: Pullquotes are a very useful tool at the designer’s disposal when it comes to orienting the reader and breaking up copy.
+style: halfRight
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there!
+
+{.images}
+type: slider
+caption: Caption Text
+style: full
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.source: Source Text
+value.thumb: http://placehold.it/201x134
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.source: Source Text
+value.thumb: http://placehold.it/201x134
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.source: Source Text
+value.thumb: http://placehold.it/201x134
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.source: Source Text
+value.thumb: http://placehold.it/201x134
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.source: Source Text
+value.thumb: http://placehold.it/201x134
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.source: Source Text
+value.thumb: http://placehold.it/201x134
+[]
+{}
+
+p: Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: threeFourthsLeft
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it?
+
+
+:skip ////// scrollStory Start /////
+{.scrollStory}
+title:
+text:
+type:
+id:
+[.+stories]
+{.story}
+title: title
+text: text
+[.+body]
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption Text
+source: Source Text
+style:
+{}
+p: graf
+[]
+{}
+{.story}
+title: title
+text: text
+[.+body]
+{.video}
+mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4
+webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm
+caption: Caption text
+source: Source text
+style:
+id: guide-video
+thumbnail: http://placehold.it/1280x720
+{}
+p: graf
+[]
+{}
+[]
+{}
+
+:skip ////// scrollStory End /////
+
+
+p: Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: threeFourthsRight
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+{.video}
+mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4
+webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm
+caption: Caption text
+source: Source text
+style: threeFourthsLeft
+id: guide-video
+thumbnail: http://placehold.it/1280x720
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+{.video}
+mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4
+webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm
+caption: Caption text
+source: Source text
+style: threeFourthsRight
+id: guide-video
+thumbnail: http://placehold.it/1280x720
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+
+{.chart}
+id: chart-guide01
+title: Media Title
+subtitle: in Subtitle Text
+caption: Caption text
+[.network]
+item.name: JFK
+item.center: true
+item.name: 2-button-suit
+item.name: Television
+item.name: Frank Sinatra
+item.name: Fashion
+[]
+{}
+
+{.chart}
+id: chart-network01
+type: network
+title: Network Viz Media Title
+subtitle: in Subtitle Text
+caption: Caption text
+style: threeFourthsLeft
+code:
+{}
+
+{.instagram-map}
+id: instagram-map
+title: Media Title
+subtitle: in Subtitle Text
+caption: Caption text
+style: threeFourthsLeft
+code:
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+{.chart}
+id: chart-guide02
+title: Media Title
+subtitle: in Subtitle Text
+caption: Caption text
+style: threeFourthsRight
+code:
+{}
+
+p: But here is an artist. He desires to paint you the dreamiest, shadiest, quietest, most enchanting bit of romantic landscape in all the valley of the Saco. What is the chief element he employs? There stand his trees, each with a hollow trunk, as if a hermit and a crucifix were within; and here sleeps his meadow, and there sleep his cattle; and up from yonder cottage goes a sleepy smoke. Deep into distant woodlands winds a mazy way, reaching to overlapping spurs of mountains bathed in their hill-side blue. But though the picture lies thus tranced, and though this pine-tree shakes down its sighs like leaves upon this shepherd's head, yet all were vain, unless the shepherd's eye were fixed upon the magic stream before him. Go visit the Prairies in June, when for scores on scores of miles you wade knee-deep among Tiger-lilies—what is the one charm wanting?—Water—there is not a drop of water there! Were Niagara but a cataract of sand, would you travel your thousand miles to see it? Why did the poor poet of Tennessee, upon suddenly receiving two handfuls of silver, deliberate whether to buy him a coat, which he sadly needed, or invest his money in a pedestrian trip to Rockaway Beach? Why is almost every robust healthy boy with a robust healthy soul in him, at some time or other crazy to go to sea? Why upon your first voyage as a passenger, did you yourself feel such a mystical vibration, when first told that you and your ship were now out of sight of land? Why did the old Persians hold the sea holy? Why did the Greeks give it a separate deity, and own brother of Jove? Surely all this is not without meaning. And still deeper the meaning of that story of Narcissus, who because he could not grasp the tormenting, mild image he saw in the fountain, plunged into it and was drowned. But that same image, we ourselves see in all rivers and oceans. It is the image of the ungraspable phantom of life; and this is the key to it all.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: bleed
+{}
+
+{.chart}
+id: chart-guide03
+title: Media Title
+subtitle: in Subtitle Text
+caption: Caption text
+style: full
+code:
+{}
+
+{.pullquote}
+text: The content for pull-quotes is pulled directly out of the copy; or is a summarized excerpt.
+style: halfLeft
+{}
+
+
+p: Now, when I say that I am in the habit of going to sea whenever I begin to grow hazy about the eyes, and begin to be over conscious of my lungs, I do not mean to have it inferred that I ever go to sea as a passenger. For to go as a passenger you must needs have a purse, and a purse is but a rag unless you have something in it. Besides, passengers get sea-sick—grow quarrelsome—don't sleep of nights—do not enjoy themselves much, as a general thing;—no, I never go as a passenger; nor, though I am something of a salt, do I ever go to sea as a Commodore, or a Captain, or a Cook. I abandon the glory and distinction of such offices to those who like them. For my part, I abominate all honourable respectable toils, trials, and tribulations of every kind whatsoever. It is quite as much as I can do to take care of myself, without taking care of ships, barques, brigs, schooners, and what not. And as for going as cook,—though I confess there is considerable glory in that, a cook being a sort of officer on ship-board—yet, somehow, I never fancied broiling fowls;—though once broiled, judiciously buttered, and judgmatically salted and peppered, there is no one who will speak more respectfully, not to say reverentially, of a broiled fowl than I will. It is out of the idolatrous dotings of the old Egyptians upon broiled ibis and roasted river horse, that you see the mummies of those creatures in their huge bake-houses the pyramids.
+
+{.images}
+type: gallery
+caption: Caption text
+source: Source text
+style: bleed
+grid: 3
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+[]
+{}
+
+{.pullquote}
+text: Pullquotes are a very useful tool at the designer’s disposal when it comes to orienting the reader and breaking up copy.
+style: hangLeft
+{}
+
+p: No, when I go to sea, I go as a simple sailor, right before the mast, plumb down into the forecastle, aloft there to the royal mast-head. True, they rather order me about some, and make me jump from spar to spar, like a grasshopper in a May meadow. And at first, this sort of thing is unpleasant enough. It touches one's sense of honour, particularly if you come of an old established family in the land, the Van Rensselaers, or Randolphs, or Hardicanutes. And more than all, if just previous to putting your hand into the tar-pot, you have been lording it as a country schoolmaster, making the tallest boys stand in awe of you. The transition is a keen one, I assure you, from a schoolmaster to a sailor, and requires a strong decoction of Seneca and the Stoics to enable you to grin and bear it. But even this wears off in time.
+
+{.images}
+type: gallery
+caption: Caption text
+source: Source text
+style: full
+grid: 3
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+[]
+{}
+
+{.pullquote}
+text: Pullquotes are a very useful tool at the designer’s disposal when it comes to orienting the reader and breaking up copy.
+style: hangRight
+{}
+
+p: What of it, if some old hunks of a sea-captain orders me to get a broom and sweep down the decks? What does that indignity amount to, weighed, I mean, in the scales of the New Testament? Do you think the archangel Gabriel thinks anything the less of me, because I promptly and respectfully obey that old hunks in that particular instance? Who ain't a slave? Tell me that. Well, then, however the old sea-captains may order me about—however they may thump and punch me about, I have the satisfaction of knowing that it is all right; that everybody else is one way or other served in much the same way—either in a physical or metaphysical point of view, that is; and so the universal thump is passed round, and all hands should rub each other's shoulder-blades, and be content.
+
+{.images}
+type: gallery
+caption: Caption text
+source: Source text
+style: halfRight
+grid: 2
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt text
+value.ratio: 3x2
+[]
+{}
+
+p: Again, I always go to sea as a sailor, because they make a point of paying me for my trouble, whereas they never pay passengers a single penny that I ever heard of. On the contrary, passengers themselves must pay. And there is all the difference in the world between paying and being paid. The act of paying is perhaps the most uncomfortable infliction that the two orchard thieves entailed upon us. But being paid,—what will compare with it? The urbane activity with which a man receives money is really marvellous, considering that we so earnestly believe money to be the root of all earthly ills, and that on no account can a monied man enter heaven. Ah! how cheerfully we consign ourselves to perdition!
+
+{.images}
+type: gallery
+caption: Caption text
+source: Source text
+style: wide
+grid: 2
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.ratio: 3x2
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.ratio: 3x2
+[]
+{}
+
+p: Finally, I always go to sea as a sailor, because of the wholesome exercise and pure air of the fore-castle deck. For as in this world, head winds are far more prevalent than winds from astern (that is, if you never violate the Pythagorean maxim), so for the most part the Commodore on the quarter-deck gets his atmosphere at second hand from the sailors on the forecastle. He thinks he breathes it first; but not so. In much the same way do the commonalty lead their leaders in many other things, at the same time that the leaders little suspect it. But wherefore it was that after having repeatedly smelt the sea as a merchant sailor, I should now take it into my head to go on a whaling voyage; this the invisible police officer of the Fates, who has the constant surveillance of me, and secretly dogs me, and influences me in some unaccountable way—he can better answer than any one else. And, doubtless, my going on this whaling voyage, formed part of the grand programme of Providence that was drawn up a long time ago. It came in as a sort of brief interlude and solo between more extensive performances. I take it that this part of the bill must have run something like this:
+
+{.blockquote}
+text: It’s more an act of transference, of ideas and evocations hung around the vast and unknowable shape of the whale, an extended musing on the strange meeting of human history and natural history. It is, above all, a sui-generis creation, one that came into the world as an unnatural, immaculate conception.
+credit: Philip Hoare
+source: What “Moby-Dick” Means to Me
+{}
+
+p: Though I cannot tell why it was exactly that those stage managers, the Fates, put me down for this shabby part of a whaling voyage, when others were set down for magnificent parts in high tragedies, and short and easy parts in genteel comedies, and jolly parts in farces—though I cannot tell why this was exactly; yet, now that I recall all the circumstances, I think I can see a little into the springs and motives which being cunningly presented to me under various disguises, induced me to set about performing the part I did, besides cajoling me into the delusion that it was a choice resulting from my own unbiased freewill and discriminating judgment.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption Text
+source: Source Text
+style: hangLeft
+{}
+
+p: Chief among these motives was the overwhelming idea of the great whale himself. Such a portentous and mysterious monster roused all my curiosity. Then the wild and distant seas where he rolled his island bulk; the undeliverable, nameless perils of the whale; these, with all the attending marvels of a thousand Patagonian sights and sounds, helped to sway me to my wish. With other men, perhaps, such things would not have been inducements; but as for me, I am tormented with an everlasting itch for things remote. I love to sail forbidden seas, and land on barbarous coasts. Not ignoring what is good, I am quick to perceive a horror, and could still be social with it—would they let me—since it is but well to be on friendly terms with all the inmates of the place one lodges in.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption Text
+source: Source Text
+style: hangRight
+{}
+
+p: By reason of these things, then, the whaling voyage was welcome; the great flood-gates of the wonder-world swung open, and in the wild conceits that swayed me to my purpose, two and two there floated into my inmost soul, endless processions of the whale, and, mid most of them all, one grand hooded phantom, like a snow hill in the air.
+
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: bleed
+{}
+
+[]
+Helpful Links
+render at http://storysmith-guide.herokuapp.com/specials/story-guide
+user specials
+password nbcdev
+repo at https://github.com/nbcnews/bluenode/pull/3701
+Story Key (ArchieML)
+Story Content
+Example
+Options
+Headline
+headline: This is a Headline
+
+
+Summary or Standfirst
+summary: This is a summary
+
+
+Byline(s)
+[+bylines]
+{.byline}
+name:
+role:
+type:
+twitter:
+email:
+{}
+[]
+type: author
+First Published Date
+firstPublished: MM/DD/YYYY
+
+
+Last Published Date
+lastPublished: MM/DD/YYYY
+
+
+Main Art Image
+{mainArtImage}
+url:
+alt:
+caption:
+{}
+
+
+Main Art Video
+{mainArtVideo}
+mp4:
+webm:
+thumbnail:
+alt:
+loop:
+autoplay:
+{}
+loop: true
+loop: false
+autoplay: true
+autoplay: false
+Social Image
+socialImage:
+
+
+Paragraph
+p:
+
+
+Heading Level 2
+h2:
+
+
+Heading Level 3
+h3:
+
+
+Heading Level 4
+h4:
+
+
+Heading Level 5
+h5:
+
+
+Heading Level 6
+h6:
+
+
+Inline Image
+{.image}
+url:
+alt:
+caption:
+source:
+style:
+{}
+style: hangLeft
+style: hangRight
+style: halfLeft
+style: halfRight
+style: full
+style: wide
+style: bleed
+Images (Gallery)
+{.images}
+type: gallery
+caption:
+source:
+style:
+[.images]
+value.url:
+value.alt:
+value.url:
+value.alt:
+[]
+{}
+style: full
+style: wide
+style: bleed
+Blockquote
+{.blockquote}
+text:
+credit:
+source:
+{}
+
+
+Pullquote
+{.pullquote}
+text:
+style:
+{}
+style: hangLeft
+style: hangRight
+style: halfLeft
+style: halfRight
+style: full
+style: wide
+Inline Video
+{.video}
+mp4:
+webm:
+caption:
+source:
+style:
+id:
+{}
+style: hangLeft
+style: hangRight
+style: halfLeft
+style: halfRight
+style: full
+style: wide
+style: bleed
+id: [optional]
+Inline YouTube
+{.youtube}
+url:
+caption:
+source:
+style: full
+id:
+{}
+style: hangLeft
+style: hangRight
+style: halfLeft
+style: halfRight
+style: full
+style: wide
+style: bleed
+id: [optional]
+Inline MPX Video
+{.mpx}
+url:
+caption:
+source:
+style:
+id:
+title:
+duration:
+{}
+id: [MPX Guid]
+url: [limelight mp4 url]?metafile=none&manifest=m3u
+
