@@ -61,7 +61,7 @@ Publishing, Google Doc, and Dropbox Paper workflows require credentials in `./en
 
 ### Develop
 
-Runs your project locally at `localhost:3000` with BrowserSync. Edit contents of `./layouts`, `./lib`, `./partials`, and `./src`.
+Runs your project locally at `localhost:3000` with [BrowserSync](https://github.com/Browsersync/browser-sync). Edit contents of `./layouts`, `./lib`, `./partials`, and `./src`.
 
 ```sh
 npm run dev
