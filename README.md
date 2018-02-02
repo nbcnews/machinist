@@ -97,6 +97,20 @@ To ingest the Google doc you will need to have access to it. [Generate credentia
 npm run doc-ingest
 ```
 
+#### Structured Data
+
+The `./data/models/` folder can have strutured data written in YAML, JSON, or AML. In the front matter for the page you can add that data to the page's metadata.
+
+```html
+----
+layout: story.hbs
+model: story.aml # Specify the file with your data
+----
+
+<h1>{{model.headline}}</h1>
+
+```
+
 #### ai2html Workflow
 
 Can be changed, but by default:
