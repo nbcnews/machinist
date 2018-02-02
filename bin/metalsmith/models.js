@@ -4,10 +4,23 @@ let fileCount = 0
 function readFile (path, metalsmith, done, callback) {
   fileCount++
   metalsmith.readFile(path, function (err, res) {
-    // console.log('models - readFile:', path)
     --fileCount
     callback(err, res)
     if (fileCount === 0) { done() }
+  })
+}
+
+function getModel (path, metalsmith, done) {
+  readFile(path, metalsmith, done, (err, res) => {
+    if (err) {
+      throw Error(err + ' @ readFile()')
+    }
+
+    try {
+      return JSON.parse(res ? res.contents : {})
+    } catch (ex) {
+      throw Error(ex)
+    }
   })
 }
 
@@ -15,36 +28,19 @@ module.exports = function (opts) {
   var dir = opts.directory || 'models'
 
   return function (files, metalsmith, done) {
-    function parseFile (filePath, data, fileName, dir, file, key) {
-      filePath = metalsmith.path(dir, fileName)
-      readFile(filePath, metalsmith, done, function (err, res) {
-        try {
-          if (key) {
-            data.model[key] = JSON.parse(res ? res.contents : {})
-          }
-          data.model = JSON.parse(res ? res.contents : {})
-        } catch (e) {
-          throw new Error('Error loading data for file ' + file + '\n\n' + err)
-        }
-      })
-    }
-
     fileCount = 0
-    Object.keys(files).forEach(function (file) {
-      let filePath
+    Object.keys(files).forEach(file => {
       const data = files[file]
-      let fileName = data.model
       debug(data.model)
       if (typeof data.model === 'string') {
-        parseFile(filePath, data, fileName, dir, file)
+        const filePath = metalsmith.path(dir, data.model)
+        debug('1 Model filePath:', filePath)
+        data.model = getModel(filePath, metalsmith, done)
       } else if (typeof data.model === 'object') {
-        Object.keys(data.model).forEach(function (key) {
-          filePath = metalsmith.path(dir, data.model[key])
-          debug(filePath)
-          fileName = data.model[key]
-          debug(fileName)
-          //
-          parseFile(filePath, data, fileName, dir, file, key)
+        Object.keys(data.model).forEach(key => {
+          const filePath = metalsmith.path(dir, data.model[key])
+          debug('Multi-Model filePath:', dir, filePath)
+          data.model[key] = getModel(filePath, metalsmith, done)
         })
       }
     })
