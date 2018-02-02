@@ -1,6 +1,7 @@
 const debug = require('debug')('metalsmith-models')
 let fileCount = 0
 
+// TODO: wrap with a promise
 function readFile (path, metalsmith, done, callback) {
   fileCount++
   metalsmith.readFile(path, function (err, res) {
@@ -10,16 +11,18 @@ function readFile (path, metalsmith, done, callback) {
   })
 }
 
-function getModel (path, metalsmith, done) {
+// TODO: wrap with a promise
+function getModel (path, metalsmith, done, callback) {
   readFile(path, metalsmith, done, (err, res) => {
     if (err) {
       throw Error(err + ' @ readFile()')
     }
 
     try {
-      return JSON.parse(res ? res.contents : {})
+      const content = JSON.parse(res ? res.contents.toString() : {})
+      return callback(null, content)
     } catch (ex) {
-      throw Error(ex)
+      callback(ex)
     }
   })
 }
@@ -35,12 +38,18 @@ module.exports = function (opts) {
       if (typeof data.model === 'string') {
         const filePath = metalsmith.path(dir, data.model)
         debug('1 Model filePath:', filePath)
-        data.model = getModel(filePath, metalsmith, done)
+        getModel(filePath, metalsmith, done, function (err, content) {
+          if (err) { throw Error(err) }
+          data.model = content
+        })
       } else if (typeof data.model === 'object') {
         Object.keys(data.model).forEach(key => {
           const filePath = metalsmith.path(dir, data.model[key])
-          debug('Multi-Model filePath:', dir, filePath)
-          data.model[key] = getModel(filePath, metalsmith, done)
+          debug('Multi-Model filePath:', filePath)
+          getModel(filePath, metalsmith, done, (err, content) => {
+            if (err) { throw Error(err) }
+            data.model[key] = content
+          })
         })
       }
     })
