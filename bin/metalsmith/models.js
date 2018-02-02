@@ -1,4 +1,8 @@
+const path = require('path')
 const debug = require('debug')('metalsmith-models')
+const yaml = require('js-yaml')
+const aml = require('archieml')
+
 let fileCount = 0
 
 // TODO: wrap with a promise
@@ -12,15 +16,20 @@ function readFile (path, metalsmith, done, callback) {
 }
 
 // TODO: wrap with a promise
-function getModel (path, metalsmith, done, callback) {
-  readFile(path, metalsmith, done, (err, res) => {
+function getModel (filePath, metalsmith, done, callback) {
+  readFile(filePath, metalsmith, done, (err, res) => {
     if (err) {
       throw Error(err + ' @ readFile()')
     }
 
     try {
-      const content = JSON.parse(res ? res.contents.toString() : {})
-      return callback(null, content)
+      if (path.extname(filePath) === '.json') {
+        return callback(null, JSON.parse(res ? res.contents.toString() : {}))
+      } else if (path.extname(filePath) === '.yml') {
+        return callback(null, yaml.safeLoad(res ? res.contents : {}))
+      } else if (path.extname(filePath) === '.aml') {
+        return callback(null, aml.load(res.contents.toString('utf8')))
+      }
     } catch (ex) {
       callback(ex)
     }
