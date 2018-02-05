@@ -7,10 +7,16 @@
 {{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
 {{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
 {{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
-{{~#ifEqual value.style 'breakout'}}column--1halfx set--center gutter--vertical-2x{{/ifEqual}}
 {{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'breakout'}}column--1halfx set--center gutter--vertical-2x{{/ifEqual}}
 {{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
 <figure {{#if value.id}}id="{{value.id}}"{{/if}} class="media{{#ifEqual value.type 'gallery'}} media--gallery lightgallery{{/ifEqual}}">
+  {{#ifOr value.title value.leadin}}<div class="media__txt-wrapper">{{/ifOr}}
+    {{#if value.title}}
+      {{> story/mediaTitle}}
+    {{/if}}
+    {{#if value.leadin}}<p class="media__leadin">{{{value.leadin}}}</p>{{/if}}
+  {{#ifOr value.title value.leadin}}</div>{{/ifOr}}
   <div class="media__gallery">
       {{#each value.images}}
       <figure class="media__gallery__item{{#ifEqual ../value.grid '3'}} media__gallery__item--3{{else}} media__gallery__item--2{{/ifEqual}}

@@ -11,6 +11,12 @@
 {{~#ifEqual value.style 'breakout'}}column--1halfx set--center gutter--vertical-2x{{/ifEqual}}
 {{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
   <figure class="media lightgallery">
+    {{#ifOr value.title value.leadin}}<div class="media__txt-wrapper">{{/ifOr}}
+      {{#if value.title}}
+        {{> story/mediaTitle}}
+      {{/if}}
+      {{#if value.leadin}}<p class="media__leadin">{{{value.leadin}}}</p>{{/if}}
+    {{#ifOr value.title value.leadin}}</div>{{/ifOr}}
     <a class="media__gallery__item media__gallery__item--image" href="{{value.url}}" title="{{value.caption}}">
       {{#if value.ratio}}<div class="intrinsic ratio--{{value.ratio}}">{{/if}}
         <img
