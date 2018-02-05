@@ -101,6 +101,8 @@ npm run doc-ingest
 
 The `./data/models/` folder can have strutured data written in YAML, JSON, or AML. In the front matter for the page you can add that data to the page's metadata.
 
+Single file:
+
 ```html
 ----
 layout: story.hbs
@@ -108,7 +110,20 @@ model: story.aml # Specify the file with your data
 ----
 
 <h1>{{model.headline}}</h1>
+```
 
+Multiple files:
+
+```html
+----
+layout: story.hbs
+model: # Specify the files with your data
+  key1: story.aml # Access by the key set
+  key2: data.yaml # Access by the key set
+----
+
+<h1>{{model.key1.headline}}</h1>
+<p>{{model.key2.source</p>
 ```
 
 #### ai2html Workflow
