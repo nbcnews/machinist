@@ -123,7 +123,7 @@ model: # Specify the files with your data
 ----
 
 <h1>{{model.key1.headline}}</h1>
-<p>{{model.key2.source</p>
+<p>{{model.key2.source}}</p>
 ```
 
 #### ai2html Workflow
