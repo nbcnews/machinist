@@ -32,7 +32,7 @@ Opinionated scaffolding and static site generator for storytelling.
 
 - Boilerplate CSS/Markup/JS for story components
 - Add structured data globally via JSON or YAML in the `./src/globaldata/`
-- Add structured data to a specific Markdown file by adding in the frontmatter `model: file-name.json`, with `file-name.json` living in `./src/models/`
+- Add structured data to a specific file, see [Structured Data](#structured-data)
 - Google Doc to JSON using ArchieML
 - Dropbox Paper to JSON using ArchieML
 - An ai2html pipeline
