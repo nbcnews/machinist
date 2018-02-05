@@ -7,6 +7,7 @@
 {{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
 {{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
 {{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'breakout'}}column--1halfx set--center gutter--vertical-2x{{/ifEqual}}
 {{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
   <div id="{{value.id}}" class="scrollstory">
     {{#each value.stories}}

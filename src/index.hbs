@@ -1,17 +1,7 @@
 ---
-model:
-  key1: googledoc.json
-  key2: dropboxpaper.json
-  key3: story.yml
-  key4: story.aml
+model: story.aml
 layout: story.hbs
 ---
 
-<p>single model:</p>
-<h1>{{model.headline}}</h1>
-
-<p> object model:</p>
-<h1>{{model.key1.headline}}</h1>
-<h1>{{model.key2.headline}}</h1>
-<h1>{{model.key3.headline}}</h1>
-<h1>{{model.key4.headline}}</h1>
+{{!-- Passing model to ./partials/story.hbs --}}
+{{> story model}}
