@@ -99,7 +99,7 @@ npm run doc-ingest
 
 #### Structured Data
 
-The `./data/models/` folder can have strutured data written in YAML, JSON, or AML. In the front matter for the page you can add that data to the page's metadata.
+The `./data/models/` folder can have structured data written in YAML, JSON, or AML. In the front matter for the page you can add that data to the page's metadata.
 
 Single file:
 
