@@ -11,7 +11,6 @@
   dl,
   ul,
   ol,
-  blockquote,
   pre {
     margin-left: auto;
     margin-right: auto;
@@ -23,16 +22,6 @@
   h2 {
     margin-bottom: emRhythm(4, $ms-up1);
     margin-top: emRhythm(4, $ms-up1);
-    text-align: center;
-  }
-
-  blockquote {
-    max-width: $column-width + ($gutter * 2);
-  }
-
-  blockquote p {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
