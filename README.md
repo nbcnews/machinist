@@ -30,7 +30,7 @@ Opinionated scaffolding and static site generator for storytelling.
 
 ## Features
 
-- Boilerplate CSS/Markup/JS for story components, see `./src/data/models/story.aml`
+- Included optional CSS/Markup/JS for story components, see `./src/data/models/story.aml`
 - Add structured data globally via JSON or YAML in the `./src/globaldata/`
 - Add structured data to a specific file, see [Structured Data](#structured-data)
 - Google Doc to JSON using ArchieML
