@@ -373,21 +373,3 @@ width: 350
 height: 900
 style: full
 {}
-
-{.offcanvas}
-id: oc-1
-[.+body]
-h2: Off Canvas Heading
-p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-{.image}
-url: http://placehold.it/2000x1333
-alt: Alt Text
-caption: Caption text
-source: Source text
-style: full
-ratio: 3x2
-noLazyload: true
-{}
-[]
-{}
