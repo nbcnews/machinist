@@ -113,50 +113,22 @@ h6,
   margin-bottom: emRhythm(1, $ms-down1);
 }
 
-@if $link-underline-descenders {
-  a,
-  a:link {
-    background-image: linear-gradient($link-color, $link-color);
-    background-position: 0 95%;
-    background-repeat: repeat-x;
-    background-size: 1px 1px;
-    color: $link-color;
-    text-decoration: none;
-    text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
-  }
-
-  a:visited {
-    color: $link-color;
-  }
-
-  a:hover {
-    background-size: 1px 2px;
-    color: $link-color;
-  }
-
-  a:active {
-    color: lighten($link-color, 15%);
-  }
+a,
+a:link {
+  color: $link-color;
+  text-decoration: underline;
 }
 
-@else {
-  a,
-  a:link {
-    color: $link-color;
-    text-decoration: underline;
-  }
+a:visited {
+  color: $link-color;
+}
 
-  a:visited {
-    color: $link-color;
-  }
+a:hover {
+  color: lighten($link-color, 25%);
+}
 
-  a:hover {
-    color: lighten($link-color, 25%);
-  }
-
-  a:active {
-    color: lighten($link-color, 10%);
-  }
+a:active {
+  color: lighten($link-color, 10%);
 }
 
 p {
@@ -191,7 +163,7 @@ figure {
 }
 
 figcaption {
-  @include setType(2.5, $ms-down1, $silent: true);
+  @include setType(2.5, $ms-down2, $silent: true);
 
   color: $secondary-text-color;
   font-family: $font-mono;

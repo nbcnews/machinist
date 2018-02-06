@@ -1,5 +1,15 @@
 <div{{#if value.id}} id="{{value.id}}"{{/if}} class="reveal">
-  <div class="reveal__container">
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}
+reveal__container gutter--horizontal">
     {{#if value.kicker}}<div class="kicker kicker--inline">{{value.kicker}}</div>{{/if}}
     {{#each value.body}}
       {{#ifEqual type 'p||div||h1||h2||h3||h4||h5||h6||ul||ol'}}
@@ -12,7 +22,7 @@
         {{> story/pullquote}}
       {{/ifEqual}}
       {{#ifEqual type 'image'}}
-      	{{> story/figureImage}}
+      	{{> story/image}}
       {{/ifEqual}}
       {{#ifEqual type 'images'}}
         {{#ifEqual value.type 'gallery'}}
@@ -46,8 +56,7 @@
         {{> story/callout}}
       {{/ifEqual}}
     {{/each}}
-  </div>
-<button class="reveal__close" data-sset="reveal-close">
+<button class="reveal__close" data-sset="reveal-close" data-id="{{value.id}}">
   <svg class="menu__icon menu__icon--close" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
     <path d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
     	c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697c0.469-0.469,1.228-0.469,1.697,0
@@ -55,4 +64,5 @@
     	C14.817,13.62,14.817,14.38,14.348,14.849z"></path>
   </svg>
 </button>
+</div>
 </div>

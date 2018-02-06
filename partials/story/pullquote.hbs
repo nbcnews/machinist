@@ -17,9 +17,9 @@
         {{#if value.credit}}
           {{value.credit}}
         {{/if}}
-        {{#ifAnd value.credit value.source}} | {{/ifAnd}}
+        {{#ifAnd value.credit value.source}} {{/ifAnd}}
         {{#if value.source}}
-          {{{value.source}}}
+         <span class="pullquote__source">{{{value.source}}}</span>
         {{/if}}
       </cite>
     {{/ifOr}}

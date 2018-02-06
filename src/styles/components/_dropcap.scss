@@ -1,13 +1,11 @@
-@if ($dropcap) {
-  .article__body > p:first-child::first-letter {
-    display: block;
-    float: left;
-    font-size: 9.5em;
-    font-weight: 900;
-    line-height: 0.7;
-    margin-right: $base-vertical-unit;
-    margin-top: 0.08em;
-  }
+.article__body > p:first-child::first-letter {
+  display: block;
+  float: left;
+  font-size: 9.5em;
+  font-weight: 900;
+  line-height: 0.7;
+  margin-right: $base-vertical-unit;
+  margin-top: 0.08em;
 }
 
 .dropcap {

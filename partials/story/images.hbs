@@ -27,10 +27,12 @@
       {{#if value.ratio}}<div class="intrinsic ratio--{{value.ratio}}">{{/if}}
         <img
             src="{{value.url}}"
+            {{#unless value.noLazyload}}
             srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             data-srcset="{{value.url}}"
+            {{/unless}}
             data-sizes="auto"
-            class="lazyload{{#if value.ratio}} intrinsic__element{{/if}}"
+            class="{{#unless value.noLazyload}}lazyload{{/unless}}{{#if value.ratio}} intrinsic__element{{/if}}"
             alt="{{#if value.caption}}{{value.caption}}{{else}}{{value.alt}}{{#if value.source}} | {{value.source}}{{/if}}{{/if}}"
             title="{{value.caption}}" />
         {{#if value.ratio}}</div>{{/if}}
