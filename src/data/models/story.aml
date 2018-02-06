@@ -49,12 +49,29 @@ h6: Subhead Level Six
 
 p: Donec nec dolor erat, <a href="http://blank.org">condimentum sagittis sem</a>. <mark>Praesent porttitor porttitor</mark> risus, <strong>dapibus rutrum ipsum</strong> gravida et. <em>Integer lectus nisi</em>, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac nisi.
 
+{.tweet}
+code: <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Special Report: For almost half a century, America’s largest native reservation relied on coal. Now its coal era appears to be nearing an end, threatening hundreds of jobs: <a href="https://t.co/8SSXSzJjTr">https://t.co/8SSXSzJjTr</a> <a href="https://t.co/puNIyqqDfj">pic.twitter.com/puNIyqqDfj</a></p>&mdash; NBC News (@NBCNews) <a href="https://twitter.com/NBCNews/status/942767633736269825?ref_src=twsrc%5Etfw">December 18, 2017</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+style: full
+{}
+
+p: Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus mauris vitae nisi. Cras laoreet ultrices ligula eget tempus.
+
+{.tweets}
+style: wide
+grid: 3
+[.tweets]
+value.code: <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Saving Deal Island: On the eastern shore of Maryland&#39;s Chesapeake Bay, climate change is threatening a way of life <a href="https://t.co/m6ZRQmPpku">https://t.co/m6ZRQmPpku</a> <a href="https://t.co/AxCP6WwcMc">pic.twitter.com/AxCP6WwcMc</a></p>&mdash; NBC News (@NBCNews) <a href="https://twitter.com/NBCNews/status/930194437359235073?ref_src=twsrc%5Etfw">November 13, 2017</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+value.code: <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Why failing to reach a deal over the Irish border could mean trouble for Brexit talks <a href="https://t.co/ptRxhxUNfJ">https://t.co/ptRxhxUNfJ</a> <a href="https://t.co/h4rak5Bpbi">pic.twitter.com/h4rak5Bpbi</a></p>&mdash; NBC News (@NBCNews) <a href="https://twitter.com/NBCNews/status/937992545610723330?ref_src=twsrc%5Etfw">December 5, 2017</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+value.code: <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Journey of a Bullet: 6 survivors describe what it&#39;s like to be shot and cope with the enduring trauma <a href="https://t.co/RjXx5FWi4Y">https://t.co/RjXx5FWi4Y</a> <a href="https://t.co/2HtWUAZDY4">pic.twitter.com/2HtWUAZDY4</a></p>&mdash; NBC News (@NBCNews) <a href="https://twitter.com/NBCNews/status/946538852818223104?ref_src=twsrc%5Etfw">December 29, 2017</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+[]
+{}
+
 p: Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus mauris vitae nisi. Cras laoreet ultrices ligula eget tempus.
 
 {.blockquote}
 text: <q>Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat.</q>
-credit: Credit Text
-source: Source Text
+credit: Blockquote Credit Text
+source: Blockquote Source Text
 style: full
 {}
 
@@ -72,13 +89,18 @@ style: bleed
 {}
 
 {.video}
+title: Wide Video Title
+subtitle: Wide Video Sub-Title
+type: element
 mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4
 webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm
+duration: 31
 caption: Caption text
 source: Source text
 style: wide
 id: guide-video
 thumbnail: http://placehold.it/1280x720
+ratio: 16x9
 {}
 
 p: Suspendisse luctus justo sed risus dictum eu dignissim libero iaculis. Donec velit magna, auctor ullamcorper blandit eget, lobortis ac lectus. Praesent rhoncus eros quis lectus tempor a commodo leo aliquam. Donec convallis libero in nibh feugiat eleifend aliquet eros vehicula.
@@ -89,7 +111,7 @@ alt: Alt Text
 caption: Caption text
 source: Source text
 style: halfLeft
-ratio:
+ratio: 3x2
 noLazyload: true
 {}
 
@@ -114,6 +136,7 @@ alt: Alt Text
 caption: Caption text
 source: Source text
 style: halfRight
+ratio: 3x2
 noLazyload: true
 {}
 
@@ -127,6 +150,7 @@ alt: Alt Text
 caption: Bleed Image Caption Text
 source: Bleed Image Source Text
 style: bleed
+ratio: 3x2
 noLazyload: true
 {}
 
@@ -138,6 +162,7 @@ alt: Alt Text
 caption: Wide Image Caption Text
 source: Wide Image Source Text
 style: wide
+ratio: 3x2
 noLazyload: true
 {}
 
@@ -149,6 +174,7 @@ alt: Alt Text
 caption: Breakout Image Caption Text
 source: Breakout Source Text
 style: breakout
+ratio: 3x2
 noLazyload: true
 {}
 
@@ -160,18 +186,150 @@ alt: Alt Text
 caption: Full Image Caption Text
 source: Full Image Source Text
 style: full
+ratio: 3x2
 noLazyload: true
+{}
+
+{.images}
+type: gallery
+title: Wide 3-up Gallery Title
+subtitle: Wide 3-up Gallery Sub-Title
+caption: Gallery Caption Text
+source: Gallery Source Text
+style: wide
+grid: 3
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+[]
+{}
+
+{.images}
+title: Breakout 2-up Gallery Title
+subtitle: Breakout 2-up Gallery Sub-Title
+type: gallery
+caption: Gallery Caption Text
+source: Gallery Source Text
+style: breakout
+grid: 2
+[.images]
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+value.url: http://placehold.it/2000x1333
+value.alt: Alt Text
+value.caption: Caption Text
+value.source: Source Text
+value.ratio: 3x2
+value.noLazyload: true
+[]
 {}
 
 {.pullquote}
-text: Pullquotes are a very useful tool at the designer’s disposal when it comes to orienting the reader and breaking up copy.
-style: halfRight
-noLazyload: true
+text: <q>Pullquotes are a very useful tool at the designer’s disposal when it comes to orienting the reader and breaking up copy.</q>
+style: threeFourthsRight
+credit: Credit Text
+source: Source Text
 {}
 
-p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra
+p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra.
 
-p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra
+p: Lorem ipsum dolor sit amet, <mark data-sset="reveal" data-id="r-1">reveal: sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</mark>
+
+{.reveal}
+kicker: Kicker Text
+id: r-1
+style: full
+[.+body]
+p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra.
+p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra.
+[]
+{}
+
+p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra.
+
+p: Lorem ipsum dolor sit amet, <mark data-sset="offcanvas" data-ocid="oc-1">offcanvas: consectetur adipisicing elit</mark>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra.
+
+{.offcanvas}
+id: oc-1
+kicker: Kicker
+[.+body]
+h2: Off Canvas Heading
+p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+{.image}
+url: http://placehold.it/2000x1333
+alt: Alt Text
+caption: Caption text
+source: Source text
+style: full
+ratio: 3x2
+noLazyload: true
+{}
+[]
+{}
+
 
 :skip ////// ArchieML - Ignore following content /////
 
@@ -228,7 +386,7 @@ alt: Alt Text
 caption: Caption text
 source: Source text
 style: full
-ratio:
+ratio: 3x2
 noLazyload: true
 {}
 []

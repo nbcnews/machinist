@@ -6,12 +6,13 @@
 // apart if you want :)
 
 // Font families and default text color.
-$font-sans: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
-$font-headline: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
-$font-serif: "Merriweather", Georgia, "Times New Roman", serif;
-$font-display-serif: "Merriweather", Georgia, "Times New Roman", serif;
-$font-display-sans: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
-$font-mono: Menlo, Monaco, monospace;
+$font-sans: "FoundersGroteskCond", "Helvetica Neue", Arial, sans-serif !default;
+$font-headline: "PublicoHeadline", Georgia, "Times New Roman", serif !default;
+$font-serif: "PublicoText", Georgia, "Times New Roman", serif !default;
+$font-display-sans: "FoundersGroteskCond", "Helvetica Neue", Arial, sans-serif !default;
+$font-display-serif: "PublicoHeadline", Georgia, "Times New Roman", serif !default;
+$font-mono: "FoundersGroteskMono", Menlo, Monaco, monospace !default;
+$font-generic-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // The vertical grid unit. Margin, padding, and line-height are set to multiples
 // of this value. This is the value that determines the baseline for our vertical
@@ -35,8 +36,6 @@ $ms-ratio: 1.25;
 // right or justified.
 $paragraph-indent: false; // [1]
 $paragraph-justify: false; // [2]
-$dropcap: false;
-$link-underline-descenders: false;
 
 // You can optionally load type styles that use Typesettings.
 $load-typesetted: false;

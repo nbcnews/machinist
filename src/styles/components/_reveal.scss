@@ -6,16 +6,11 @@
 }
 
 [data-sset="reveal"] {
-  background-image: linear-gradient($link-color, $link-color);
-  background-position: 0 95%;
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
   color: $link-color;
   cursor: pointer;
   padding-left: 3px;
   padding-right: 3px;
-  text-decoration: none;
-  text-shadow: 0.03em 0 $highlight-color, -0.03em 0 $highlight-color, 0 0.03em $highlight-color, 0 -0.03em $highlight-color, 0.06em 0 $highlight-color, -0.06em 0 $highlight-color, 0.09em 0 $highlight-color, -0.09em 0 $highlight-color, 0.12em 0 $highlight-color, -0.12em 0 $highlight-color, 0.15em 0 $highlight-color, -0.15em 0 $highlight-color;
+  text-decoration: underline;
 
   &.is-active {
     position: relative;
@@ -23,7 +18,7 @@
   }
 
   &:hover {
-    background-size: 1px 2px;
+    color: lighten($link-color, 20%);
   }
 
   &:active {
@@ -39,4 +34,14 @@
     margin-right: 2px;
     width: 15px;
   }
+}
+
+.reveal__close {
+  padding: 0;
+}
+
+.reveal__close svg {
+  width: 36px;
+  height: 36px;
+  fill: $text-color;
 }
