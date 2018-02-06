@@ -89,8 +89,10 @@ style: bleed
 {}
 
 {.video}
+id: guide-video
 title: Wide Video Title
 subtitle: Wide Video Sub-Title
+leadin: Wide Video Leadin
 type: element
 mp4: http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.mp4
 webm : http://nodeassets.nbcnews.com/cdnassets/projects/texas-pipeline/videos/pipeline-map02.webm
@@ -98,9 +100,12 @@ duration: 31
 caption: Caption text
 source: Source text
 style: wide
-id: guide-video
 thumbnail: http://placehold.it/1280x720
 ratio: 16x9
+playsinline: true
+noControls:
+autoplay:
+muted:
 {}
 
 p: Suspendisse luctus justo sed risus dictum eu dignissim libero iaculis. Donec velit magna, auctor ullamcorper blandit eget, lobortis ac lectus. Praesent rhoncus eros quis lectus tempor a commodo leo aliquam. Donec convallis libero in nibh feugiat eleifend aliquet eros vehicula.
