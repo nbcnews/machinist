@@ -1,0 +1,25 @@
+.is-block {
+  display: block;
+}
+
+.is-inline-block {
+  display: inline-block;
+}
+
+.is-flex {
+  display: flex;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-fixed {
+  position: fixed;
+}
+
+.is-stuck {
+  // height: 100%;
+  overflow: hidden;
+  // -webkit-transform: translate3d(0, 0, 0);
+}

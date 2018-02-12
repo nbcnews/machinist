@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{description}}">
+  {{#if keywords}}
+  <meta name="news_keywords" content="{{keywords}}" />
+  {{/if}}
+  <meta name="standout" content="{{url}}{{paths.href}}" />
+  <meta property="og:site_name" content="{{name}}" />
+  <meta property="og:description" content="{{description}}" />
+  <meta property="og:title" content="{{capitalize title}} - {{name}}" />
+  <meta property="og:url" content="{{url}}{{paths.href}}" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="{{twitter.username}}" />
+  <meta name="twitter:title" content="{{title}} - {{name}}" />
+  <meta name="twitter:description" content="{{description}}" />
+  <meta name="twitter:creator" content="{{name}}" />
+  <meta name="twitter:domain" content="{{domain}}>" />
+  {{#if openGraph.image}}
+  <meta property="og:image" content="{{openGraph.image}}" />
+  <meta name="twitter:image" content="{{openGraph.image}}" />
+  {{/if}}
+  {{#if googleVerification}}
+  <meta name="google-site-verification" content="{{googleVerification}}" />
+  {{/if}}
+  <link rel="author" href="humans.txt" />
+  {{#each styles}}
+  <link rel="stylesheet" href="{{this}}"/>
+  {{/each}}
+  {{#unless noMainStyles}}
+  <link rel="stylesheet" href="{{assetPath}}{{#if devBuild}}styles/main.css{{else}}{{fingerprint.[styles/main.css]}}{{/if}}">
+  {{/unless}}
+  <title>{{#if title}}{{capitalize title}}{{else}}{{capitalize paths.dir}}{{/if}} {{titleSeperator}} {{name}}</title>
+<!-- {{#if devBuild}}dev{{else}}production{{/if}} v{{version}} -->
+</head>

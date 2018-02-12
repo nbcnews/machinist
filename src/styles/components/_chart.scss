@@ -1,0 +1,54 @@
+.chart {
+  font-family: $font-sans;
+  margin-bottom: emRhythm($base-line-multi);
+  width: 100%;
+
+  .layout--bleed &,
+  .layout--full & {
+    margin-bottom: emRhythm($base-line-multi * 2);
+    margin-top: emRhythm($base-line-multi * 2);
+  }
+}
+
+.chart__tooltip {
+  @include setType(2, $ms-down1);
+
+  background-color: $background-color;
+  padding: 3px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.chart__leadin {
+  @include setType(2.5, $base-em-font-size, $silent: true);
+
+  color: $grey;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $column-width;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+.chart__leadin--gallery {
+  @include setType(2.5, $base-em-font-size, $silent: true);
+
+  @media (min-width: $screen-xs-min) {
+    @include setType(2, $ms-down1);
+  }
+
+  @media (min-width: $screen-md-min) {
+    @include setType(2.5, $base-em-font-size, $silent: true);
+  }
+}
+
+.chart__container {
+  background-color: $lighter-grey;
+  min-height: 320px;
+}
+
+// When C3.js finishes drawing the chart it applies the class .c3
+.c3.chart__container {
+  background-color: $background-color;
+}

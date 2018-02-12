@@ -1,0 +1,42 @@
+.entry {
+  margin-bottom: $gutter * 2;
+
+  a,
+  a:link {
+    background-image: none;
+    color: $text-color;
+    text-shadow: none;
+    transition-duration: 0.5s, 0.5s;
+    transition-property: fill, color;
+    transition-timing-function: ease, ease;
+  }
+
+  a:hover,
+  a:active,
+  a:hover svg,
+  a:active svg {
+    color: lighten($dark-grey, 35%);
+    fill: lighten($dark-grey, 35%);
+    text-decoration: none;
+  }
+}
+
+.entry__headline {
+  @include setType(3, $ms-up2);
+
+  margin-bottom: emRhythm(1, $ms-up2, $silent: true);
+}
+
+.entry__desc {
+  margin-bottom: emRhythm(0.5, $silent: true);
+}
+
+.entry__art {
+  margin-bottom: emRhythm(1);
+}
+
+.entry__art img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}

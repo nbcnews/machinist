@@ -1,0 +1,47 @@
+.player__wrapper {
+  background-color: $dark-grey;
+  background-color: rgba($dark-grey, 0.95);
+  display: none;
+  height: 100%;
+  left: 0;
+  padding-top: $site-header-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.player {
+  margin-top: 3vh;
+  max-width: $column-width / 2;
+  position: relative;
+
+  @media (min-height: 480px) {
+    max-width: $column-width;
+  }
+
+  @media (min-height: 840px) {
+    max-width: $column-width * 2;
+  }
+}
+
+.player__loading {
+  color: #fff;
+  font-family: $font-sans;
+  left: 0;
+  margin-top: 53px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 0;
+}
+
+.player__loading__txt {
+  text-align: center;
+  width: 100%;
+}

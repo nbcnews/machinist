@@ -1,0 +1,36 @@
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+<figure class="charts" {{#if value.id}}id="{{value.id}}"{{/if}}>
+  <div class="gutter--vertical">
+    {{#if value.title}}
+      {{> story/mediaTitle}}
+    {{/if}}
+    {{#if value.leadin}}
+      <p class="chart__leadin">{{{value.leadin}}}</p>
+    {{/if}}
+  </div>
+  <div class="media__gallery">
+    {{#each value.charts}}
+      <figure class="chart charts__item media__gallery__item{{#ifEqual ../value.grid '3'}} media__gallery__item--3{{else}} media__gallery__item--2{{/ifEqual}}">
+        {{#if value.title}}
+          {{> story/mediaTitle}}
+        {{/if}}
+        {{#if value.leadin}}
+          <p class="chart__leadin chart__leadin--gallery align--center">{{{value.leadin}}}</p>
+        {{/if}}
+        <div{{#if value.id}} id="{{value.id}}"{{/if}} class="{{#if value.class}}{{value.class}} {{/if}}chart__container">{{#if value.code}}{{{value.code}}}{{/if}}</div>
+        {{> story/caption}}
+      </figure>
+    {{/each}}
+  </div>
+  {{> story/caption}}
+</figure>
+</div>

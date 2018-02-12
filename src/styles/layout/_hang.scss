@@ -1,0 +1,39 @@
+$hang-lg-bp: ($column-width * 2) + ($gutter * 2);
+
+.hang {
+  margin: 0 auto;
+  margin-left: $gutter;
+  margin-right: $gutter;
+  max-width: ($column-width * 2) + ($gutter * 2);
+
+  figure,
+  aside {
+    @media (min-width: $screen-xs-min) {
+      width: ($column-width / 2) - $gutter;
+    }
+  }
+}
+
+.hang--left {
+  @media (min-width: $screen-xs-min) {
+    float: left;
+    margin-left: $gutter;
+    margin-right: $gutter;
+  }
+
+  @media (min-width: $hang-lg-bp) {
+    margin-left: calc(50% - #{$column-width});
+  }
+}
+
+.hang--right {
+  @media (min-width: $screen-xs-min) {
+    float: right;
+    margin-left: $gutter;
+    margin-right: $gutter;
+  }
+
+  @media (min-width: $hang-lg-bp) {
+    margin-right: calc(50% - #{$column-width});
+  }
+}

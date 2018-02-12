@@ -1,0 +1,39 @@
+.gutter--bleed {
+  max-width: none;
+  width: 100%;
+
+  img {
+    max-width: none;
+    width: 100%;
+  }
+
+  figcaption {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+}
+
+.gutter--horizontal {
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+.gutter--horizontal-2x {
+  padding-left: $gutter * 2;
+  padding-right: $gutter * 2;
+}
+
+.gutter--horizontal-half {
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+.gutter--vertical {
+  margin-bottom: emRhythm($base-line-multi);
+  margin-top: emRhythm($base-line-multi);
+}
+
+.gutter--vertical-2x {
+  margin-bottom: emRhythm($base-line-multi * 2);
+  margin-top: emRhythm($base-line-multi * 2);
+}

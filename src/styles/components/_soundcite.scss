@@ -1,0 +1,139 @@
+// soundcite - v0.4.3 - 2016-07-18
+// Copyright (c) 2016 Tyler J. Fisher and Northwestern University Knight Lab
+
+// PLAYER CHROME
+
+@-webkit-keyframes spin {
+  from {
+    opacity: 0.4;
+    -webkit-transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: rotate(180deg);
+  }
+
+  to {
+    opacity: 0.4;
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    opacity: 0.4;
+    -moz-transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    -moz-transform: rotate(180deg);
+  }
+
+  to {
+    opacity: 0.4;
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes spin {
+  from {
+    opacity: 0.4;
+    -ms-transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    -ms-transform: rotate(180deg);
+  }
+
+  to {
+    opacity: 0.4;
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin {
+  from {
+    opacity: 0.4;
+    -o-transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    -o-transform: rotate(180deg);
+  }
+
+  to {
+    opacity: 0.4;
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    opacity: 0.2;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+
+  to {
+    opacity: 0.2;
+    transform: rotate(360deg);
+  }
+}
+
+.soundcite-loaded {
+  background: rgba($highlight-color, 1);
+  border-radius: 0;
+  cursor: pointer;
+  display: inline;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.soundcite-loaded::before {
+  content: "";
+  display: inline-block;
+  margin-right: 0;
+  vertical-align: -10%;
+}
+
+.soundcite-loading::before {
+  -moz-animation: spin 1s linear infinite;
+  -ms-animation: spin 1s linear infinite;
+  -o-animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border: 2px solid #000;
+  border-radius: 50%;
+  border-right-color: transparent;
+  font-size: 0.8em;
+  height: 0.75em;
+  margin-right: 0;
+  position: relative;
+  top: -0.05em;
+  width: 0.75em;
+}
+
+.soundcite-play::before {
+  border: 0.5em solid transparent;
+  border-left: 0.75em solid black;
+  font-size: 0.8em;
+  position: relative;
+  top: -0.05em;
+}
+
+.soundcite-pause::before {
+  border-left: 0.75em double black;
+  border-right: 0.5em solid transparent;
+  font-size: 0.8em;
+  height: 1em;
+  position: relative;
+  top: -0.05em;
+}

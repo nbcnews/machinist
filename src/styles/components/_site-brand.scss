@@ -1,0 +1,16 @@
+.site-brand {
+  margin-right: $gutter / 2;
+  margin-top: 7px;
+  padding-right: $gutter / 2;
+
+  svg {
+    height: 12px;
+    width: 87px;
+  }
+
+  .is-top & {
+    @media (min-width: $screen-sm-min) {
+      border-right: 1px solid $light-grey;
+    }
+  }
+}

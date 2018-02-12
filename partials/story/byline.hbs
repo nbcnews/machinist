@@ -1,0 +1,9 @@
+<p class="byline">
+  <meta itemprop="publisher" content="{{site}}">
+  {{#each bylines}}
+    {{#ifEqual value.type 'author'}}
+      <span class="byline__item">{{value.role}} <span class="byline__name" itemprop="author">{{value.name}}</span></span>
+    {{/ifEqual}}
+  {{/each}}
+  {{> story/dateline}}
+</p>

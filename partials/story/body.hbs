@@ -1,0 +1,107 @@
+<div data-sset="story-body" class="story__body" itemprop="articleBody">
+  {{#each body}}
+    {{#ifEqual type 'section'}}
+      {{#ifEqual value.type 'start'}}
+        <section class="{{#if value.objectClass}}{{value.objectClass}}{{else}}section{{/if}}">
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'section'}}
+      {{#ifEqual value.type 'end'}}
+        </section>
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'group'}}
+      {{#ifEqual value.type 'start'}}
+        <div id="{{#if value.id}}{{value.id}}{{else}}story__group-{{@index}}{{/if}}" class="{{#if value.objectClass}}{{value.objectClass}}{{else}}story__group{{/if}}">
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'group'}}
+      {{#ifEqual value.type 'end'}}
+        </div>
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'p||div||h1||h2||h3||h4||h5||h6||ul||ol'}}
+      <{{type}}>{{{value}}}</{{type}}>
+    {{/ifEqual}}
+    {{#ifEqual type 'blockquote'}}
+      {{> story/blockquote}}
+    {{/ifEqual}}
+    {{#ifEqual type 'pullquote'}}
+      {{> story/pullquote}}
+    {{/ifEqual}}
+    {{#ifEqual type 'hr'}}
+      <{{type}} />
+    {{/ifEqual}}
+    {{#ifEqual type 'image'}}
+    	{{> story/figureImage}}
+    {{/ifEqual}}
+    {{#ifEqual type 'tweet'}}
+    	{{> story/tweet}}
+    {{/ifEqual}}
+    {{#ifEqual type 'tweets'}}
+    	{{> story/tweets}}
+    {{/ifEqual}}
+    {{#ifEqual type 'images'}}
+      {{#ifEqual value.type 'gallery'}}
+        {{> story/images}}
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'images'}}
+      {{#ifEqual value.type 'slider'}}
+        {{> story/slider}}
+      {{/ifEqual}}
+    {{/ifEqual}}
+    {{#ifEqual type 'mpx'}}
+      {{> story/mpx}}
+    {{/ifEqual}}
+    {{#ifEqual type 'video'}}
+      {{> story/video}}
+    {{/ifEqual}}
+    {{#ifEqual type 'embed'}}
+      {{> story/embed}}
+    {{/ifEqual}}
+    {{#ifEqual type 'chart'}}
+      {{> story/chart}}
+    {{/ifEqual}}
+    {{#ifEqual type 'charts'}}
+      {{> story/charts}}
+    {{/ifEqual}}
+    {{#ifEqual type 'documentcloud'}}
+      {{> story/documentcloud}}
+    {{/ifEqual}}
+    {{#ifEqual type 'ai2html'}}
+      {{> story/ai2html}}
+    {{/ifEqual}}
+    {{#ifEqual type 'callout'}}
+      {{> story/callout}}
+    {{/ifEqual}}
+    {{#ifEqual type 'offcanvas'}}
+      {{> story/offcanvas}}
+    {{/ifEqual}}
+    {{#ifEqual type 'videos'}}
+      {{> story/videos}}
+    {{/ifEqual}}
+    {{#ifEqual type 'episodes'}}
+      {{> story/episodes}}
+      {{> story/player}}
+    {{/ifEqual}}
+    {{#ifEqual type 'scrollstory'}}
+      {{> story/scrollstory}}
+    {{/ifEqual}}
+    {{#ifEqual type 'reveal'}}
+      {{> story/reveal}}
+    {{/ifEqual}}
+    {{#ifEqual type 'titlecard'}}
+      {{> story/titlecard}}
+    {{/ifEqual}}
+    {{#ifEqual type 'nav'}}
+      {{> story/nav}}
+    {{/ifEqual}}
+    {{#ifEqual type 'addendum'}}
+      <div class="addendum">
+        <p>{{{value.text}}}</p>
+      </div>
+    {{/ifEqual}}
+  {{/each}}
+</div>
+<div class="shade"></div>

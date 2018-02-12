@@ -1,0 +1,105 @@
+.column--1x,
+.column--2x,
+.column--bleed,
+.column--1halfx{
+  figcaption {
+    padding-left: $gutter;
+    padding-right: $gutter;
+    max-width: $column-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  aside q {
+    padding-left: $gutter * 2;
+  }
+}
+
+.column--bleed img {
+  max-width: none;
+  width: 100%;
+}
+
+.column--1x {
+  max-width: $column-width;
+
+  aside q {
+    $hangQuoteBp: $screen-xs-min + $gutter;
+
+    @media (min-width: $hangQuoteBp) {
+      padding-left: $gutter;
+    }
+  }
+}
+
+.column--2x {
+  max-width: $column-width * 2;
+}
+
+.column--1halfx {
+  max-width: $column-width * 1.5;
+}
+
+.column--half {
+  width: 100%;
+
+  @media (min-width: $screen-xs-min) {
+    width: 50%;
+  }
+
+  figure,
+  aside {
+    @media (min-width: $screen-xs-min) {
+      max-width: ($column-width / 2) + $gutter;
+    }
+  }
+}
+
+.column--three-fourths {
+  width: 100%;
+
+  @media (min-width: $screen-xs-min) {
+    width: 75%;
+  }
+
+  figure,
+  aside {
+    @media (min-width: $screen-xs-min) {
+      max-width: ($column-width * 0.75) + $gutter;
+    }
+  }
+}
+
+.column--third {
+  @media (min-width: $screen-xs-min) {
+    width: 33.3333%;
+  }
+}
+
+.column--inline {
+  width: 100%;
+
+  @media (min-width: $screen-xs-min) {
+    width: 50%;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6,
+  figcaption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  figure,
+  aside {
+    padding-left: $gutter;
+    padding-right: $gutter;
+    margin-top: $base-vertical-unit;
+  }
+
+  aside q {
+    padding-left: $gutter * 2;
+  }
+}

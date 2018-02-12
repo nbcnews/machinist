@@ -1,0 +1,41 @@
+.story__body {
+  background-color: $background-color;
+
+  & > p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  dl,
+  ul,
+  ol,
+  blockquote,
+  pre {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $column-width;
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+
+  h2 {
+    margin-bottom: emRhythm(4, $ms-up1);
+    margin-top: emRhythm(4, $ms-up1);
+    text-align: center;
+  }
+
+  blockquote {
+    max-width: $column-width + ($gutter * 2);
+  }
+
+  blockquote p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.story__body > p:first-of-type::first-line {
+  font-weight: 600;
+}

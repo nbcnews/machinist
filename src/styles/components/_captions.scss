@@ -1,0 +1,10 @@
+.caption {
+  float: left;
+  max-width: $column-width;
+}
+
+.caption__source {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  opacity: 0.9;
+}

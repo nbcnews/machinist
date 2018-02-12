@@ -1,0 +1,96 @@
+.slick-slider {
+  .layout--bleed &,
+  .layout--full & {
+    margin-bottom: emRhythm($base-line-multi * 2);
+    margin-top: emRhythm($base-line-multi * 2);
+  }
+}
+
+.slick-arrow {
+  background: transparent;
+  border: 0;
+  display: block;
+  font-size: 0;
+  height: $gutter;
+  line-height: 0;
+  margin-top: ($gutter / 2) * -1;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+
+  &::before {
+    font-size: $base-font-size;
+    line-height: $gutter;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.slick-next {
+  right: $gutter;
+
+  &::before {
+    content: "›";
+  }
+}
+
+.slick-prev {
+  left: $gutter;
+
+  &::before {
+    content: "‹";
+  }
+}
+
+.slick-slider img {
+  height: auto;
+  max-width: 100%;
+}
+
+.slick-dots {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.slick-dots li {
+  cursor: pointer;
+  display: inline-block;
+  height: $gutter;
+  margin: 0 5px;
+  position: relative;
+  width: $gutter;
+}
+
+.slick-dots button {
+  background: transparent;
+  border: 0;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  height: $gutter;
+  line-height: 0;
+  outline: none;
+  padding: 5px;
+  position: absolute;
+  width: $gutter;
+
+  &::before {
+    color: $light-grey;
+    content: "•";
+    font-size: $base-font-size;
+    font-weight: 900;
+    height: $gutter;
+    left: 0;
+    line-height: $gutter;
+    position: absolute;
+    top: 0;
+    width: $gutter;
+  }
+}
+
+.slick-active button::before {
+  color: $text-color;
+}

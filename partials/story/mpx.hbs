@@ -1,0 +1,35 @@
+{{#if value.objectClass}}<div class="{{value.objectClass}}">{{/if}}
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangright'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+<figure class="media">
+  {{#ifOr value.title value.leadin}}<div class="media__txt-wrapper">{{/ifOr}}
+    {{#if value.title}}
+      {{> story/mediaTitle}}
+    {{/if}}
+    {{#if value.leadin}}<p class="media__leadin">{{{value.leadin}}}</p>{{/if}}
+  {{#ifOr value.title value.leadin}}</div>{{/ifOr}}
+  <div class="media__wrapper">
+    <video id="{{#if value.id}}{{value.id}}{{else}}video-{{@index}}{{/if}}" class="video-js vjs-default-skin vjs-16-9" controls
+        preload="none" poster="{{value.thumbnail}}"
+        data-meta='{"title":"{{value.title}}","guid":"{{value.id}}", "duration":"{{value.duration}}"}'
+        data-setup='{}'>
+      <source src="{{value.url}}" type='video/mp4'/>
+      <source src="{{value.url}}" type='video/webm'/>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser
+        that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </video>
+  </div>
+  {{> story/caption}}
+</figure>
+</div>
+{{#if value.objectClass}}</div>{{/if}}

@@ -1,0 +1,30 @@
+.credits {
+  text-align: center;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  margin: emRhythm(10) auto emRhythm(13) auto;
+  max-width: $column-width;
+}
+
+.credits__content {
+  border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
+}
+
+.credits__heading {
+  @include setType(3, $ms-down1);
+
+  margin-bottom: emRhythm(2, $ms-down1);
+  margin-top: emRhythm(2, $ms-down1);
+}
+
+.credits__person {
+  margin-bottom: emRhythm(1);
+}
+
+.credits__responsibility {
+  color: $secondary-text-color;
+  font-family: $font-sans;
+  font-size: $ms-down1;
+  text-transform: uppercase;
+}

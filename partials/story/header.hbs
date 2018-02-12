@@ -1,0 +1,35 @@
+<header data-sset="story-header" class="story-header">
+  <div class="scrim"></div>
+  {{#if mainArtImage}}
+    {{#if mainArtImage.isBackground}}
+      <div class="story-header__bg" style="background-image:url('{{mainArtImage.url}}')"></div>
+      {{else}}
+      <img data-object-fit="cover" src="{{mainArtImage.url}}" alt="{{mainArtImage.alt}}" class="story-header__bg">
+    {{/if}}
+  {{/if}}
+  {{#if mainArtVideo}}
+    <video id="js-story-header-bg" playsinline class="story-header__bg" {{#if mainArtVideo.autoplay}}autoplay{{/if}} {{#if mainArtVideo.loop}}loop{{/if}}  muted preload="auto" poster="{{mainArtVideo.thumbnail}}">
+      <source src="{{mainArtVideo.mp4}}" type="video/mp4"/>
+      <source src="{{mainArtVideo.webm}}" type="video/webm"/>
+      <img src="{{mainArtVideo.thumbnail}}" title="Your browser does not support the video tag" alt="{{mainArtVideo.alt}}"/>
+    </video>
+  {{/if}}
+  <div class="story-header__intro">
+    {{#if kicker.text}}
+      <div class="kicker kicker--hed">{{kicker.text}}</div>
+    {{/if}}
+    <h1 itemprop="headline">{{{headline}}}</h1>
+    {{#if summary}}
+      <p class="standfirst" itemprop="description">{{summary}}</p>
+    {{/if}}
+    {{#unless notPublished}}
+      {{> story/byline}}
+    {{/unless}}
+    {{#each ctas}}
+      <a class="button button--txt" href="{{value.url}}">
+        {{#if value.text}}<span>{{value.text}}</span>{{/if}}
+        {{{value.code}}}
+      </a>
+    {{/each}}
+  </div>
+</header>

@@ -1,0 +1,29 @@
+.titlecard {
+  background-color: $background-color;
+  min-height: 100vh;
+  padding: ($gutter * 7) $gutter;
+
+  @media (min-width: $screen-sm-min), (min-height: 737px) {
+    min-height: 0;
+  }
+
+  h2 {
+    @include setType(4, $ms-up4);
+
+    font-family: $font-display-sans;
+    font-weight: normal;
+    hyphens: auto;
+    letter-spacing: -0.05em;
+    margin-bottom: $gutter;
+    margin-top: $gutter;
+    max-width: none;
+    padding: 0;
+    text-align: left;
+    text-transform: uppercase;
+    word-break: break-word;
+
+    @media (min-width: $screen-sm-min) {
+      @include setType(6, $ms-up6);
+    }
+  }
+}

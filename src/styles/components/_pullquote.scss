@@ -1,0 +1,45 @@
+.pullquote {
+  $pullquote-em-font-size: $ms-up3;
+  $cite-em-font-size: $ms-down2;
+
+  @include setType(5, $pullquote-em-font-size);
+
+  font-family: $font-display-serif;
+  margin-bottom: emRhythm(2, $pullquote-em-font-size);
+  color: $text-color;
+  padding-left: $gutter;
+  padding-right: $gutter;
+
+  @media (min-width: $screen-xs-min) {
+    margin-bottom: emRhythm($base-line-multi, $pullquote-em-font-size);
+  }
+
+  q {
+    display: block;
+    margin-left: $gutter * -1;
+    padding-left: $gutter;
+  }
+
+  q ~ cite {
+    margin-left: $gutter;
+  }
+
+  cite {
+    $cite-context-px-size: (stripUnits($base-font-size) * stripUnits($pullquote-em-font-size)) * 1px;
+    $cite-px-size: (stripUnits($base-font-size) * stripUnits($cite-em-font-size) * 1px);
+    $cite-em-size: emCalc($cite-px-size, $cite-context-px-size);
+
+    font-size: $cite-em-size;
+    line-height: unitlessRhythm(2, $cite-em-font-size);
+    display: block;
+    color: $text-color;
+    margin-top: $base-vertical-unit;
+    font-family: $font-mono;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+.pullquote q::before {
+  margin-left: $gutter * -1;
+}

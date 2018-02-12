@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{projectName}}</title>
+    <meta name="description" content="{{summary}}">
+    {{#each styles}}
+      <link rel="stylesheet" href="{{this}}"/>
+    {{/each}}
+    <style media="screen">
+      {{{filedata.[styles/main.css]}}}
+    </style>
+  </head>
+  <body>
+  <div id="np-{{projectName}}" class="np-specials">
+    {{> stats}}
+    {{{typogrFormat contents}}}
+    {{> scripts}}
+  </div>
+  </body>
+</html>

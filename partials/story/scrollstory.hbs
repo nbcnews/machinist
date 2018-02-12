@@ -1,0 +1,33 @@
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+  <div id="{{value.id}}" class="scrollstory">
+    {{#each value.stories}}
+    <div class="scrollstory__story">
+        <div class="scrollstory__story__block scrollstory__story__block--target">
+          {{#each value.body}}
+            {{#ifEqual type 'image'}}
+            	{{> story/figureImage}}
+            {{/ifEqual}}
+            {{#ifEqual type 'video'}}
+            	{{> story/video}}
+            {{/ifEqual}}
+          {{/each}}
+        </div>
+        <div class="scrollstory__story__block scrollstory__story__block--non">
+          <h3>{{value.title}}</h3>
+          <p>
+            {{value.text}}
+          </p>
+        </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

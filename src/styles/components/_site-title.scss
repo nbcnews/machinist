@@ -1,0 +1,21 @@
+.site-title {
+  font-family: $font-sans;
+  font-size: $ms-down1;
+  line-height: $site-header-height;
+  margin-right: $gutter;
+  max-width: 34%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (min-width: 375px) {
+    max-width: 43%;
+  }
+
+  h1 {
+    font-size: 1em;
+    font-weight: normal;
+    line-height: $site-header-height;
+    margin-bottom: 0;
+  }
+}

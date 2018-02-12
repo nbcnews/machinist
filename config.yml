@@ -1,0 +1,23 @@
+hiddenPublish: false # Publish property set to embed.json
+projectInitDate:
+  year: '{{year}}'
+  month: '{{month}}'
+robotsDisallow: true # Allow robots from visit any page(s) on the site
+summary: TKTKTK
+dest: www # Metalsmith output directory
+src: src # Metalsmith source directory
+projectName: '{{projectName}}'
+assetPath:
+  domain: https://static-projects.nbcnews.com
+  development: /
+  stage: /
+  production:
+googleDocJson:
+  fileId: null # Google Doc ID ex. 1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY
+  output: ./src/data/models/googledoc.json # Where the resulting JSON is saved via ./lib/googledocjson.js
+# Add external scripts globally ./partials/scripts.hbs
+scripts:
+-
+-
+# https://github.com/segmentio/metalsmith-collections
+collections: false

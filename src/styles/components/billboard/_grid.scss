@@ -1,0 +1,16 @@
+.bb-grid {
+  line {
+    stroke: #aaa;
+  }
+
+  text {
+    fill: #aaa;
+  }
+}
+
+.bb-xgrid,
+.bb-ygrid {
+  stroke-dasharray: 3 3;
+}
+
+// .bb-xgrid-focus {}

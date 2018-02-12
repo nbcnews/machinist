@@ -1,0 +1,26 @@
+.callout {
+  border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
+  color: $grey;
+  font-size: $ms-down1;
+  margin-bottom: emRhythm(2, $ms-down1);
+  padding: $gutter $gutter ($gutter / 2) $gutter;
+
+  @media (min-width: $screen-xs-min) {
+    margin-bottom: emRhythm($base-line-multi, $ms-down1);
+  }
+
+  a,
+  a:link {
+    background-image: none;
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+.callout .callout__heading {
+  margin-bottom: $gutter / 4;
+  margin-top: 0;
+  padding: 0;
+  text-align: left;
+}

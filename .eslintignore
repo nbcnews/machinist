@@ -1,0 +1,5 @@
+**/vendor/**
+**/admin/**
+**/assets/**
+admin.js
+bin/machinist

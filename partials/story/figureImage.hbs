@@ -1,0 +1,32 @@
+{{#if value.objectClass}}<div class="{{value.objectClass}}">{{/if}}
+<div class="
+{{~#ifEqual value.style 'hangLeft'}}hang hang--left{{/ifEqual}}
+{{~#ifEqual value.style 'hangRight'}}hang hang--right{{/ifEqual}}
+{{~#ifEqual value.style 'halfLeft'}}column--inline column--half set--left{{/ifEqual}}
+{{~#ifEqual value.style 'halfRight'}}column--inline column--half set--right{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsLeft'}}column--inline column--three-fourths set--left{{/ifEqual}}
+{{~#ifEqual value.style 'threeFourthsRight'}}column--inline column--three-fourths set--right{{/ifEqual}}
+{{~#ifEqual value.style 'wide'}}column--2x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'full'}}column--1x set--center gutter--vertical-2x{{/ifEqual}}
+{{~#ifEqual value.style 'bleed'}}column--bleed gutter--vertical-2x{{/ifEqual}}">
+  <figure class="media lightgallery">
+    <a class="media__gallery__item media__gallery__item--image" href="{{value.url}}" title="{{value.caption}}">
+      {{#if value.ratio}}<div class="intrinsic ratio--{{value.ratio}}">{{/if}}
+        <img
+            {{#if value.crossorigin}}crossorigin="anonymous"{{/if}}
+            src="{{value.url}}"
+            {{#if value.id}}id="{{value.id}}"{{/if}}
+            {{#unless value.noLazyload}}
+            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-srcset="{{value.url}}"
+            {{/unless}}
+            data-sizes="auto"
+            {{#ifEqual value.style 'halfLeft||halfRight||full'}}data-action="zoom"{{/ifEqual}}
+            class="{{#unless value.noLazyload}}lazyload{{/unless}}{{#if value.ratio}} intrinsic__element{{/if}}"
+            alt="{{value.alt}}" />
+      {{#if value.ratio}}</div>{{/if}}
+    </a>
+    {{> story/caption}}
+  </figure>
+</div>
+{{#if value.objectClass}}</div>{{/if}}
