@@ -1,6 +1,6 @@
 {
   "name": "@nbcnews/machinist",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A boilerplate for a Metalsmith static site.",
   "main": "bin/cli",
   "scripts": {
