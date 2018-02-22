@@ -4,7 +4,7 @@ url: http://blank.org/
 {}
 
 {mainArtImage}
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Caption Text
 {}
@@ -104,7 +104,7 @@ duration: 31
 caption: Caption text
 source: Source text
 style: wide
-thumbnail: http://placehold.it/1280x720
+thumbnail: https://via.placeholder.com/1280x720
 ratio: 16x9
 playsinline: true
 noControls:
@@ -115,7 +115,7 @@ muted:
 p: Suspendisse luctus justo sed risus dictum eu dignissim libero iaculis. Donec velit magna, auctor ullamcorper blandit eget, lobortis ac lectus. Praesent rhoncus eros quis lectus tempor a commodo leo aliquam. Donec convallis libero in nibh feugiat eleifend aliquet eros vehicula.
 
 {.image}
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Caption text
 source: Source text
@@ -140,7 +140,7 @@ style: hangLeft
 p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra
 
 {.image}
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Caption text
 source: Source text
@@ -154,7 +154,7 @@ p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
 {.image}
 title: Bleed Image Title
 subtitle: Bleed Image Sub-Title
-url: http://placehold.it/2000x800
+url: https://via.placeholder.com/2000x800
 alt: Alt Text
 caption: Bleed Image Caption Text
 source: Bleed Image Source Text
@@ -166,7 +166,7 @@ noLazyload: true
 {.image}
 title: Wide Image Title
 subtitle: Wide Image Sub-Title
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Wide Image Caption Text
 source: Wide Image Source Text
@@ -178,7 +178,7 @@ noLazyload: true
 {.image}
 title: Breakout Image Title
 subtitle: Breakout Image Sub-Title
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Breakout Image Caption Text
 source: Breakout Source Text
@@ -190,7 +190,7 @@ noLazyload: true
 {.image}
 title: Full Image Title
 subtitle: Full Image Sub-Title
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Full Image Caption Text
 source: Full Image Source Text
@@ -208,37 +208,37 @@ source: Gallery Source Text
 style: wide
 grid: 3
 [.images]
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
@@ -256,37 +256,37 @@ source: Gallery Source Text
 style: breakout
 grid: 2
 [.images]
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
 value.ratio: 3x2
 value.noLazyload: true
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.caption: Caption Text
 value.source: Source Text
@@ -328,7 +328,7 @@ h2: Off Canvas Heading
 p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 p: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 {.image}
-url: http://placehold.it/2000x1333
+url: https://via.placeholder.com/2000x1333
 alt: Alt Text
 caption: Caption text
 source: Source text
@@ -352,30 +352,30 @@ type: slider
 caption: Caption Text
 style: full
 [.images]
-value.url: http://placehold.it/2000x1333
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.source: Source Text
-value.thumb: http://placehold.it/201x134
-value.url: http://placehold.it/2000x1333
+value.thumb: https://via.placeholder.com/201x134
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.source: Source Text
-value.thumb: http://placehold.it/201x134
-value.url: http://placehold.it/2000x1333
+value.thumb: https://via.placeholder.com/201x134
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.source: Source Text
-value.thumb: http://placehold.it/201x134
-value.url: http://placehold.it/2000x1333
+value.thumb: https://via.placeholder.com/201x134
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.source: Source Text
-value.thumb: http://placehold.it/201x134
-value.url: http://placehold.it/2000x1333
+value.thumb: https://via.placeholder.com/201x134
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.source: Source Text
-value.thumb: http://placehold.it/201x134
-value.url: http://placehold.it/2000x1333
+value.thumb: https://via.placeholder.com/201x134
+value.url: https://via.placeholder.com/2000x1333
 value.alt: Alt Text
 value.source: Source Text
-value.thumb: http://placehold.it/201x134
+value.thumb: https://via.placeholder.com/201x134
 []
 {}
 
