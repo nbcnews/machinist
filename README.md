@@ -87,7 +87,7 @@ npm run doc-ingest
 
 #### Google Doc Data
 
-Create a new doc or optionally duplicate the [example project](https://docs.google.com/document/d/1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY/edit) on Google Docs. 
+Create a new [Google Doc](https://www.google.com/docs/about/) and optionally paste the contents of `./src/data/models/story.aml` to get started. 
 
 Get the file ID from the URL. It should look like: `1bj563rIzGL95pvfWORPk-4ukUhRU-GYR55QGx9emyjY`. Add that as the value for `googleDocJson.fileId` in `config.yml`. 
 
