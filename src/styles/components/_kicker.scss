@@ -1,7 +1,7 @@
 .kicker {
   @include setType(2, $ms-down1);
 
-  font-family: $font-sans;
+  font-family: $font-mono;
   text-transform: uppercase;
 }
 
