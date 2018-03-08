@@ -163,23 +163,17 @@ figure {
 }
 
 figcaption {
-  @include setType(2.5, $ms-down2, $silent: true);
+  @include setType(3, $ms-down1);
 
   color: $secondary-text-color;
-  font-family: $font-mono;
+  font-family: $font-serif;
   font-weight: 400;
-  letter-spacing: -0.04em;
   margin-top: $base-vertical-unit;
-  word-spacing: -0.19em;
 }
 
 blockquote {
   font-family: $font-display-serif;
   margin: emRhythm($base-line-multi * 2) 0;
-  // margin-bottom: emRhythm($base-line-multi * 2);
-  // margin-left: 0;
-  // margin-right: 0;
-  // margin-top: emRhythm($base-line-multi * 2);
   padding-bottom: 0;
   text-align: center;
 
