@@ -1,6 +1,6 @@
 .pullquote {
   $pullquote-em-font-size: $ms-up3;
-  $cite-em-font-size: $ms-down2;
+  $cite-em-font-size: $ms-down1;
 
   @include setType(5, $pullquote-em-font-size);
 
@@ -32,9 +32,9 @@
     font-size: $cite-em-size;
     line-height: unitlessRhythm(2, $cite-em-font-size);
     display: block;
-    color: $text-color;
+    color: $secondary-text-color;
     margin-top: $base-vertical-unit;
-    font-family: $font-mono;
+    font-family: $font-serif;
     font-style: normal;
     font-weight: normal;
   }
@@ -45,7 +45,8 @@
 }
 
 .pullquote__source {
-  text-transform: uppercase;
-  font-size: 0.85em;
-  opacity: 0.9;
+  font-size: $caption-source-size;
+  opacity: 0.7;
+  font-family: $font-mono;
+  word-spacing: -0.1em;
 }

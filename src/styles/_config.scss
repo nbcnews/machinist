@@ -22,7 +22,7 @@ $base-vertical-unit: 9px;
 
 // The value that multiplies the $base-vertical-unit to get the $base-line-height.
 // This gives type an ideal line-height.
-$base-line-multi: 3;
+$base-line-multi: 4;
 
 // Base font size in pixels.
 $base-font-size: 17px;
@@ -41,9 +41,11 @@ $paragraph-justify: false; // [2]
 $load-typesetted: false;
 $global-init: true;
 
+$caption-source-size: 0.88em;
+
 // Colors
 $dark: #000;
-$dark-grey: #252525;
+$dark-grey: #555;
 $grey: #737373;
 $light-grey: #bdbdbd;
 $lighter-grey: #f0f0f0;
