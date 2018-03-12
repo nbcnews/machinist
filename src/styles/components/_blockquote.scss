@@ -2,3 +2,10 @@
   padding-left: $gutter;
   padding-right: $gutter;
 }
+
+.blockquote__source {
+  font-size: $caption-source-size;
+  opacity: 0.7;
+  font-family: $font-mono;
+  word-spacing: -0.1em;
+}
