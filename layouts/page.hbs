@@ -1,23 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{metadata.pageTitle}}</title>
-    <meta name="description" content="{{metadata.description}}">
-    <meta property="og:url" content="{{metadata.ogUrl}}">
-    <meta property="og:title" content="{{metadata.ogTitle}}" />
-    <meta property="og:description" content="{{metadata.ogDescription}}" />
-    <meta property="og:type" content="{{metadata.ogType}}" />
-    <meta property="og:image" content="{{metadata.socialImage}}" />
-    <meta name="twitter:card" content="{{metadata.twitterCard}}" />
-    <meta name="twitter:title" content="{{metadata.twitterTitle}}" />
-    <meta name="twitter:description" content="{{metadata.twitterDescription}}" />
-    <meta name="twitter:image" content="{{metadata.socialImage}}" />
-    {{#each styles}}
-      <link rel="stylesheet" href="{{this}}"/>
-    {{/each}}
-    <link rel="stylesheet" href="/{{fingerprint.[styles/main.css]}}">
+    {{> start}}
+    <link rel="stylesheet" href="{{assetPath}}{{#if devBuild}}styles/main.css{{else}}{{fingerprint.[styles/main.css]}}{{/if}}">
+    <link rel="author" href="humans.txt" />
   </head>
   <body>
     {{> stats}}
