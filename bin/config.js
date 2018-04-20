@@ -53,6 +53,7 @@ module.exports = () => {
   config.projectSlug = convertedProjectName
   config.version = version
   config.cwdVersion = cwdPkg.version
+  config.cwdAuthor = cwdPkg.author
   config.dependencies = dependencies
   config.devBuild = devBuild
   config.debugMode = debugMode
