@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{capitalize metadata.pageTitle}}</title>
+<meta name="description" content="{{metadata.description}}">
+{{#if metadata.keywords}}
+<meta name="news_keywords" content="{{metadata.keywords}}" />
+{{/if}}
+<meta property="og:url" content="{{metadata.ogUrl}}">
+<meta property="og:title" content="{{metadata.ogTitle}}" />
+<meta property="og:description" content="{{metadata.ogDescription}}" />
+<meta property="og:type" content="{{metadata.ogType}}" />
+<meta property="og:image" content="{{metadata.socialImage}}" />
+<meta name="twitter:card" content="{{metadata.twitterCard}}" />
+<meta name="twitter:title" content="{{metadata.twitterTitle}}" />
+<meta name="twitter:description" content="{{metadata.twitterDescription}}" />
+<meta name="twitter:image" content="{{metadata.socialImage}}" />
+{{#if metadata.googleVerification}}
+<meta name="google-site-verification" content="{{metadata.googleVerification}}" />
+{{/if}}
+{{#each styles}}
+  <link rel="stylesheet" href="{{this}}"/>
+{{/each}}
