@@ -1,4 +1,3 @@
-
 module.exports = function (revealBtn = '[data-sset="reveal"]', revealClose = '[data-sset="reveal-close"]', revealContainer = '.reveal__container') {
   var $revealBtn = $(revealBtn)
   var $revealClose = $(revealClose)
