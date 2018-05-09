@@ -2,9 +2,12 @@
 	<footer class="credits__content">
 		<h2 class="credits__heading">Credits</h2>
     {{#each bylines}}
-    <p>
-      <span class="credits__responsibility">{{value.role}}</span> <strong>{{#if value.credit}}{{{value.credit}}}{{else}}{{{value.name}}}{{/if}}</strong><br>
-    </p>
+    {{#ifEqual value.type 'author'}}
+      {{else}}
+      <p>
+        <span class="credits__responsibility">{{value.role}}</span> <span class="credits__person">{{#if value.credit}}{{{value.credit}}}{{else}}{{{value.name}}}{{/if}}</span><br>
+      </p>
+    {{/ifEqual}}
     {{/each}}
 	</footer>
 </div>
