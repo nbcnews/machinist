@@ -7,7 +7,7 @@
 
 // Font families and default text color.
 $font-sans: "FoundersGroteskCond", "Helvetica Neue", Arial, sans-serif !default;
-$font-headline: "PublicoHeadline", Georgia, "Times New Roman", serif !default;
+$font-headline: "FoundersGroteskCond", "Helvetica Neue", Arial, sans-serif !default;
 $font-serif: "PublicoText", Georgia, "Times New Roman", serif !default;
 $font-display-sans: "FoundersGroteskCond", "Helvetica Neue", Arial, sans-serif !default;
 $font-display-serif: "PublicoHeadline", Georgia, "Times New Roman", serif !default;
@@ -18,11 +18,11 @@ $font-generic-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 // of this value. This is the value that determines the baseline for our vertical
 // rhythm. The default value of 6px allows more fine tuned designs that still
 // obey vertical rhythm.
-$base-vertical-unit: 9px;
+$base-vertical-unit: 4px;
 
 // The value that multiplies the $base-vertical-unit to get the $base-line-height.
 // This gives type an ideal line-height.
-$base-line-multi: 4;
+$base-line-multi: 7;
 
 // Base font size in pixels.
 $base-font-size: 17px;

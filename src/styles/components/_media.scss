@@ -141,7 +141,7 @@
 }
 
 .media__title {
-  @include setType(3, $ms-up1);
+  @include setType(7, $ms-up2);
 
   font-family: $font-sans;
 }
@@ -150,10 +150,11 @@
   color: $grey;
   display: block;
   font-weight: normal;
+  margin-top: emRhythm(2, $ms-up1);
 }
 
 .media__leadin {
-  @include setType(2.5, $base-em-font-size, $silent: true);
+  @include setType(7, $base-em-font-size, $silent: true);
 
   color: $grey;
   margin-left: auto;

@@ -1,5 +1,5 @@
 .kicker {
-  @include setType(2, $ms-down1);
+  @include setType(4, $ms-down1);
 
   font-family: $font-mono;
   text-transform: uppercase;
@@ -8,6 +8,7 @@
 .kicker--hed {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: emRhythm(2, $ms-down1);
   max-width: $column-width + ($gutter * 2);
 }
 

@@ -2,29 +2,36 @@
   text-align: center;
   padding-left: $gutter;
   padding-right: $gutter;
-  margin: emRhythm(10) auto emRhythm(13) auto;
+  margin: emRhythm(20) auto emRhythm(13) auto;
   max-width: $column-width;
 }
 
 .credits__content {
   border-bottom: 1px solid $light-grey;
   border-top: 1px solid $light-grey;
+  padding-bottom: $gutter;
+
+  p {
+    @include setType(4, $ms-down1);
+
+    margin-bottom: emRhythm(4, $ms-down1);
+  }
 }
 
 .credits__heading {
-  @include setType(3, $ms-down1);
+  @include setType(4, $ms-down1);
 
   margin-bottom: emRhythm(2, $ms-down1);
-  margin-top: emRhythm(2, $ms-down1);
+  margin-top: emRhythm(6, $ms-down1);
 }
 
 .credits__person {
-  margin-bottom: emRhythm(1);
+  font-family: $font-mono;
+  letter-spacing: -0.04em;
+  word-spacing: -0.2em;
 }
 
 .credits__responsibility {
   color: $secondary-text-color;
-  font-family: $font-sans;
-  font-size: $ms-down1;
-  text-transform: uppercase;
+  font-family: $font-serif;
 }

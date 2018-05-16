@@ -7,7 +7,7 @@
     color: $lg-next-prev-color;
     cursor: pointer;
     display: block;
-    font-family: $font-sans;
+    font-family: $font-mono;
     font-size: 2em;
     margin-top: -47px;
     padding: 8px 10px 9px;
@@ -126,22 +126,33 @@
   }
 }
 
+.lg-sub-html-custom {
+  background-color: $lg-sub-html-bg;
+  color: $lg-sub-html-color;
+  font-size: $ms-down1;
+  line-height: 1.9;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $column-width;
+  text-align: center;
+  padding: $base-vertical-unit * 2;
+  z-index: $zindex-subhtml;
+  white-space: normal;
+}
+
 // lightGallery title
 .lg-sub-html {
   background-color: $lg-sub-html-bg;
-  bottom: 0;
   color: $lg-sub-html-color;
   font-size: $ms-down1;
-  left: 0;
-  line-height: 1.2;
+  line-height: 1.9;
   margin-left: auto;
   margin-right: auto;
-  max-width: $column-width * 2;
+  max-width: $column-width * 1.5;
   padding: 18px 40px;
-  position: fixed;
-  right: 0;
   text-align: center;
   z-index: $zindex-subhtml;
+  white-space: normal;
 
   h4 {
     font-size: 13px;
@@ -157,6 +168,8 @@
 
 // lg image counter
 #lg-counter {
+  font-family: $font-mono;
+  letter-spacing: -0.04em;
   color: $lg-icon-color;
   display: inline-block;
   font-size: $lg-counter-font-size;

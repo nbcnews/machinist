@@ -85,32 +85,32 @@ h1,
 
 h2,
 .h2 {
-  @include setType(3, $ms-up1);
+  @include setType(6, $ms-up1);
 
-  margin-bottom: emRhythm(1, $ms-up1, $silent: true);
+  margin-bottom: emRhythm(2, $ms-up1, $silent: true);
 }
 
 h3,
 .h3 {
-  @include setType(2.5, $base-em-font-size, $silent: true);
+  @include setType(5, $base-em-font-size, $silent: true);
 
-  margin-bottom: emRhythm(1);
+  margin-bottom: emRhythm(2);
 }
 
 h4,
 .h4 {
-  @include setType(2.5, $base-em-font-size, $silent: true);
+  @include setType(5, $base-em-font-size, $silent: true);
 
-  margin-bottom: emRhythm(1);
+  margin-bottom: emRhythm(2);
 }
 
 h5,
 .h5,
 h6,
 .h6 {
-  @include setType(2, $ms-down1);
+  @include setType(4, $ms-down1);
 
-  margin-bottom: emRhythm(1, $ms-down1);
+  margin-bottom: emRhythm(2, $ms-down1);
 }
 
 a,
@@ -163,12 +163,12 @@ figure {
 }
 
 figcaption {
-  @include setType(3, $ms-down1);
+  @include setType(6, $ms-down1);
 
   color: $secondary-text-color;
   font-family: $font-serif;
   font-weight: 400;
-  margin-top: $base-vertical-unit;
+  margin-top: $base-vertical-unit * 2;
 }
 
 blockquote {
@@ -178,20 +178,20 @@ blockquote {
   text-align: center;
 
   p {
-    @include setType(4, $ms-up2);
+    @include setType(9, $ms-up2);
 
     font-weight: 900;
     margin-bottom: 0;
   }
 
   cite {
-    @include setType(2, $ms-down1);
+    @include setType(4, $ms-down1);
 
     color: $secondary-text-color;
     display: block;
     font-style: normal;
     font-weight: 400;
-    margin-top: emRhythm(1, $ms-down1);
+    margin-top: emRhythm(2, $ms-down1);
     padding-left: $gutter;
     padding-right: $gutter;
   }

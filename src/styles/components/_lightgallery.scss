@@ -1,3 +1,4 @@
+// lightgallery@1.2.18
 // http://sachinchoolur.github.io/lightGallery/docs/license.html
 // Core variables and mixins
 @import "lightgallery/lg-variables";
@@ -65,7 +66,7 @@
     }
   }
   .lg {
-    font-family: $font-mono;
+    font-family: $font-serif;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -129,10 +130,15 @@
   .lg-image {
     display: inline-block;
     height: auto !important;
-    max-height: 100%;
+    max-height: 80%;
     max-width: 100%;
     vertical-align: middle;
     width: auto !important;
+    object-fit: contain;
+
+    @media (min-width: $screen-sm-min) {
+      max-height: 100%;
+    }
   }
   &.lg-show-after-load {
     .lg-item {
