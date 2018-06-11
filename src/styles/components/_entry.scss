@@ -22,8 +22,8 @@
 }
 
 .entry__headline {
-  @include setType(3, $ms-up2);
-
+  font-size: $ms-up2;
+  line-height: 1;
   margin-bottom: emRhythm(1, $ms-up2, $silent: true);
 }
 
