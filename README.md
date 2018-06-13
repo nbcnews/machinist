@@ -21,9 +21,11 @@ Opinionated scaffolding and static site generator for storytelling.
 
 *See [Setup](#setup) for recommended local install.*
 
+By default `machinist init` will automatically set the generated project's month and year. 
+
 1. Install [Node.js](https://nodejs.org/) (v8.x required)
 1. `npm install -g @nbcnews/machinist`
-1. `machinist init <project-name>`
+1. `machinist init <project-name> <optional-explicit-month: MM> <optional-explicit-year: YYYY>`
 1. `npm i`
 1. `npm run dev`
 1. Visit [`http://localhost:3000`](http://localhost:3000)
@@ -41,18 +43,20 @@ Opinionated scaffolding and static site generator for storytelling.
 
 You can either scaffold using the globally installed Machinist or scaffold locally.
 
+By default `machinist init` will automatically set the generated project's month and year. 
+
 Install locally (recommended)
 
 1. `cd` into an empty project directory
 1. `npm install @nbcnews/machinist`
-1. `$(npm bin)/machinist init <project-name>`
+1. `$(npm bin)/machinist init <project-name> <optional-explicit-month: MM> <optional-explicit-year: YYYY>`
 1. `npm install`
 
 Install globally 
 
 1. `npm install -g @nbcnews/machinist`
 1. `cd` into an empty project directory
-1. `machinist init <project-name>`
+1. `machinist init <project-name> <optional-explicit-month: MM> <optional-explicit-year: YYYY>`
 1. `npm install`
 
 ## How To Use

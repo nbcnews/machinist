@@ -13,13 +13,13 @@ var outputFiles = [
 
 function projectInit (program) {
   const projectName = program.init
-  let month = program.args[0] || new Date().getMonth() + 1
+  let month = program.args[1] || new Date().getMonth() + 1
 
   if (month.toString().length === 1) {
     month = '0' + month
   }
 
-  const year = program.args[1] || new Date().getYear() + 1900
+  const year = program.args[2] || new Date().getYear() + 1900
   const data = { projectName, month, year }
 
   console.log('## DEBUG data:', data)
